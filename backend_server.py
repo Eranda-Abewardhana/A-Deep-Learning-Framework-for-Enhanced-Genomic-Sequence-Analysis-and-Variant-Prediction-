@@ -247,26 +247,13 @@ try:
 except Exception as e:
     traceback.print_exc()
     print(f"\n[FAIL] Failed to load model: {e}")
-    # Print key diff for debugging
-    if model is not None:
-        expected = set(model.state_dict().keys())
-        got = set(ckpt.keys()) if 'ckpt' in dir() else set()
-        missing = expected - got
-        unexpected = got - expected
-        if missing:
-            print(f"  Missing keys ({len(missing)}): {sorted(missing)[:10]}")
-        if unexpected:
-            print(f"  Unexpected keys ({len(unexpected)}): {sorted(unexpected)[:10]}")
-
-
-# ─── Sample variants (from thesis evaluation data) ───────────────────────────
-
+    # Print key diff for debug
 SAMPLES = [
     {
-        "id": "brca1_frameshift_high",
-        "label": "🚨 High Risk — Pathogenic (BRCA1 Frameshift c.68_72del)",
+        "id": "pathogenic_brca1_high",
+        "label": "🚨 High Risk — Pathogenic (BRCA1 Frameshift p=0.820)",
         "gene": "BRCA1",
-        "variant": "5-bp Frameshift Deletion (High Impact)",
+        "variant": "4-bp Frameshift Deletion (High Impact)",
         "ref": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
                 "ACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTG"
                 "GATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTC"
@@ -278,37 +265,21 @@ SAMPLES = [
                 "AAGAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATA"
                 "TTTTTAGAGATCTCTTGAGAATCTGATCAGAAAATCTAATGGATGCAAAG"
                 "CTATTTAAGCATTGTACC"),
-        "alt": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTAAAGCACCAG"
-                "GATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTGGATTC"
-                "ATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTCTTTCA"
-                "AGCTCAGCCAGACTGCTCTCTTCAGAAATATCACTTGCATGGCCTGGAAA"
-                "GCCAGCTCTTCTACCATCCATGTCAGAGTCATGGAAACACTCTCTAACCT"
-                "CCTTTGTTTTACCTCTATCTTGTACTCCATAAACCTCTCAGTACAGAACA"
-                "TACAACTGATCACCCTGAATGGATCCCAAAGAGCTGATAAATATAAATTG"
-                "TGCTTAATTAAGAAGTCTTCCTTCAAAGAAGCAATGGCCAATCTAGTGAA"
-                "GAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATATT"
-                "TTTAGAGATCTCTTGAGAATCTGATCAGAAAATCTAATGGATGCAAAGCT"
-                "ATTTAAGCATTGTACC"),
+        "alt": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
+                "ACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTG"
+                "GATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTC"
+                "TTTCAAGCTCAGCCAGACTGCTCTCTTCAGAAATATCACTTGCATGGCCT"
+                "GGAAAGCCAGCTCTTCTACCATCCATGTCAGAGTCATGGAAACACTCTCTA"
+                "ACCTCCTTTGTTTTACCTCTATCTTGTACTCCATAAACCTCTCAGTACAGA"
+                "ACATACAACTGATCACCCTGAATGGATCCCAAAGAGCTGATAAATATAAAT"
+                "TGTGCTTAATTAAGAAGTCTTCCTTCAAAGAAGCAATGGCCAATCTAGTG"
+                "AAGAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATA"
+                "TTTTTAGAGATCTCTTGAGAATCTGATCAGAAAAATGGATGCAAAGCTAT"
+                "TTAAGCATTGTACC"),
     },
     {
-        "id": "brca2_nonsense_high",
-        "label": "🚨 High Risk — Pathogenic (BRCA2 Nonsense c.5946delT)",
-        "gene": "BRCA2",
-        "variant": "1-bp Deletion Truncation (High Impact)",
-        "ref": ("ACGAAGGTCAACCGGAAATACCAGAACAAATAACCACTCCCCCCAAACTC"
-                "CTGGAAGAAGATAAAAACAGTGTTTTTGCTGAAGAGCAGAAACAGAACAG"
-                "TTTTAGTGACAACAGCAGTGTTTTTGCTGAAGAGCAGAAACAGAACAGTT"
-                "TTAGTGACAACAGCAGTGTTTTTGCTGAAGAGCAGAAACAGAACAGTTTT"
-                "AGTGACAACAGCA"),
-        "alt": ("ACGAAGGTCAACCGGAAATACCAGAACAAATAACCACTCCCCCCAAACTC"
-                "CTGGAAGAAGATAAAAACAGTGTTTTTGCTGAAGAGCAGAAACAGAACAG"
-                "TTTTAGTGACAACAGCAGTGTTTTTGCTGAAGAGCAGAAACAGAACAGTT"
-                "TTAGTGACAACAGCAGTGTTTTTGCTGAAGAGCAGAAACAGAACAGTTTT"
-                "AGTGACAAC"),
-    },
-    {
-        "id": "brca1_missense_mid",
-        "label": "⚠️ Moderate Risk — VUS (BRCA1 Missense c.5095C>T)",
+        "id": "vus_brca1_mid",
+        "label": "⚠️ Moderate Risk — VUS (BRCA1 Missense p=0.501)",
         "gene": "BRCA1",
         "variant": "Missense Alteration (Uncertain Significance)",
         "ref": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
@@ -335,38 +306,10 @@ SAMPLES = [
                 "CTATTTAAGCATTGTACC"),
     },
     {
-        "id": "brca1_synonymous_low",
-        "label": "✅ Low Risk — Benign (BRCA1 Synonymous c.5137G>A)",
-        "gene": "BRCA1",
-        "variant": "Synonymous G>A SNV (Low Risk / Silent)",
-        "ref": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
-                "ACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTG"
-                "GATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTC"
-                "TTTCAAGCTCAGCCAGACTGCTCTCTTCAGAAATATCACTTGCATGGCCT"
-                "GGAAAGCCAGCTCTTCTACCATCCATGTCAGAGTCATGGAAACACTCTCTA"
-                "ACCTCCTTTGTTTTACCTCTATCTTGTACTCCATAAACCTCTCAGTACAGA"
-                "ACATACAACTGATCACCCTGAATGGATCCCAAAGAGCTGATAAATATAAAT"
-                "TGTGCTTAATTAAGAAGTCTTCCTTCAAAGAAGCAATGGCCAATCTAGTG"
-                "AAGAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATA"
-                "TTTTTAGAGATCTCTTGAGAATCTGATCAGAAAATCTAATGGATGCAAAG"
-                "CTATTTAAGCATTGTACC"),
-        "alt": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
-                "ACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTG"
-                "GATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTC"
-                "TTTCAAGCTCAGCCAGACTGCTCTCTTCAGAAATATCACTTGCATGGCCT"
-                "GGAAAGCCAGCTCTTCTACCATCCATGTCAGAGTCATGGAAACACTCTCTA"
-                "ACCTCCTTTGTTTTACCTCTATCTTGTACTCCATAAACCTCTCAGTACAGA"
-                "ACATACAACTGATCACCCTGAATGGATCCCAAAGAGCTGATAAATATAAAT"
-                "TGTGCTTAATTAAGAAGTCTTCCTTCAAAGAAGCAATGGCCAATCTAGTA"
-                "AAGAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATA"
-                "TTTTTAGAGATCTCTTGAGAATCTGATCAGAAAATCTAATGGATGCAAAG"
-                "CTATTTAAGCATTGTACC"),
-    },
-    {
-        "id": "arhgap21_intronic_low",
-        "label": "✅ Low Risk — Benign (ARHGAP21 Intronic Polymorphism)",
+        "id": "benign_arhgap21",
+        "label": "✅ Low Risk — Benign (ARHGAP21 Synonymous p=0.005)",
         "gene": "ARHGAP21",
-        "variant": "Non-coding Intronic SNV (Very Low Risk)",
+        "variant": "Synonymous Base Variant (Low Risk)",
         "ref": ("GGATCTCCGATTTCTCCCTCTGCTAAAGGTCAGAGGTACTGGTGCGTAG"
                 "GCCGTTCCCTGGCCCAGCCAGTCTCGGCATTCACTTTCCTCTCCCGCTCT"
                 "GCTCTCATTCTCCCTAGTGTATATCTGCGCCGGATGCTTTTCCTTTTTAG"
