@@ -1298,7 +1298,73 @@ footer {
   color: var(--accent-light);
   font-size: 0.88rem;
 }
+
+/* Pipeline Flow Cards */
+.pipeline-flow-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+.pipeline-step-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+}
+.pipeline-step-card .step-num {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.72rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pipeline-step-card .step-text {
+  color: var(--text-dim);
+}
+
+/* Quick Jump Evaluator Bar */
+.nb-nav-quickbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.quick-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  margin-right: 0.25rem;
+}
+.nb-quick-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.nb-quick-chip:hover {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--accent);
+  color: var(--text);
+}
 </style>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
@@ -2123,22 +2189,33 @@ footer {
 <section class="tab-panel" id="panel-notebook" role="tabpanel">
 <div class="notebook-container">
   <div class="notebook-header">
-    <div style="display:flex; align-items:center; gap:0.75rem; justify-content:space-between; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center; gap:0.75rem; justify-content:space-between; flex-wrap:wrap; margin-bottom:1rem;">
       <div>
-        <h3 style="margin:0; font-size:1.1rem; color:var(--text);">📓 Interactive Jupyter Notebook Viewer &mdash; a-deep-learning-framework (11).ipynb</h3>
-        <div style="font-size:0.8rem; color:var(--text-dim); margin-top:0.25rem;">Complete 68-cell thesis execution transcript with clean outputs, PyTorch code & inline plot figures</div>
+        <h3 style="margin:0; font-size:1.15rem; color:var(--text);">📓 Interactive Jupyter Notebook &mdash; a-deep-learning-framework (11).ipynb</h3>
+        <div style="font-size:0.82rem; color:var(--text-dim); margin-top:0.25rem;">Complete 68-cell thesis execution trajectory formatted for evaluation review</div>
       </div>
-      <div style="font-size:0.78rem; background:rgba(99,102,241,0.12); color:var(--accent-light); padding:0.4rem 0.8rem; border-radius:6px; border:1px solid rgba(99,102,241,0.25);">
+      <div style="font-size:0.78rem; background:rgba(99,102,241,0.12); color:var(--accent-light); padding:0.45rem 0.9rem; border-radius:6px; border:1px solid rgba(99,102,241,0.25); font-weight:600;">
         <span>68 Cells</span> &bull; <span>Python 3.12 (PyTorch CUDA)</span>
       </div>
     </div>
+    <div class="nb-nav-quickbar">
+      <span class="quick-label">Evaluator Quick Jump:</span>
+      <a href="#nb-cell-0" class="nb-quick-chip">Overview &amp; Setup (Cells 1-5)</a>
+      <a href="#nb-cell-12" class="nb-quick-chip">Architecture &amp; Delta Check (Cells 9-10)</a>
+      <a href="#nb-cell-18" class="nb-quick-chip">Training Loop (Cells 12-14)</a>
+      <a href="#nb-cell-26" class="nb-quick-chip">XAI Attributions (Cells 15-18)</a>
+      <a href="#nb-cell-38" class="nb-quick-chip">NCBI External Eval (Cells 21-24)</a>
+      <a href="#nb-cell-54" class="nb-quick-chip">Ablation Study (Cell 27)</a>
+    </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-0">
-    <div class="nb-md-content"><p><h2 class="nb-h1">A Deep Learning Framework for Enhanced Genomic Sequence Analysis and Variant Prediction</h2></p><p><blockquote class="nb-quote"><strong>Run order:</strong> Cells are numbered and must be executed top-to-bottom.  </blockquote>
-<blockquote class="nb-quote">All outputs are saved to <code>/kaggle/working/figures/</code> for use in the thesis appendix.</blockquote></p></div>
+    <div class="nb-md-content"><h2 class="nb-h1">A Deep Learning Framework for Enhanced Genomic Sequence Analysis and Variant Prediction</h2>
+<br>
+<p><blockquote class="nb-quote"><strong>Run order:</strong> Cells are numbered and must be executed top-to-bottom.  </blockquote></p>
+<p><blockquote class="nb-quote">All outputs are saved to <code>/kaggle/working/figures/</code> for use in the thesis appendix.</blockquote></p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-1">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 1 — Install Dependencies</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 1 — Install Dependencies</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-2">
     <div class="nb-input-row">
@@ -2158,7 +2235,7 @@ footer {
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-3">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 2 — Imports &amp; Global Config</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 2 — Imports &amp; Global Config</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-4">
     <div class="nb-input-row">
@@ -2224,7 +2301,7 @@ figures/ folder ready</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-5">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 3 — Download &amp; Preprocess ClinVar</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 3 — Download &amp; Preprocess ClinVar</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-6">
     <div class="nb-input-row">
@@ -2349,7 +2426,7 @@ Name: count, dtype: int64</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-7">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 4 — Download hg38 Reference Genome</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 4 — Download hg38 Reference Genome</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-8">
     <div class="nb-input-row">
@@ -2390,7 +2467,7 @@ Chromosomes loaded: 455</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-9">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 5 — Sequence Utility Functions</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 5 — Sequence Utility Functions</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-10">
     <div class="nb-input-row">
@@ -2502,54 +2579,60 @@ print(&quot;Sequence utilities ready.&quot;)</code></pre></div>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-11">
-    <div class="nb-md-content"><p><h3 class="nb-h2">ClinVar Data Preprocessing Pipeline</h3></p><p>The ClinVar variant summary dataset is processed through the following steps to prepare a clean dataset for machine learning:</p><p><code></code>`text
-Download ClinVar dataset (.gz)
-        │
-        ▼
-Extract compressed file to .txt format
-        │
-        ▼
-Load dataset using pandas / cuDF (GPU acceleration if available)
-        │
-        ▼
-Filter variants mapped to GRCh38 genome assembly
-        │
-        ▼
-Remove variants with missing or invalid reference/alternate alleles
-        │
-        ▼
-Convert clinical significance into binary labels
-        │
-        ├── Pathogenic / Likely Pathogenic → Label = 1
-        │
-        └── Benign / Likely Benign → Label = 0
-        │
-        ▼
-Remove conflicting and unknown clinical classifications
-        │
-        ▼
-Keep only clinically relevant variant types:
-        - Single Nucleotide Variants (SNVs)
-        - Insertions
-        - Deletions
-        - Indels
-        │
-        ▼
-Remove duplicate variants based on Variation ID and genome assembly
-        │
-        ▼
-Perform gene-balanced sampling
-        (maximum 200 variants per gene)
-        │
-        ▼
-Convert GPU DataFrame back to pandas (if cuDF was used)
-        │
-        ▼
-Final cleaned and balanced dataset
-ready for machine learning model training</p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">ClinVar Data Preprocessing Pipeline</h3>
+<br>
+<p>The ClinVar variant summary dataset is processed through the following steps to prepare a clean dataset for machine learning:</p>
+<br>
+<p><code></code>`text</p>
+<p>Download ClinVar dataset (.gz)</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Extract compressed file to .txt format</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Load dataset using pandas / cuDF (GPU acceleration if available)</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Filter variants mapped to GRCh38 genome assembly</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Remove variants with missing or invalid reference/alternate alleles</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Convert clinical significance into binary labels</p>
+<p>        │</p>
+<p>        ├── Pathogenic / Likely Pathogenic → Label = 1</p>
+<p>        │</p>
+<p>        └── Benign / Likely Benign → Label = 0</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Remove conflicting and unknown clinical classifications</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Keep only clinically relevant variant types:</p>
+<ul class="nb-list">
+<li>Single Nucleotide Variants (SNVs)</li>
+<li>Insertions</li>
+<li>Deletions</li>
+<li>Indels</li>
+</ul>
+<p>        │</p>
+<p>        ▼</p>
+<p>Remove duplicate variants based on Variation ID and genome assembly</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Perform gene-balanced sampling</p>
+<p>        (maximum 200 variants per gene)</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Convert GPU DataFrame back to pandas (if cuDF was used)</p>
+<p>        │</p>
+<p>        ▼</p>
+<p>Final cleaned and balanced dataset</p>
+<p>ready for machine learning model training</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-12">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 6 — Build Mutation-Aware Dataset (Parallel)</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 6 — Build Mutation-Aware Dataset (Parallel)</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-13">
     <div class="nb-input-row">
@@ -2671,7 +2754,7 @@ Name: count, dtype: int64</pre>
     <div class="nb-md-content"><p><strong>GeneSymbol is a column that comes straight from the ClinVar variant_summary.txt file — it&#x27;s the official gene name/symbol associated with each variant record. Examples of values it holds: BRCA1, BRCA2, TP53, MLH1, CFTR, MSH2, etc.</strong></p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-15">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 7 — Train / Validation / Test Split</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 7 — Train / Validation / Test Split</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-16">
     <div class="nb-input-row">
@@ -2774,10 +2857,10 @@ test_ds size: 107,083</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-18">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 8 — PyTorch Dataset</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 8 — PyTorch Dataset</h3></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-19">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 9 — Model Architecture</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 9 — Model Architecture</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-20">
     <div class="nb-input-row">
@@ -2957,58 +3040,140 @@ print(&quot;Model architecture defined.&quot;)</code></pre></div>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-21">
-    <div class="nb-md-content"><p><h3 class="nb-h2">PositionalEncoding</h3></p><p><strong>Task:</strong> Inject positional information into the sequence, since Transformers have no inherent sense of sequence order.</p><p>This module precomputes a fixed sinusoidal positional encoding matrix (<code>pe</code>) of shape <code>[max_len, d_model]</code> following the standard *Attention Is All You Need* formulation, where sine functions are applied to even dimensions and cosine functions to odd dimensions. During the forward pass, the positional encoding corresponding to the input sequence length is added directly to the input tensor <code>x</code>. This provides every position within the 1024 bp sequence with a unique positional representation while preserving the learned feature embeddings.</p><p>---</p><p><h3 class="nb-h2">MultiKernelCNN</h3></p><p><strong>Task:</strong> Extract local sequence motifs at multiple receptive field sizes.</p><p>The module consists of three parallel Conv1D branches with kernel sizes of <strong>3</strong>, <strong>7</strong>, and <strong>15</strong>, each followed by Batch Normalization and a GELU activation function. Smaller kernels capture fine-grained sequence motifs, whereas larger kernels learn broader contextual patterns. During the forward pass, the outputs from all three convolutional branches are concatenated along the channel dimension, producing a richer multi-scale representation than could be achieved with a single kernel size.</p><p>---</p><p><h3 class="nb-h2">MutationAwarePooling</h3></p><p><strong>Task:</strong> Aggregate sequence-level representations while emphasizing the mutation site.</p><p>This attention-based pooling module converts sequence representations of shape <code>[B, L, D]</code> into fixed-length vectors. It learns three independent attention gates corresponding to the REF, ALT, and Δ streams. The module computes the average absolute magnitude of the difference representation (<code>delta_mag</code>) at each sequence position and uses this value to enhance the attention logits. Consequently, positions where the REF and ALT sequences differ most receive higher attention weights across all streams.</p><p>During the forward pass, the attention scores are normalized using a softmax function and used to compute weighted sums over the sequence length, producing three pooled feature vectors: <code>ref_g</code>, <code>alt_g</code>, and <code>delta_g</code>.</p><p>For ablation experiments, the module supports <code>use_delta=False</code>, which disables Δ-based attention enhancement and removes the delta stream, resulting in conventional attention pooling.</p><p>---</p><p><h3 class="nb-h2">MutationAwareBRCAClassifierV2</h3></p><p><strong>Task:</strong> Perform end-to-end pathogenicity prediction while integrating explicit mutation-difference learning and supporting systematic ablation studies.</p><p>This class serves as the complete model architecture and orchestrates all feature extraction, representation learning, pooling, and classification stages.</p><p><h4 class="nb-h3">Model Initialization</h4></p><p>The constructor builds the REF and ALT encoding branches. When <code>tie_branches=True</code>, both branches share the same CNN and projection weights, forming a Siamese architecture. Weight sharing guarantees that identical REF and ALT sequences produce identical latent representations, ensuring that</p><p>\[
-\Delta_h = 0
-\]</p><p>for identical inputs. This property makes the learned Δ representation meaningful rather than introducing unnecessary noise.</p><p>The constructor also configures the ablation switches (<code>use_cnn</code>, <code>use_transformer</code>, <code>use_delta</code>, and <code>single_seq</code>), enabling individual components to be disabled when constructing the baseline architectures presented in the thesis.</p><p><h4 class="nb-h3">Branch Encoding</h4></p><p>The <code>encode_branch()</code> function defines the shared processing pipeline for both REF and ALT sequences. Each branch performs the following operations:</p><p>1. Input reshaping.
-2. Multi-scale feature extraction using <strong>MultiKernelCNN</strong>.
-3. Channel projection to the Transformer embedding dimension using a 1×1 convolution.
-4. Addition of sinusoidal positional encodings.
-5. Contextual representation learning through the Transformer encoder (or bypassed when <code>use_transformer=False</code>).</p><p>Because both REF and ALT use the same encoding pipeline, the extracted representations remain directly comparable.</p><p><h4 class="nb-h3">Forward Pass</h4></p><p>During inference, the model first encodes the ALT sequence.</p><p>If <code>single_seq=True</code> (Baseline D), only the ALT representation is pooled and classified, providing the standard single-sequence baseline without any sequence comparison.</p><p>Otherwise, the REF sequence is also encoded, after which the explicit mutation-difference representation is computed as</p><p>\[
-\Delta_h = ALT_h - REF_h
-\]</p><p>This explicit Δ-learning mechanism represents the primary methodological contribution of the proposed architecture.</p><p>The REF, ALT, and Δ representations are then processed by <strong>MutationAwarePooling</strong>, producing three fixed-length vectors (<code>ref_g</code>, <code>alt_g</code>, and <code>delta_g</code>). These vectors are concatenated and passed to the classifier for final prediction.</p><p>When <code>return_aux=True</code>, the model additionally returns intermediate hidden representations and attention weights for downstream explainability analyses, including Integrated Gradients, Absolute Gradient, and In Silico Mutagenesis (ISM).</p><p><h4 class="nb-h3">Classification Head</h4></p><p>The classifier consists of a three-layer multilayer perceptron (MLP):</p><p><code></code>`
-(n_streams × 128)
-        ↓
-       256
-        ↓
-        64
-        ↓
-         1
-<code></code>`</p><p>Each hidden layer uses GELU activation with dropout regularization. The final layer outputs a single logit representing variant pathogenicity, while the sigmoid activation is applied externally during loss computation and evaluation.</p><p>---</p><p><h3 class="nb-h2">Overall Pipeline</h3></p><p>The proposed architecture combines local and global representation learning through the following sequence of operations:</p><p><code></code>`
-Input DNA Sequences
-        │
-        ▼
-MultiKernelCNN
-(Local multi-scale motif extraction)
-        │
-        ▼
-Positional Encoding
-(Add sequence order information)
-        │
-        ▼
-Transformer Encoder
-(Global contextual representation learning)
-        │
-        ▼
-Δ Representation
-(ALT − REF explicit mutation learning)
-        │
-        ▼
-MutationAwarePooling
-(Attention pooling emphasizing mutation sites)
-        │
-        ▼
-Concatenation
-[REF | ALT | Δ]
-        │
-        ▼
-MLP Classifier
-        │
-        ▼
-Pathogenicity Prediction
-<code></code>`</p><p>In summary, the <strong>PositionalEncoding</strong> and <strong>MultiKernelCNN</strong> modules capture positional and local sequence information, the <strong>Transformer encoder</strong> models long-range genomic dependencies, <strong>MutationAwarePooling</strong> aggregates representations while emphasizing mutation-sensitive regions, and <strong>MutationAwareBRCAClassifierV2</strong> integrates these components through explicit Δ-learning, forming the central contribution of the proposed architecture while remaining flexible enough to support comprehensive ablation studies.</p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">PositionalEncoding</h3>
+<br>
+<p><strong>Task:</strong> Inject positional information into the sequence, since Transformers have no inherent sense of sequence order.</p>
+<br>
+<p>This module precomputes a fixed sinusoidal positional encoding matrix (<code>pe</code>) of shape <code>[max_len, d_model]</code> following the standard *Attention Is All You Need* formulation, where sine functions are applied to even dimensions and cosine functions to odd dimensions. During the forward pass, the positional encoding corresponding to the input sequence length is added directly to the input tensor <code>x</code>. This provides every position within the 1024 bp sequence with a unique positional representation while preserving the learned feature embeddings.</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">MultiKernelCNN</h3>
+<br>
+<p><strong>Task:</strong> Extract local sequence motifs at multiple receptive field sizes.</p>
+<br>
+<p>The module consists of three parallel Conv1D branches with kernel sizes of <strong>3</strong>, <strong>7</strong>, and <strong>15</strong>, each followed by Batch Normalization and a GELU activation function. Smaller kernels capture fine-grained sequence motifs, whereas larger kernels learn broader contextual patterns. During the forward pass, the outputs from all three convolutional branches are concatenated along the channel dimension, producing a richer multi-scale representation than could be achieved with a single kernel size.</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">MutationAwarePooling</h3>
+<br>
+<p><strong>Task:</strong> Aggregate sequence-level representations while emphasizing the mutation site.</p>
+<br>
+<p>This attention-based pooling module converts sequence representations of shape <code>[B, L, D]</code> into fixed-length vectors. It learns three independent attention gates corresponding to the REF, ALT, and Δ streams. The module computes the average absolute magnitude of the difference representation (<code>delta_mag</code>) at each sequence position and uses this value to enhance the attention logits. Consequently, positions where the REF and ALT sequences differ most receive higher attention weights across all streams.</p>
+<br>
+<p>During the forward pass, the attention scores are normalized using a softmax function and used to compute weighted sums over the sequence length, producing three pooled feature vectors: <code>ref_g</code>, <code>alt_g</code>, and <code>delta_g</code>.</p>
+<br>
+<p>For ablation experiments, the module supports <code>use_delta=False</code>, which disables Δ-based attention enhancement and removes the delta stream, resulting in conventional attention pooling.</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">MutationAwareBRCAClassifierV2</h3>
+<br>
+<p><strong>Task:</strong> Perform end-to-end pathogenicity prediction while integrating explicit mutation-difference learning and supporting systematic ablation studies.</p>
+<br>
+<p>This class serves as the complete model architecture and orchestrates all feature extraction, representation learning, pooling, and classification stages.</p>
+<br>
+<h4 class="nb-h3">Model Initialization</h4>
+<br>
+<p>The constructor builds the REF and ALT encoding branches. When <code>tie_branches=True</code>, both branches share the same CNN and projection weights, forming a Siamese architecture. Weight sharing guarantees that identical REF and ALT sequences produce identical latent representations, ensuring that</p>
+<br>
+<p>\[</p>
+<p>\Delta_h = 0</p>
+<p>\]</p>
+<br>
+<p>for identical inputs. This property makes the learned Δ representation meaningful rather than introducing unnecessary noise.</p>
+<br>
+<p>The constructor also configures the ablation switches (<code>use_cnn</code>, <code>use_transformer</code>, <code>use_delta</code>, and <code>single_seq</code>), enabling individual components to be disabled when constructing the baseline architectures presented in the thesis.</p>
+<br>
+<h4 class="nb-h3">Branch Encoding</h4>
+<br>
+<p>The <code>encode_branch()</code> function defines the shared processing pipeline for both REF and ALT sequences. Each branch performs the following operations:</p>
+<br>
+<ol class="nb-list">
+<li>Input reshaping.</li>
+<li>Multi-scale feature extraction using <strong>MultiKernelCNN</strong>.</li>
+<li>Channel projection to the Transformer embedding dimension using a 1×1 convolution.</li>
+<li>Addition of sinusoidal positional encodings.</li>
+<li>Contextual representation learning through the Transformer encoder (or bypassed when <code>use_transformer=False</code>).</li>
+</ol>
+<br>
+<p>Because both REF and ALT use the same encoding pipeline, the extracted representations remain directly comparable.</p>
+<br>
+<h4 class="nb-h3">Forward Pass</h4>
+<br>
+<p>During inference, the model first encodes the ALT sequence.</p>
+<br>
+<p>If <code>single_seq=True</code> (Baseline D), only the ALT representation is pooled and classified, providing the standard single-sequence baseline without any sequence comparison.</p>
+<br>
+<p>Otherwise, the REF sequence is also encoded, after which the explicit mutation-difference representation is computed as</p>
+<br>
+<p>\[</p>
+<p>\Delta_h = ALT_h - REF_h</p>
+<p>\]</p>
+<br>
+<p>This explicit Δ-learning mechanism represents the primary methodological contribution of the proposed architecture.</p>
+<br>
+<p>The REF, ALT, and Δ representations are then processed by <strong>MutationAwarePooling</strong>, producing three fixed-length vectors (<code>ref_g</code>, <code>alt_g</code>, and <code>delta_g</code>). These vectors are concatenated and passed to the classifier for final prediction.</p>
+<br>
+<p>When <code>return_aux=True</code>, the model additionally returns intermediate hidden representations and attention weights for downstream explainability analyses, including Integrated Gradients, Absolute Gradient, and In Silico Mutagenesis (ISM).</p>
+<br>
+<h4 class="nb-h3">Classification Head</h4>
+<br>
+<p>The classifier consists of a three-layer multilayer perceptron (MLP):</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;(n_streams × 128)</p>
+<p>        ↓</p>
+<p>       256</p>
+<p>        ↓</p>
+<p>        64</p>
+<p>        ↓</p>
+<p>         1&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>Each hidden layer uses GELU activation with dropout regularization. The final layer outputs a single logit representing variant pathogenicity, while the sigmoid activation is applied externally during loss computation and evaluation.</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">Overall Pipeline</h3>
+<br>
+<p>The proposed architecture combines local and global representation learning through the following sequence of operations:</p>
+<br>
+<div class="pipeline-flow-container">  <div class="pipeline-step-card"><span class="step-num">1</span><span class="step-text">Input DNA Sequences
+<p>        │</p>
+<br>
+<p>MultiKernelCNN</p>
+<p>(Local multi-scale motif extraction)</p>
+<p>        │</p>
+<br>
+<p>Positional Encoding</p>
+<p>(Add sequence order information)</p>
+<p>        │</p>
+<br>
+<p>Transformer Encoder</p>
+<p>(Global contextual representation learning)</p>
+<p>        │</p>
+<br>
+<p>Δ Representation</p>
+<p>(ALT − REF explicit mutation learning)</p>
+<p>        │</p>
+<br>
+<p>MutationAwarePooling</p>
+<p>(Attention pooling emphasizing mutation sites)</p>
+<p>        │</p>
+<br>
+<p>Concatenation</p>
+<p>[REF&lt;/span&gt;&lt;/div&gt;  &lt;div class=&quot;pipeline-step-card&quot;&gt;&lt;span class=&quot;step-num&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;step-text&quot;&gt;ALT&lt;/span&gt;&lt;/div&gt;  &lt;div class=&quot;pipeline-step-card&quot;&gt;&lt;span class=&quot;step-num&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;step-text&quot;&gt;Δ]</p>
+<p>        │</p>
+<br>
+<p>MLP Classifier</p>
+<p>        │</p>
+<br>
+<p>Pathogenicity Prediction&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<br>
+<p>In summary, the <strong>PositionalEncoding</strong> and <strong>MultiKernelCNN</strong> modules capture positional and local sequence information, the <strong>Transformer encoder</strong> models long-range genomic dependencies, <strong>MutationAwarePooling</strong> aggregates representations while emphasizing mutation-sensitive regions, and <strong>MutationAwareBRCAClassifierV2</strong> integrates these components through explicit Δ-learning, forming the central contribution of the proposed architecture while remaining flexible enough to support comprehensive ablation studies.</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-22">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 10 — Initialise Model, Loss &amp; Optimiser</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 10 — Initialise Model, Loss &amp; Optimiser</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-23">
     <div class="nb-input-row">
@@ -3110,7 +3275,7 @@ All activations confirmed GELU (modules + transformer).
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-24">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 11 — Training &amp; Evaluation Loop Functions</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 11 — Training &amp; Evaluation Loop Functions</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-25">
     <div class="nb-input-row">
@@ -3175,7 +3340,7 @@ print(&quot;Training functions ready.&quot;)
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-26">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 12 — Train on Full Dataset (Chunked)</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 12 — Train on Full Dataset (Chunked)</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-27">
     <div class="nb-input-row">
@@ -3558,29 +3723,49 @@ Reloaded best checkpoint (Val AUC 0.9461) — all evaluation below uses these we
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-28">
-    <div class="nb-md-content"><p><h4 class="nb-h3">Note — How Cell 11&#x27;s training loop connects to the model classes in Cell 9</h4></p><p><code>train_one_epoch</code> and <code>evaluate</code> never mention <code>MultiKernelCNN</code>, <code>MutationAwarePooling</code>,
-or <code>MutationAwareBRCAClassifierV2</code> by name. They don&#x27;t need to — the connection happens
-through Python&#x27;s object-calling convention, not through direct references.</p><p><strong>1. Calling an object with <code>()</code> triggers <code>__call__</code></strong></p><p>When a class defines <code>__call__</code>, writing <code>obj(x, y)</code> is automatically translated by
-Python into <code>obj.__call__(x, y)</code>.</p><p><code></code>`python
-class Doubler:
-    def __call__(self, x):
-        return x * 2</p><p>d = Doubler()
-d(5)          # same as d.__call__(5) -&gt; 10
-<code></code>`</p><p><strong>2. <code>nn.Module</code> (PyTorch&#x27;s base class) defines <code>__call__</code> to run <code>forward()</code></strong></p><p>Every model class here (<code>MutationAwareBRCAClassifierV2</code>, <code>MultiKernelCNN</code>,
-<code>MutationAwarePooling</code>) subclasses <code>nn.Module</code>. PyTorch&#x27;s <code>nn.Module.__call__</code>
-(written inside PyTorch itself — never shown in this notebook) does some
-bookkeeping and then calls <strong>your</strong> <code>forward()</code> method.</p><p>So in Cell 11:</p><p><code></code>`python
-logits = model(ref_x, alt_x)
-<code></code>`</p><p>really means:</p><p><code></code>`python
-model.__call__(ref_x, alt_x)   # PyTorch&#x27;s built-in dispatch
-  -&gt; model.forward(ref_x, alt_x)   # the forward() you wrote in Cell 9
-<code></code>`</p><p><strong>3. That single call cascades through every submodule</strong></p><p><code>model</code> (a <code>MutationAwareBRCAClassifierV2</code> instance) stores <code>MultiKernelCNN</code> and
-<code>MutationAwarePooling</code> as attributes (<code>self.alt_cnn</code>, <code>self.ref_cnn</code>, <code>self.pooler</code>),
-created back in <code>__init__</code>. Its <code>forward()</code> calls each of them by name, and each of
-*those* calls is itself another <code>__call__</code> -&gt; <code>forward()</code> dispatch, one level deeper:</p></div>
+    <div class="nb-md-content"><h4 class="nb-h3">Note — How Cell 11&#x27;s training loop connects to the model classes in Cell 9</h4>
+<br>
+<p><code>train_one_epoch</code> and <code>evaluate</code> never mention <code>MultiKernelCNN</code>, <code>MutationAwarePooling</code>,</p>
+<p>or <code>MutationAwareBRCAClassifierV2</code> by name. They don&#x27;t need to — the connection happens</p>
+<p>through Python&#x27;s object-calling convention, not through direct references.</p>
+<br>
+<p><strong>1. Calling an object with <code>()</code> triggers <code>__call__</code></strong></p>
+<br>
+<p>When a class defines <code>__call__</code>, writing <code>obj(x, y)</code> is automatically translated by</p>
+<p>Python into <code>obj.__call__(x, y)</code>.</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;class Doubler:</p>
+<p>    def __call__(self, x):</p>
+<p>        return x * 2</p>
+<br>
+<p>d = Doubler()</p>
+<p>d(5)          # same as d.__call__(5) -&amp;gt; 10&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p><strong>2. <code>nn.Module</code> (PyTorch&#x27;s base class) defines <code>__call__</code> to run <code>forward()</code></strong></p>
+<br>
+<p>Every model class here (<code>MutationAwareBRCAClassifierV2</code>, <code>MultiKernelCNN</code>,</p>
+<p><code>MutationAwarePooling</code>) subclasses <code>nn.Module</code>. PyTorch&#x27;s <code>nn.Module.__call__</code></p>
+<p>(written inside PyTorch itself — never shown in this notebook) does some</p>
+<p>bookkeeping and then calls <strong>your</strong> <code>forward()</code> method.</p>
+<br>
+<p>So in Cell 11:</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;logits = model(ref_x, alt_x)&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>really means:</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;model.__call__(ref_x, alt_x)   # PyTorch&amp;#x27;s built-in dispatch</p>
+<p>  -&amp;gt; model.forward(ref_x, alt_x)   # the forward() you wrote in Cell 9&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p><strong>3. That single call cascades through every submodule</strong></p>
+<br>
+<p><code>model</code> (a <code>MutationAwareBRCAClassifierV2</code> instance) stores <code>MultiKernelCNN</code> and</p>
+<p><code>MutationAwarePooling</code> as attributes (<code>self.alt_cnn</code>, <code>self.ref_cnn</code>, <code>self.pooler</code>),</p>
+<p>created back in <code>__init__</code>. Its <code>forward()</code> calls each of them by name, and each of</p>
+<p>*those* calls is itself another <code>__call__</code> -&gt; <code>forward()</code> dispatch, one level deeper:</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-29">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 13 — Figure F.1: Training &amp; Validation Curves</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 13 — Figure F.1: Training &amp; Validation Curves</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-30">
     <div class="nb-input-row">
@@ -3629,7 +3814,7 @@ print(&quot;Saved: figures/training_curves.png&quot;)
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-31">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 14 — Explainability Helper Functions</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 14 — Explainability Helper Functions</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-32">
     <div class="nb-input-row">
@@ -3853,7 +4038,7 @@ print(&quot;Explainability helpers ready.&quot;)</code></pre></div>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-33">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 15 — Figures F.4 &amp; F.5: Integrated Gradients</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 15 — Figures F.4 &amp; F.5: Integrated Gradients</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-34">
     <div class="nb-input-row">
@@ -3914,50 +4099,94 @@ IG delta     : 0.001799</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-35">
-    <div class="nb-md-content"><p><h4 class="nb-h3">Note — Integrated Gradients: Inputs, Outputs, and the Mechanism Between Them</h4></p><p><strong>Conceptually, IG needs:</strong>
-1. A differentiable model/function that takes some input and returns a scalar output.
-2. The real input to be explained.
-3. A baseline input — the &quot;zero information&quot; reference point, same shape as the real input.
-4. (Internally) a number of interpolation steps along the path from baseline → input.</p><p><strong>Conceptually, IG returns:</strong>
-- One attribution score <strong>per input feature</strong>, same shape as the input — how much each individual value contributed to the output.
-- A convergence delta — a scalar measuring how closely the numerical approximation matches the theoretical completeness guarantee.</p><p><strong>Important — the model&#x27;s output is not a bystander.</strong> The inputs above are just raw material; they don&#x27;t carry any notion of &quot;importance&quot; by themselves. Importance only exists because IG *runs the model repeatedly and watches how its output responds*. Concretely, between &quot;inputs in&quot; and &quot;attributions out,&quot; IG does:</p><p>1. Builds a series of in-between sequences walking from the baseline to the real input (baseline → 25% real → 50% real → ... → 100% real).
-2. At <strong>every step</strong>, runs the model forward and reads off its <strong>output</strong> (the pathogenicity logit).
-3. Computes the <strong>gradient of that output</strong> with respect to every input feature, at every step — i.e. &quot;if I nudge this feature right now, how much does the output move?&quot;
-4. <strong>Averages those output-sensitivities across the whole walk</strong>, then multiplies by <code>(real_value - baseline_value)</code>.</p><p>So &quot;how much did position 512 matter&quot; really means <strong>&quot;how much did the model&#x27;s output change as position 512 went from &#x27;nothing&#x27; to its real value, averaged across the whole interpolation path.&quot;</strong> The attribution score is extracted from tracking the output, not read off the inputs alone — the model&#x27;s output is central to the computation at every single step, not just the final answer.</p><p>---</p><p><h4 class="nb-h3">In this notebook&#x27;s code</h4></p><p><code></code>`python
-def run_integrated_gradients(model, sample, device):
-    ig = IntegratedGradients(_IGWrapper(model).to(device))
-    ref_x = sample[&quot;ref&quot;].unsqueeze(0).to(device)
-    alt_x = sample[&quot;alt&quot;].unsqueeze(0).to(device)
-    attr, delta = ig.attribute(
-        inputs=(ref_x, alt_x),
-        baselines=(torch.zeros_like(ref_x), torch.zeros_like(alt_x)),
-        return_convergence_delta=True,
-    )
-    return ref_x, alt_x, attr[0], attr[1], delta
-<code></code>`</p><p><strong>Inputs to <code>ig.attribute(...)</code></strong></p><p>| Argument | What it is | Shape |
-|---|---|---|
-| Wrapped model (<code>_IGWrapper(model)</code>) | Lets Captum treat <code>model(ref_x, alt_x) -&gt; logit</code> as one differentiable function — this is what gets *run* at every interpolation step to produce the outputs IG tracks | takes <code>(ref_x, alt_x)</code>, returns a single logit |
-| <code>inputs=(ref_x, alt_x)</code> | The <strong>real</strong> REF/ALT one-hot sequences for this one variant — the endpoint of the interpolation walk | <code>ref_x</code>: <code>[1, 1024, 5]</code>, <code>alt_x</code>: <code>[1, 1024, 5]</code> |
-| <code>baselines=(zeros, zeros)</code> | The <strong>neutral reference</strong> pair — all-zero tensors (&quot;no sequence information&quot;) — the starting point of the interpolation walk | same shapes as above |</p><p>Both REF and ALT are attributed <strong>jointly in a single call</strong>, since the model&#x27;s prediction depends on both sequences together (via the Δ-learning step) — not attributed separately. Internally, Captum interpolates both sequences simultaneously and captures the <strong>model&#x27;s output</strong> at each joint interpolation step, not just at the two endpoints.</p><p><strong>Outputs of <code>ig.attribute(...)</code></strong></p><p>| Return value | What it is | Shape |
-|---|---|---|
-| <code>attr</code> | Tuple <code>(ref_attributions, alt_attributions)</code> — one per input, derived from the accumulated output-sensitivity across every interpolation step | each: <code>[1, 1024, 5]</code> |
-| <code>delta</code> | Scalar — how far the attribution sum deviates from <code>F(input) - F(baseline)</code>, i.e. from the *actual* observed change in model output between the real input and the baseline | scalar |</p><p>Unpacked as <code>ref_attr = attr[0]</code>, <code>alt_attr = attr[1]</code>.</p><p><strong>Meaning of one value:</strong> e.g. <code>ref_attr[0, 512, 0]</code> (position 512, channel &quot;A&quot;) answers *&quot;how much did position 512 being A, rather than &#x27;nothing&#x27; (baseline), push the model&#x27;s pathogenicity logit — positive toward pathogenic, negative toward benign, near-zero meaning it barely mattered.&quot;* This number only exists because the model&#x27;s output was evaluated and differentiated repeatedly along the path — it is not something read directly from <code>ref_x</code>/<code>alt_x</code>.</p><p><strong>Post-processing — not a raw IG output:</strong></p><p><code></code>`python
-def summarize_attr(attr_tensor):
-    return np.abs(attr_tensor.detach().cpu().numpy()[0]).sum(axis=-1)
-<code></code>`</p><p>Collapses <code>[1, 1024, 5]</code> → <code>[1024]</code>: drops batch dim, takes absolute value (direction discarded — only &quot;how much did this position matter&quot; is kept), sums across the 5 channels. This <code>[1024]</code>-length array is what actually gets plotted as the attribution bar chart.</p><p>---</p><p><h4 class="nb-h3">Summary table</h4></p><p>| Stage | Object | Shape | Meaning |
-|---|---|---|---|
-| Input 1 | <code>ref_x</code> | <code>[1, 1024, 5]</code> | Real REF sequence, one-hot |
-| Input 2 | <code>alt_x</code> | <code>[1, 1024, 5]</code> | Real ALT sequence, one-hot |
-| Baseline 1 | <code>zeros_like(ref_x)</code> | <code>[1, 1024, 5]</code> | &quot;No sequence&quot; reference for REF |
-| Baseline 2 | <code>zeros_like(alt_x)</code> | <code>[1, 1024, 5]</code> | &quot;No sequence&quot; reference for ALT |
-| <strong>Model output, tracked at every interpolation step</strong> | <code>model(ref_x(α), alt_x(α))</code> | scalar logit per step | Not a final input/output pair — evaluated repeatedly along the baseline→input path; this is what IG actually integrates over |
-| Output 1 | <code>ref_attr</code> | <code>[1, 1024, 5]</code> | Per-feature signed attribution for REF, derived from the accumulated output changes |
-| Output 2 | <code>alt_attr</code> | <code>[1, 1024, 5]</code> | Per-feature signed attribution for ALT, derived from the accumulated output changes |
-| Output 3 | <code>delta</code> | scalar | Numerical approximation error check |
-| Post-processed | <code>summarize_attr(...)</code> | <code>[1024]</code> | One unsigned importance score per position, ready to plot |</p></div>
+    <div class="nb-md-content"><h4 class="nb-h3">Note — Integrated Gradients: Inputs, Outputs, and the Mechanism Between Them</h4>
+<br>
+<p><strong>Conceptually, IG needs:</strong></p>
+<ol class="nb-list">
+<li>A differentiable model/function that takes some input and returns a scalar output.</li>
+<li>The real input to be explained.</li>
+<li>A baseline input — the &quot;zero information&quot; reference point, same shape as the real input.</li>
+<li>(Internally) a number of interpolation steps along the path from baseline → input.</li>
+</ol>
+<br>
+<p><strong>Conceptually, IG returns:</strong></p>
+<ul class="nb-list">
+<li>One attribution score <strong>per input feature</strong>, same shape as the input — how much each individual value contributed to the output.</li>
+<li>A convergence delta — a scalar measuring how closely the numerical approximation matches the theoretical completeness guarantee.</li>
+</ul>
+<br>
+<p><strong>Important — the model&#x27;s output is not a bystander.</strong> The inputs above are just raw material; they don&#x27;t carry any notion of &quot;importance&quot; by themselves. Importance only exists because IG *runs the model repeatedly and watches how its output responds*. Concretely, between &quot;inputs in&quot; and &quot;attributions out,&quot; IG does:</p>
+<br>
+<ol class="nb-list">
+<li>Builds a series of in-between sequences walking from the baseline to the real input (baseline → 25% real → 50% real → ... → 100% real).</li>
+<li>At <strong>every step</strong>, runs the model forward and reads off its <strong>output</strong> (the pathogenicity logit).</li>
+<li>Computes the <strong>gradient of that output</strong> with respect to every input feature, at every step — i.e. &quot;if I nudge this feature right now, how much does the output move?&quot;</li>
+<li><strong>Averages those output-sensitivities across the whole walk</strong>, then multiplies by <code>(real_value - baseline_value)</code>.</li>
+</ol>
+<br>
+<p>So &quot;how much did position 512 matter&quot; really means <strong>&quot;how much did the model&#x27;s output change as position 512 went from &#x27;nothing&#x27; to its real value, averaged across the whole interpolation path.&quot;</strong> The attribution score is extracted from tracking the output, not read off the inputs alone — the model&#x27;s output is central to the computation at every single step, not just the final answer.</p>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">In this notebook&#x27;s code</h4>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;def run_integrated_gradients(model, sample, device):</p>
+<p>    ig = IntegratedGradients(_IGWrapper(model).to(device))</p>
+<p>    ref_x = sample[&amp;quot;ref&amp;quot;].unsqueeze(0).to(device)</p>
+<p>    alt_x = sample[&amp;quot;alt&amp;quot;].unsqueeze(0).to(device)</p>
+<p>    attr, delta = ig.attribute(</p>
+<p>        inputs=(ref_x, alt_x),</p>
+<p>        baselines=(torch.zeros_like(ref_x), torch.zeros_like(alt_x)),</p>
+<p>        return_convergence_delta=True,</p>
+<p>    )</p>
+<p>    return ref_x, alt_x, attr[0], attr[1], delta&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p><strong>Inputs to <code>ig.attribute(...)</code></strong></p>
+<br>
+<p>| Argument | What it is | Shape |</p>
+<p>|---|---|---|</p>
+<p>| Wrapped model (<code>_IGWrapper(model)</code>) | Lets Captum treat <code>model(ref_x, alt_x) -&gt; logit</code> as one differentiable function — this is what gets *run* at every interpolation step to produce the outputs IG tracks | takes <code>(ref_x, alt_x)</code>, returns a single logit |</p>
+<p>| <code>inputs=(ref_x, alt_x)</code> | The <strong>real</strong> REF/ALT one-hot sequences for this one variant — the endpoint of the interpolation walk | <code>ref_x</code>: <code>[1, 1024, 5]</code>, <code>alt_x</code>: <code>[1, 1024, 5]</code> |</p>
+<p>| <code>baselines=(zeros, zeros)</code> | The <strong>neutral reference</strong> pair — all-zero tensors (&quot;no sequence information&quot;) — the starting point of the interpolation walk | same shapes as above |</p>
+<br>
+<p>Both REF and ALT are attributed <strong>jointly in a single call</strong>, since the model&#x27;s prediction depends on both sequences together (via the Δ-learning step) — not attributed separately. Internally, Captum interpolates both sequences simultaneously and captures the <strong>model&#x27;s output</strong> at each joint interpolation step, not just at the two endpoints.</p>
+<br>
+<p><strong>Outputs of <code>ig.attribute(...)</code></strong></p>
+<br>
+<p>| Return value | What it is | Shape |</p>
+<p>|---|---|---|</p>
+<p>| <code>attr</code> | Tuple <code>(ref_attributions, alt_attributions)</code> — one per input, derived from the accumulated output-sensitivity across every interpolation step | each: <code>[1, 1024, 5]</code> |</p>
+<p>| <code>delta</code> | Scalar — how far the attribution sum deviates from <code>F(input) - F(baseline)</code>, i.e. from the *actual* observed change in model output between the real input and the baseline | scalar |</p>
+<br>
+<p>Unpacked as <code>ref_attr = attr[0]</code>, <code>alt_attr = attr[1]</code>.</p>
+<br>
+<p><strong>Meaning of one value:</strong> e.g. <code>ref_attr[0, 512, 0]</code> (position 512, channel &quot;A&quot;) answers *&quot;how much did position 512 being A, rather than &#x27;nothing&#x27; (baseline), push the model&#x27;s pathogenicity logit — positive toward pathogenic, negative toward benign, near-zero meaning it barely mattered.&quot;* This number only exists because the model&#x27;s output was evaluated and differentiated repeatedly along the path — it is not something read directly from <code>ref_x</code>/<code>alt_x</code>.</p>
+<br>
+<p><strong>Post-processing — not a raw IG output:</strong></p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;def summarize_attr(attr_tensor):</p>
+<p>    return np.abs(attr_tensor.detach().cpu().numpy()[0]).sum(axis=-1)&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>Collapses <code>[1, 1024, 5]</code> → <code>[1024]</code>: drops batch dim, takes absolute value (direction discarded — only &quot;how much did this position matter&quot; is kept), sums across the 5 channels. This <code>[1024]</code>-length array is what actually gets plotted as the attribution bar chart.</p>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">Summary table</h4>
+<br>
+<p>| Stage | Object | Shape | Meaning |</p>
+<p>|---|---|---|---|</p>
+<p>| Input 1 | <code>ref_x</code> | <code>[1, 1024, 5]</code> | Real REF sequence, one-hot |</p>
+<p>| Input 2 | <code>alt_x</code> | <code>[1, 1024, 5]</code> | Real ALT sequence, one-hot |</p>
+<p>| Baseline 1 | <code>zeros_like(ref_x)</code> | <code>[1, 1024, 5]</code> | &quot;No sequence&quot; reference for REF |</p>
+<p>| Baseline 2 | <code>zeros_like(alt_x)</code> | <code>[1, 1024, 5]</code> | &quot;No sequence&quot; reference for ALT |</p>
+<p>| <strong>Model output, tracked at every interpolation step</strong> | <code>model(ref_x(α), alt_x(α))</code> | scalar logit per step | Not a final input/output pair — evaluated repeatedly along the baseline→input path; this is what IG actually integrates over |</p>
+<p>| Output 1 | <code>ref_attr</code> | <code>[1, 1024, 5]</code> | Per-feature signed attribution for REF, derived from the accumulated output changes |</p>
+<p>| Output 2 | <code>alt_attr</code> | <code>[1, 1024, 5]</code> | Per-feature signed attribution for ALT, derived from the accumulated output changes |</p>
+<p>| Output 3 | <code>delta</code> | scalar | Numerical approximation error check |</p>
+<p>| Post-processed | <code>summarize_attr(...)</code> | <code>[1024]</code> | One unsigned importance score per position, ready to plot |</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-36">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 16 — Figures F.6, F.7 &amp; F.8: AbsoluteGrad + Delta</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 16 — Figures F.6, F.7 &amp; F.8: AbsoluteGrad + Delta</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-37">
     <div class="nb-input-row">
@@ -4045,23 +4274,35 @@ Saved: guided_absolutegrad_sample.csv</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-38">
-    <div class="nb-md-content"><p><h4 class="nb-h3">Note — Integrated Gradients (IG) vs. Guided AbsoluteGrad (AG)</h4></p><p>Both methods answer the same question — &quot;how important is each position to the model&#x27;s decision?&quot; — and both produce the same *kind* of output (a bar chart, one bar per position). The difference is entirely in <strong>how each bar&#x27;s height is calculated</strong>.</p><p><strong>AbsoluteGrad (AG) — one snapshot</strong>
-Stand at the real sequence and take exactly <strong>one gradient reading</strong>: &quot;if I nudge this position slightly *right now*, how much does the output move?&quot; That single number becomes the bar height. One forward pass, one backward pass — done.</p><p><strong>Integrated Gradients (IG) — a whole journey, averaged</strong>
-Start from an &quot;empty&quot; sequence (all-zeros baseline — no information) and walk in small steps toward the real sequence. At <strong>every step</strong> along that walk, take a gradient reading, then <strong>average all of those readings together</strong>. That average becomes the bar height.</p><p><strong>Why IG does the extra work:</strong> a single gradient reading (AG) can be misleading. If the model is already very confident about a position, nudging it slightly barely changes the output anymore — even if that position is genuinely the most important one in the sequence. AG would report a small bar there, wrongly implying &quot;not important,&quot; purely because the model has saturated. IG avoids this by also checking earlier points in the walk, when the model was less confident and more sensitive — averaging over the whole path recovers signal a single snapshot can miss.</p><p>| | <strong>Integrated Gradients (IG)</strong> | <strong>AbsoluteGrad (AG)</strong> |
-|---|---|---|
-| Core question | &quot;How much did this position contribute, vs. a baseline of &#x27;nothing&#x27;?&quot; | &quot;How sensitive is the output to this position, right now?&quot; |
-| How it&#x27;s measured | Many gradient readings, averaged along a path from baseline → real input | One single gradient reading, at the real input |
-| Needs a baseline? | Yes — all-zero tensor | No |
-| Speed / cost | Slower, more compute | Fast, cheap |
-| Saturation problem | Avoided — averaging over the path recovers signal even where the final gradient is flat | Can be misled — near-zero gradient at an already-confident (but truly important) position |
-| Mathematical guarantee | Yes — attributions ≈ sum to the real output change (checked via <code>delta</code>) | None |
-| Direction of effect | Signed (positive → pathogenic, negative → benign); collapsed to absolute value only when plotted | Direction lost immediately — always absolute value |
-| Used for REF vs ALT comparison (Delta chart)? | No | Yes — cheap enough to compute twice and subtract (Figure F.8: ALT − REF) |
-| In this notebook | Figures F.4 &amp; F.5 | Figures F.6, F.7 &amp; F.8 |
-| Role in the analysis | The rigorous, &quot;gold standard&quot; check | A cheaper, quick cross-check confirming IG&#x27;s result isn&#x27;t a fluke |</p><p><strong>Why the notebook uses both:</strong> not redundancy — it&#x27;s a cross-check. If the cheap, rough method (AG) and the slow, rigorous method (IG) <strong>agree</strong> — both spike at the mutation site — that&#x27;s stronger evidence than either alone, since it means the result isn&#x27;t just an artifact of one technique&#x27;s particular quirks.</p></div>
+    <div class="nb-md-content"><h4 class="nb-h3">Note — Integrated Gradients (IG) vs. Guided AbsoluteGrad (AG)</h4>
+<br>
+<p>Both methods answer the same question — &quot;how important is each position to the model&#x27;s decision?&quot; — and both produce the same *kind* of output (a bar chart, one bar per position). The difference is entirely in <strong>how each bar&#x27;s height is calculated</strong>.</p>
+<br>
+<p><strong>AbsoluteGrad (AG) — one snapshot</strong></p>
+<p>Stand at the real sequence and take exactly <strong>one gradient reading</strong>: &quot;if I nudge this position slightly *right now*, how much does the output move?&quot; That single number becomes the bar height. One forward pass, one backward pass — done.</p>
+<br>
+<p><strong>Integrated Gradients (IG) — a whole journey, averaged</strong></p>
+<p>Start from an &quot;empty&quot; sequence (all-zeros baseline — no information) and walk in small steps toward the real sequence. At <strong>every step</strong> along that walk, take a gradient reading, then <strong>average all of those readings together</strong>. That average becomes the bar height.</p>
+<br>
+<p><strong>Why IG does the extra work:</strong> a single gradient reading (AG) can be misleading. If the model is already very confident about a position, nudging it slightly barely changes the output anymore — even if that position is genuinely the most important one in the sequence. AG would report a small bar there, wrongly implying &quot;not important,&quot; purely because the model has saturated. IG avoids this by also checking earlier points in the walk, when the model was less confident and more sensitive — averaging over the whole path recovers signal a single snapshot can miss.</p>
+<br>
+<p>| | <strong>Integrated Gradients (IG)</strong> | <strong>AbsoluteGrad (AG)</strong> |</p>
+<p>|---|---|---|</p>
+<p>| Core question | &quot;How much did this position contribute, vs. a baseline of &#x27;nothing&#x27;?&quot; | &quot;How sensitive is the output to this position, right now?&quot; |</p>
+<p>| How it&#x27;s measured | Many gradient readings, averaged along a path from baseline → real input | One single gradient reading, at the real input |</p>
+<p>| Needs a baseline? | Yes — all-zero tensor | No |</p>
+<p>| Speed / cost | Slower, more compute | Fast, cheap |</p>
+<p>| Saturation problem | Avoided — averaging over the path recovers signal even where the final gradient is flat | Can be misled — near-zero gradient at an already-confident (but truly important) position |</p>
+<p>| Mathematical guarantee | Yes — attributions ≈ sum to the real output change (checked via <code>delta</code>) | None |</p>
+<p>| Direction of effect | Signed (positive → pathogenic, negative → benign); collapsed to absolute value only when plotted | Direction lost immediately — always absolute value |</p>
+<p>| Used for REF vs ALT comparison (Delta chart)? | No | Yes — cheap enough to compute twice and subtract (Figure F.8: ALT − REF) |</p>
+<p>| In this notebook | Figures F.4 &amp; F.5 | Figures F.6, F.7 &amp; F.8 |</p>
+<p>| Role in the analysis | The rigorous, &quot;gold standard&quot; check | A cheaper, quick cross-check confirming IG&#x27;s result isn&#x27;t a fluke |</p>
+<br>
+<p><strong>Why the notebook uses both:</strong> not redundancy — it&#x27;s a cross-check. If the cheap, rough method (AG) and the slow, rigorous method (IG) <strong>agree</strong> — both spike at the mutation site — that&#x27;s stronger evidence than either alone, since it means the result isn&#x27;t just an artifact of one technique&#x27;s particular quirks.</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-39">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 17 — Figure F.9: In-silico Mutagenesis Heatmap</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 17 — Figure F.9: In-silico Mutagenesis Heatmap</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-40">
     <div class="nb-input-row">
@@ -4121,32 +4362,56 @@ ISM window                 : [472, 552]  mutation: [512, 513]</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-41">
-    <div class="nb-md-content"><p><h4 class="nb-h3">Note — Figure F.9: In-silico Mutagenesis (ISM) Heatmap</h4></p><p><strong>What ISM does, in simple words:</strong> IG and AbsoluteGrad both rely on the model&#x27;s *gradient* — a fast mathematical shortcut for sensitivity. ISM is different — it&#x27;s brute-force and literal: <strong>for every position in the window, actually substitute in every other possible base, re-run the model for real, and record how much the prediction changes.</strong> No math shortcuts, just &quot;swap the letter, re-run the model, see what happens,&quot; repeated many times.</p><p><strong>Why this matters:</strong> it&#x27;s the most direct, assumption-free check possible. If ISM&#x27;s result agrees with IG and AG (which rely on gradients), that&#x27;s a third, independent confirmation that the model is truly reacting to the right positions — not an artifact of how gradients happen to behave.</p><p>---</p><p><strong>How the code does it</strong></p><p><code></code>`python
-ism_scores, base_prob = in_silico_mutagenesis_alt(model, sample, left, right, DEVICE)
-<code></code>`</p><p>From <code>in_silico_mutagenesis_alt</code> (Cell 14):
-<code></code>`python
-base_prob = predict_prob(model, ref_x, alt_x, device)   # the real prediction, unmutated</p><p>for pos in range(start, end):          # every position in the window
-    for b in range(5):                 # every possible base (A, C, G, T, N)
-        if b == orig: continue         # skip the base already there
-        mut = alt_x.clone()
-        mut[pos, :] = 0.0
-        mut[pos, b] = 1.0              # swap in a different base
-        scores[i, b] = predict_prob(model, ref_x, mut, device) - base_prob
-<code></code>`</p><p>For an 80-position window (<code>flank=40</code>) × 5 bases, this runs the model roughly <strong>80 × 4 ≈ 320 times</strong>, each time recording: *&quot;if I substitute this base here, does the pathogenicity probability go up or down, and by how much?&quot;*</p><p>---</p><p><strong>Reading the heatmap</strong> (the first plot in this series that&#x27;s a 2D grid, not bars):</p><p>| Axis / Color | Meaning |
-|---|---|
-| X-axis | Position in the sequence (an 80bp window around the mutation) |
-| Y-axis | Which base was substituted in (A, C, G, T, N) |
-| Color (dark red) | Substituting this base here made the model <strong>more confident it&#x27;s pathogenic</strong> |
-| Color (dark blue) | Would make the model <strong>more confident it&#x27;s benign</strong> |
-| Color (white/pale) | Barely changes the prediction |
-| Letters along the bottom | The actual real base present at each position, for reference |</p><p><strong>What a representative result shows:</strong>
-- The <strong>mutation site itself</strong> is often pale in the row matching the real (already-present) base — swapping in what&#x27;s already there changes nothing, as expected.
-- A <strong>wide, strong dark-red band in the &quot;N&quot; row</strong> across much of the window is common — introducing an ambiguous/unknown base is a generic, strong disruption signal the model has learned to flag.
-- Scattered dark-red patches elsewhere (various positions across T/C/A rows) show the model has a <strong>wide receptive field</strong> — it&#x27;s sensitive to more than just the single mutated base.
-- The strongest signal typically clusters in the <strong>general neighborhood</strong> of the mutation rather than the one exact base — consistent with the thesis&#x27;s reported mutation-site attribution rank being *lower* for ISM (0.75) than for IG (0.98) or AG (0.99): literal substitution naturally reveals &quot;this whole region is sensitive,&quot; not just one pinpoint position.</p><p><strong>One-line summary:</strong> ISM doesn&#x27;t use math shortcuts — it actually swaps in every possible letter at every position and re-runs the model for real, then colors a grid by how much each swap changed the prediction, giving the most literal, ground-truth check of which positions and substitutions the model actually cares about.</p></div>
+    <div class="nb-md-content"><h4 class="nb-h3">Note — Figure F.9: In-silico Mutagenesis (ISM) Heatmap</h4>
+<br>
+<p><strong>What ISM does, in simple words:</strong> IG and AbsoluteGrad both rely on the model&#x27;s *gradient* — a fast mathematical shortcut for sensitivity. ISM is different — it&#x27;s brute-force and literal: <strong>for every position in the window, actually substitute in every other possible base, re-run the model for real, and record how much the prediction changes.</strong> No math shortcuts, just &quot;swap the letter, re-run the model, see what happens,&quot; repeated many times.</p>
+<br>
+<p><strong>Why this matters:</strong> it&#x27;s the most direct, assumption-free check possible. If ISM&#x27;s result agrees with IG and AG (which rely on gradients), that&#x27;s a third, independent confirmation that the model is truly reacting to the right positions — not an artifact of how gradients happen to behave.</p>
+<br>
+<p>---</p>
+<br>
+<p><strong>How the code does it</strong></p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;ism_scores, base_prob = in_silico_mutagenesis_alt(model, sample, left, right, DEVICE)&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>From <code>in_silico_mutagenesis_alt</code> (Cell 14):</p>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;base_prob = predict_prob(model, ref_x, alt_x, device)   # the real prediction, unmutated</p>
+<br>
+<p>for pos in range(start, end):          # every position in the window</p>
+<p>    for b in range(5):                 # every possible base (A, C, G, T, N)</p>
+<p>        if b == orig: continue         # skip the base already there</p>
+<p>        mut = alt_x.clone()</p>
+<p>        mut[pos, :] = 0.0</p>
+<p>        mut[pos, b] = 1.0              # swap in a different base</p>
+<p>        scores[i, b] = predict_prob(model, ref_x, mut, device) - base_prob&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>For an 80-position window (<code>flank=40</code>) × 5 bases, this runs the model roughly <strong>80 × 4 ≈ 320 times</strong>, each time recording: *&quot;if I substitute this base here, does the pathogenicity probability go up or down, and by how much?&quot;*</p>
+<br>
+<p>---</p>
+<br>
+<p><strong>Reading the heatmap</strong> (the first plot in this series that&#x27;s a 2D grid, not bars):</p>
+<br>
+<p>| Axis / Color | Meaning |</p>
+<p>|---|---|</p>
+<p>| X-axis | Position in the sequence (an 80bp window around the mutation) |</p>
+<p>| Y-axis | Which base was substituted in (A, C, G, T, N) |</p>
+<p>| Color (dark red) | Substituting this base here made the model <strong>more confident it&#x27;s pathogenic</strong> |</p>
+<p>| Color (dark blue) | Would make the model <strong>more confident it&#x27;s benign</strong> |</p>
+<p>| Color (white/pale) | Barely changes the prediction |</p>
+<p>| Letters along the bottom | The actual real base present at each position, for reference |</p>
+<br>
+<p><strong>What a representative result shows:</strong></p>
+<ul class="nb-list">
+<li>The <strong>mutation site itself</strong> is often pale in the row matching the real (already-present) base — swapping in what&#x27;s already there changes nothing, as expected.</li>
+<li>A <strong>wide, strong dark-red band in the &quot;N&quot; row</strong> across much of the window is common — introducing an ambiguous/unknown base is a generic, strong disruption signal the model has learned to flag.</li>
+<li>Scattered dark-red patches elsewhere (various positions across T/C/A rows) show the model has a <strong>wide receptive field</strong> — it&#x27;s sensitive to more than just the single mutated base.</li>
+<li>The strongest signal typically clusters in the <strong>general neighborhood</strong> of the mutation rather than the one exact base — consistent with the thesis&#x27;s reported mutation-site attribution rank being *lower* for ISM (0.75) than for IG (0.98) or AG (0.99): literal substitution naturally reveals &quot;this whole region is sensitive,&quot; not just one pinpoint position.</li>
+</ul>
+<br>
+<p><strong>One-line summary:</strong> ISM doesn&#x27;t use math shortcuts — it actually swaps in every possible letter at every position and re-runs the model for real, then colors a grid by how much each swap changed the prediction, giving the most literal, ground-truth check of which positions and substitutions the model actually cares about.</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-42">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 18 — XAI Batch Validation (Mutation-Site Rank)</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 18 — XAI Batch Validation (Mutation-Site Rank)</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-43">
     <div class="nb-input-row">
@@ -4349,7 +4614,7 @@ Saved: /kaggle/working/xai_validation_summary.csv</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-44">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 19 — NCBI ClinVar External Validation Setup</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 19 — NCBI ClinVar External Validation Setup</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-45">
     <div class="nb-input-row">
@@ -4588,7 +4853,7 @@ print(json.dumps(test, indent=2))</code></pre></div>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-46">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 20 — Run NCBI Evaluation Loop</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 20 — Run NCBI Evaluation Loop</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-47">
     <div class="nb-input-row">
@@ -4704,7 +4969,7 @@ Saved: ncbi_evaluation_results.csv</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-48">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 21 — Evaluation Metrics &amp; Figures F.2, F.3</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 21 — Evaluation Metrics &amp; Figures F.2, F.3</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-49">
     <div class="nb-input-row">
@@ -4803,113 +5068,365 @@ weighted avg       0.84      0.82      0.82       942</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-50">
-    <div class="nb-md-content"><p><h2 class="nb-h1">20. Model Evaluation with NCBI ClinVar Lookup (Stratified Sampling)</h2></p><p>This section evaluates the trained variant classification model against external clinical annotations retrieved from <strong>NCBI ClinVar</strong>.</p><p>The evaluation process:
-1. Creates a balanced evaluation dataset by sampling variants across:
-   - Variant types:
-     - Single nucleotide variants (SNVs)
-     - Deletions
-     - Insertions
-     - Indels
-   - Clinical labels:
-     - 0 → Benign
-     - 1 → Pathogenic</p><p>2. Runs model inference on the selected variants to obtain:
-   - Predicted pathogenicity probability
-   - Binary model prediction</p><p>3. Queries NCBI ClinVar using the <code>VariationID</code> to retrieve:
-   - Clinical significance
-   - Review status</p><p>4. Converts ClinVar clinical significance into binary labels:
-   - Pathogenic → 1
-   - Benign → 0
-   - Conflicting / Unknown / VUS → ignored (-1)</p><p>5. Saves all evaluation results for further analysis.</p><p><h3 class="nb-h2">Why Stratified Sampling?</h3></p><p>The dataset may contain imbalanced distributions of:
-- Variant types
-- Pathogenic vs benign examples</p><p>Stratified sampling ensures that the evaluation set contains a representative mixture of different variant categories and labels instead of randomly selecting only dominant classes.</p><p>---</p><p><h2 class="nb-h1">Model Prediction and NCBI Validation</h2></p><p>For every selected variant:</p><p><h4 class="nb-h3">Model Prediction</h4></p><p>The variant reference and alternative allele representations are passed through the trained model.</p><p>The model outputs:</p><p>$$
-P(pathogenic) = \sigma(logit)
-$$</p><p>where:</p><p>- $\sigma$ is the sigmoid activation function
-- Output probability ranges from 0 to 1</p><p>Classification threshold:</p><p>$$
-Prediction =
-\begin{cases}
-1 &amp; probability \geq 0.5 \\
-0 &amp; probability &lt; 0.5
-\end{cases}
-$$</p><p>---</p><p><h4 class="nb-h3">NCBI ClinVar Lookup</h4></p><p>Each variant is queried using its <code>VariationID</code>.</p><p>ClinVar provides expert-curated clinical interpretations.</p><p>Examples:</p><p>| ClinVar Significance | Converted Label |
-|---|---|
-| Pathogenic | 1 |
-| Likely pathogenic | 1 |
-| Benign | 0 |
-| Likely benign | 0 |
-| Conflicting interpretations | Ignore |
-| Uncertain significance (VUS) | Ignore |</p><p>Only variants with definitive labels are used for final metric calculation.</p><p>---</p><p><h2 class="nb-h1">21. Evaluation Metrics and Figures</h2></p><p>After collecting model predictions and ClinVar labels, the model performance is measured.</p><p>Only variants satisfying:</p><p>- Valid ClinVar binary label
-- Available model prediction probability</p><p>are included.</p><p>---</p><p><h3 class="nb-h2">Evaluation Metrics</h3></p><p><h4 class="nb-h3">ROC-AUC</h4></p><p>Measures how well the model separates pathogenic and benign variants across all probability thresholds.</p><p>$$
-AUC = P(score_{pathogenic} &gt; score_{benign})
-$$</p><p>Higher values indicate better discrimination.</p><p>---</p><p><h4 class="nb-h3">Area Under Precision-Recall Curve (AUPRC)</h4></p><p>Evaluates model performance under class imbalance.</p><p>It focuses on:</p><p>- Precision:
-  
-$$
-Precision=\frac{TP}{TP+FP}
-$$</p><p>- Recall:</p><p>$$
-Recall=\frac{TP}{TP+FN}
-$$</p><p>A higher AUPRC indicates better identification of pathogenic variants.</p><p>---</p><p><h4 class="nb-h3">Matthews Correlation Coefficient (MCC)</h4></p><p>A balanced classification metric considering:</p><p>- True positives
-- True negatives
-- False positives
-- False negatives</p><p>$$
-MCC=
-\frac{TP \times TN - FP \times FN}
-{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}
-$$</p><p>Range:</p><p>- +1 → Perfect prediction
-- 0 → Random prediction
-- -1 → Completely incorrect prediction</p><p>---</p><p><h4 class="nb-h3">Balanced Accuracy</h4></p><p>Useful for imbalanced datasets.</p><p>It averages:</p><p>- Sensitivity (Recall of pathogenic variants)
-- Specificity (Recall of benign variants)</p><p>$$
-Balanced Accuracy =
-\frac{Sensitivity + Specificity}{2}
-$$</p><p>---</p><p><h3 class="nb-h2">Agreement Analysis</h3></p><p>Two comparisons are calculated:</p><p><h4 class="nb-h3">Model vs NCBI</h4></p><p>Measures how often the AI model agrees with ClinVar:</p><p>
-Model Prediction == NCBI Label</p><p>
----</p><p><h4 class="nb-h3">Original Dataset Label vs NCBI</h4></p><p>Measures whether the original dataset annotations agree with external ClinVar evidence:</p><p>
-Original Label == NCBI Label</p><p>
-This helps determine whether the dataset labels are consistent with independent clinical evidence.</p><p>---</p><p><h2 class="nb-h1">Figure F.2: Confusion Matrix</h2></p><p>The confusion matrix compares:</p><p>         Predicted
-          B     P</p><p>Actual B TN FP</p><p>Actual P FN TP</p><p>
-where:</p><p>- TN → Correctly predicted benign variants
-- TP → Correctly predicted pathogenic variants
-- FP → Benign variants incorrectly classified as pathogenic
-- FN → Pathogenic variants missed by the model</p><p>This visualizes the types of classification errors.</p><p>---</p><p><h2 class="nb-h1">Figure F.3: Precision-Recall Curve</h2></p><p>The Precision-Recall curve shows model performance at different classification thresholds.</p><p>The curve plots:</p><p>- X-axis → Recall
-- Y-axis → Precision</p><p>The area under this curve:</p><p>
-AUPRC</p><p>
-summarizes the model&#x27;s ability to identify pathogenic variants while minimizing false positives.</p><p>---</p><p><h2 class="nb-h1">Output Files</h2></p><p>The evaluation generates:</p><p><h4 class="nb-h3">CSV Results</h4></p><p>
-/kaggle/working/ncbi_evaluation_results.csv</p><p>
-Contains:</p><p>- Variation ID
-- Gene symbol
-- Variant type
-- Original dataset label
-- Model probability
-- Model prediction
-- NCBI clinical significance
-- NCBI review status
-- Converted NCBI label</p><p>
-<h4 class="nb-h3">Figures</h4></p><p>
-/kaggle/working/figures/confusion_matrix.png</p><p>
-Confusion matrix visualization.</p><p></p><p>/kaggle/working/figures/pr_curve.png</p><p>
-Precision-Recall curve visualization.</p><p>
-<h2 class="nb-h1">Summary</h2></p><p>This evaluation pipeline validates the AI variant classification model against independent NCBI ClinVar clinical annotations.</p><p>The workflow:</p><p>
-Test Variants
-|
-↓
-Stratified Sampling
-|
-↓
-Model Prediction
-|
-↓
-NCBI ClinVar Lookup
-|
-↓
-Label Matching
-|
-↓
-Performance Metrics
-|
-↓
-Confusion Matrix + PR Curve</p><p>
-This provides an external validation of the model&#x27;s ability to distinguish benign and pathogenic genetic variants.</p></div>
+    <div class="nb-md-content"><h2 class="nb-h1">20. Model Evaluation with NCBI ClinVar Lookup (Stratified Sampling)</h2>
+<br>
+<p>This section evaluates the trained variant classification model against external clinical annotations retrieved from <strong>NCBI ClinVar</strong>.</p>
+<br>
+<p>The evaluation process:</p>
+<ol class="nb-list">
+<li>Creates a balanced evaluation dataset by sampling variants across:</li>
+</ol>
+<ul class="nb-list">
+<li>Variant types:</li>
+<li>Single nucleotide variants (SNVs)</li>
+<li>Deletions</li>
+<li>Insertions</li>
+<li>Indels</li>
+<li>Clinical labels:</li>
+<li>0 → Benign</li>
+<li>1 → Pathogenic</li>
+</ul>
+<br>
+<ol class="nb-list">
+<li>Runs model inference on the selected variants to obtain:</li>
+</ol>
+<ul class="nb-list">
+<li>Predicted pathogenicity probability</li>
+<li>Binary model prediction</li>
+</ul>
+<br>
+<ol class="nb-list">
+<li>Queries NCBI ClinVar using the <code>VariationID</code> to retrieve:</li>
+</ol>
+<ul class="nb-list">
+<li>Clinical significance</li>
+<li>Review status</li>
+</ul>
+<br>
+<ol class="nb-list">
+<li>Converts ClinVar clinical significance into binary labels:</li>
+</ol>
+<ul class="nb-list">
+<li>Pathogenic → 1</li>
+<li>Benign → 0</li>
+<li>Conflicting / Unknown / VUS → ignored (-1)</li>
+</ul>
+<br>
+<ol class="nb-list">
+<li>Saves all evaluation results for further analysis.</li>
+</ol>
+<br>
+<h3 class="nb-h2">Why Stratified Sampling?</h3>
+<br>
+<p>The dataset may contain imbalanced distributions of:</p>
+<ul class="nb-list">
+<li>Variant types</li>
+<li>Pathogenic vs benign examples</li>
+</ul>
+<br>
+<p>Stratified sampling ensures that the evaluation set contains a representative mixture of different variant categories and labels instead of randomly selecting only dominant classes.</p>
+<br>
+<p>---</p>
+<br>
+<h2 class="nb-h1">Model Prediction and NCBI Validation</h2>
+<br>
+<p>For every selected variant:</p>
+<br>
+<h4 class="nb-h3">Model Prediction</h4>
+<br>
+<p>The variant reference and alternative allele representations are passed through the trained model.</p>
+<br>
+<p>The model outputs:</p>
+<br>
+<p>$$</p>
+<p>P(pathogenic) = \sigma(logit)</p>
+<p>$$</p>
+<br>
+<p>where:</p>
+<br>
+<ul class="nb-list">
+<li>$\sigma$ is the sigmoid activation function</li>
+<li>Output probability ranges from 0 to 1</li>
+</ul>
+<br>
+<p>Classification threshold:</p>
+<br>
+<p>$$</p>
+<p>Prediction =</p>
+<p>\begin{cases}</p>
+<p>1 &amp; probability \geq 0.5 \\</p>
+<p>0 &amp; probability &lt; 0.5</p>
+<p>\end{cases}</p>
+<p>$$</p>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">NCBI ClinVar Lookup</h4>
+<br>
+<p>Each variant is queried using its <code>VariationID</code>.</p>
+<br>
+<p>ClinVar provides expert-curated clinical interpretations.</p>
+<br>
+<p>Examples:</p>
+<br>
+<p>| ClinVar Significance | Converted Label |</p>
+<p>|---|---|</p>
+<p>| Pathogenic | 1 |</p>
+<p>| Likely pathogenic | 1 |</p>
+<p>| Benign | 0 |</p>
+<p>| Likely benign | 0 |</p>
+<p>| Conflicting interpretations | Ignore |</p>
+<p>| Uncertain significance (VUS) | Ignore |</p>
+<br>
+<p>Only variants with definitive labels are used for final metric calculation.</p>
+<br>
+<p>---</p>
+<br>
+<h2 class="nb-h1">21. Evaluation Metrics and Figures</h2>
+<br>
+<p>After collecting model predictions and ClinVar labels, the model performance is measured.</p>
+<br>
+<p>Only variants satisfying:</p>
+<br>
+<ul class="nb-list">
+<li>Valid ClinVar binary label</li>
+<li>Available model prediction probability</li>
+</ul>
+<br>
+<p>are included.</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">Evaluation Metrics</h3>
+<br>
+<h4 class="nb-h3">ROC-AUC</h4>
+<br>
+<p>Measures how well the model separates pathogenic and benign variants across all probability thresholds.</p>
+<br>
+<p>$$</p>
+<p>AUC = P(score_{pathogenic} &gt; score_{benign})</p>
+<p>$$</p>
+<br>
+<p>Higher values indicate better discrimination.</p>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">Area Under Precision-Recall Curve (AUPRC)</h4>
+<br>
+<p>Evaluates model performance under class imbalance.</p>
+<br>
+<p>It focuses on:</p>
+<br>
+<ul class="nb-list">
+<li>Precision:</li>
+</ul>
+<br>
+<p>$$</p>
+<p>Precision=\frac{TP}{TP+FP}</p>
+<p>$$</p>
+<br>
+<ul class="nb-list">
+<li>Recall:</li>
+</ul>
+<br>
+<p>$$</p>
+<p>Recall=\frac{TP}{TP+FN}</p>
+<p>$$</p>
+<br>
+<p>A higher AUPRC indicates better identification of pathogenic variants.</p>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">Matthews Correlation Coefficient (MCC)</h4>
+<br>
+<p>A balanced classification metric considering:</p>
+<br>
+<ul class="nb-list">
+<li>True positives</li>
+<li>True negatives</li>
+<li>False positives</li>
+<li>False negatives</li>
+</ul>
+<br>
+<p>$$</p>
+<p>MCC=</p>
+<p>\frac{TP \times TN - FP \times FN}</p>
+<p>{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}</p>
+<p>$$</p>
+<br>
+<p>Range:</p>
+<br>
+<ul class="nb-list">
+<li>+1 → Perfect prediction</li>
+<li>0 → Random prediction</li>
+<li>-1 → Completely incorrect prediction</li>
+</ul>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">Balanced Accuracy</h4>
+<br>
+<p>Useful for imbalanced datasets.</p>
+<br>
+<p>It averages:</p>
+<br>
+<ul class="nb-list">
+<li>Sensitivity (Recall of pathogenic variants)</li>
+<li>Specificity (Recall of benign variants)</li>
+</ul>
+<br>
+<p>$$</p>
+<p>Balanced Accuracy =</p>
+<p>\frac{Sensitivity + Specificity}{2}</p>
+<p>$$</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">Agreement Analysis</h3>
+<br>
+<p>Two comparisons are calculated:</p>
+<br>
+<h4 class="nb-h3">Model vs NCBI</h4>
+<br>
+<p>Measures how often the AI model agrees with ClinVar:</p>
+<br>
+<br>
+<p>Model Prediction == NCBI Label</p>
+<br>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">Original Dataset Label vs NCBI</h4>
+<br>
+<p>Measures whether the original dataset annotations agree with external ClinVar evidence:</p>
+<br>
+<br>
+<p>Original Label == NCBI Label</p>
+<br>
+<br>
+<p>This helps determine whether the dataset labels are consistent with independent clinical evidence.</p>
+<br>
+<p>---</p>
+<br>
+<h2 class="nb-h1">Figure F.2: Confusion Matrix</h2>
+<br>
+<p>The confusion matrix compares:</p>
+<br>
+<p>         Predicted</p>
+<p>          B     P</p>
+<br>
+<p>Actual B TN FP</p>
+<br>
+<p>Actual P FN TP</p>
+<br>
+<br>
+<p>where:</p>
+<br>
+<ul class="nb-list">
+<li>TN → Correctly predicted benign variants</li>
+<li>TP → Correctly predicted pathogenic variants</li>
+<li>FP → Benign variants incorrectly classified as pathogenic</li>
+<li>FN → Pathogenic variants missed by the model</li>
+</ul>
+<br>
+<p>This visualizes the types of classification errors.</p>
+<br>
+<p>---</p>
+<br>
+<h2 class="nb-h1">Figure F.3: Precision-Recall Curve</h2>
+<br>
+<p>The Precision-Recall curve shows model performance at different classification thresholds.</p>
+<br>
+<p>The curve plots:</p>
+<br>
+<ul class="nb-list">
+<li>X-axis → Recall</li>
+<li>Y-axis → Precision</li>
+</ul>
+<br>
+<p>The area under this curve:</p>
+<br>
+<br>
+<p>AUPRC</p>
+<br>
+<br>
+<p>summarizes the model&#x27;s ability to identify pathogenic variants while minimizing false positives.</p>
+<br>
+<p>---</p>
+<br>
+<h2 class="nb-h1">Output Files</h2>
+<br>
+<p>The evaluation generates:</p>
+<br>
+<h4 class="nb-h3">CSV Results</h4>
+<br>
+<br>
+<p>/kaggle/working/ncbi_evaluation_results.csv</p>
+<br>
+<br>
+<p>Contains:</p>
+<br>
+<ul class="nb-list">
+<li>Variation ID</li>
+<li>Gene symbol</li>
+<li>Variant type</li>
+<li>Original dataset label</li>
+<li>Model probability</li>
+<li>Model prediction</li>
+<li>NCBI clinical significance</li>
+<li>NCBI review status</li>
+<li>Converted NCBI label</li>
+</ul>
+<br>
+<br>
+<h4 class="nb-h3">Figures</h4>
+<br>
+<br>
+<p>/kaggle/working/figures/confusion_matrix.png</p>
+<br>
+<br>
+<p>Confusion matrix visualization.</p>
+<br>
+<br>
+<br>
+<p>/kaggle/working/figures/pr_curve.png</p>
+<br>
+<br>
+<p>Precision-Recall curve visualization.</p>
+<br>
+<br>
+<h2 class="nb-h1">Summary</h2>
+<br>
+<p>This evaluation pipeline validates the AI variant classification model against independent NCBI ClinVar clinical annotations.</p>
+<br>
+<p>The workflow:</p>
+<br>
+<br>
+<p>Test Variants</p>
+<p>|</p>
+<p>↓</p>
+<p>Stratified Sampling</p>
+<p>|</p>
+<p>↓</p>
+<p>Model Prediction</p>
+<p>|</p>
+<p>↓</p>
+<p>NCBI ClinVar Lookup</p>
+<p>|</p>
+<p>↓</p>
+<p>Label Matching</p>
+<p>|</p>
+<p>↓</p>
+<p>Performance Metrics</p>
+<p>|</p>
+<p>↓</p>
+<p>Confusion Matrix + PR Curve</p>
+<br>
+<br>
+<p>This provides an external validation of the model&#x27;s ability to distinguish benign and pathogenic genetic variants.</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-51">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 22 — Figure F.10: Per-Gene Performance</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 22 — Figure F.10: Per-Gene Performance</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-52">
     <div class="nb-input-row">
@@ -5006,45 +5523,71 @@ CCDC39  3     1.000  NaN
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-53">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Why This Matters for the Thesis</h3></p><p><h4 class="nb-h3">1. The Generalization Question</h4></p><p>A common failure mode in genomic ML papers is that a model looks great in
-aggregate but is actually just doing well on a handful of over-represented
-genes (e.g., BRCA1, BRCA2, TP53 — genes with thousands of curated ClinVar
-entries) while performing poorly everywhere else. If those few genes
-dominate the test set, overall AUC/accuracy numbers can look strong even
-though the model hasn&#x27;t learned anything generalizable about sequence-level
-pathogenicity — it may have just learned gene-specific shortcuts (e.g.,
-&quot;most BRCA1 missense variants in this dataset are pathogenic, so predict
-pathogenic whenever the input pattern looks like BRCA1&quot;).</p><p>The per-gene breakdown is how this is checked. If accuracy and AUC stay
-consistently high across a wide range of genes with reasonable N, that&#x27;s
-evidence the model is learning something about variant pathogenicity
-itself, not memorizing gene-specific label frequencies.</p><p><h4 class="nb-h3">2. Why AUC Near 0.5 With &quot;Decent&quot; Accuracy Is a Red Flag</h4></p><p>Accuracy and AUC measure different things:</p><p>- <strong>Accuracy</strong> checks whether the final thresholded prediction
-  (<code>model_pred</code>, using the 0.5 cutoff) matches the true label.
-- <strong>AUC</strong> checks whether the model&#x27;s raw probability scores rank pathogenic
-  variants above benign ones, across all thresholds.</p><p><strong>Example:</strong> a gene where 18 of 20 variants are pathogenic and 2 are
-benign. A model that outputs a probability around 0.6 for *every* variant
-in that gene — regardless of the actual sequence — would get 90% accuracy
-(it predicts &quot;pathogenic&quot; every time, and 90% of the true labels are
-pathogenic), but its AUC would sit right around 0.5, because the
-probabilities don&#x27;t actually discriminate between the two classes — they&#x27;re
-just uniformly biased toward the majority label. High accuracy here is an
-artifact of class imbalance within that gene&#x27;s subgroup, not evidence the
-model is examining the sequence and making a real judgment call.</p><p><strong>Takeaway:</strong> when accuracy is noticeably higher than AUC for a given gene,
-flag it explicitly as a limitation. It tells a careful reader that for that
-gene, the model&#x27;s confidence scores aren&#x27;t reliably informative, even
-though the final classification looks fine on the surface.</p><p><h4 class="nb-h3">3. Representativeness View vs. Worst-Case View</h4></p><p><code>gene_df</code> is sorted by <code>N</code> (variant count) and truncated to the top 20, so
-the current figure only shows how the model does on the genes with the
-*most* data. It doesn&#x27;t show where the model does *worst*. A gene with
-only 5 variants and an AUC of 0.3 wouldn&#x27;t appear at all if it&#x27;s not in the
-top 20 by count — but that&#x27;s exactly the kind of result a supervisor might
-probe during a viva (&quot;show me where it fails&quot;).</p><p><strong>Suggested companion figure:</strong> same code structure, but sort by <code>AUC</code>
-ascending instead of <code>N</code> descending, with a minimum N threshold (e.g.,
-<code>N &gt;= 5</code>) to avoid noisy single-digit samples dominating the &quot;worst&quot; list.
-This directly answers the failure-mode question and shows the limitation
-was found proactively rather than only presenting favorable results —
-generally a stronger position to defend.</p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Why This Matters for the Thesis</h3>
+<br>
+<h4 class="nb-h3">1. The Generalization Question</h4>
+<br>
+<p>A common failure mode in genomic ML papers is that a model looks great in</p>
+<p>aggregate but is actually just doing well on a handful of over-represented</p>
+<p>genes (e.g., BRCA1, BRCA2, TP53 — genes with thousands of curated ClinVar</p>
+<p>entries) while performing poorly everywhere else. If those few genes</p>
+<p>dominate the test set, overall AUC/accuracy numbers can look strong even</p>
+<p>though the model hasn&#x27;t learned anything generalizable about sequence-level</p>
+<p>pathogenicity — it may have just learned gene-specific shortcuts (e.g.,</p>
+<p>&quot;most BRCA1 missense variants in this dataset are pathogenic, so predict</p>
+<p>pathogenic whenever the input pattern looks like BRCA1&quot;).</p>
+<br>
+<p>The per-gene breakdown is how this is checked. If accuracy and AUC stay</p>
+<p>consistently high across a wide range of genes with reasonable N, that&#x27;s</p>
+<p>evidence the model is learning something about variant pathogenicity</p>
+<p>itself, not memorizing gene-specific label frequencies.</p>
+<br>
+<h4 class="nb-h3">2. Why AUC Near 0.5 With &quot;Decent&quot; Accuracy Is a Red Flag</h4>
+<br>
+<p>Accuracy and AUC measure different things:</p>
+<br>
+<ul class="nb-list">
+<li><strong>Accuracy</strong> checks whether the final thresholded prediction</li>
+</ul>
+<p>  (<code>model_pred</code>, using the 0.5 cutoff) matches the true label.</p>
+<ul class="nb-list">
+<li><strong>AUC</strong> checks whether the model&#x27;s raw probability scores rank pathogenic</li>
+</ul>
+<p>  variants above benign ones, across all thresholds.</p>
+<br>
+<p><strong>Example:</strong> a gene where 18 of 20 variants are pathogenic and 2 are</p>
+<p>benign. A model that outputs a probability around 0.6 for *every* variant</p>
+<p>in that gene — regardless of the actual sequence — would get 90% accuracy</p>
+<p>(it predicts &quot;pathogenic&quot; every time, and 90% of the true labels are</p>
+<p>pathogenic), but its AUC would sit right around 0.5, because the</p>
+<p>probabilities don&#x27;t actually discriminate between the two classes — they&#x27;re</p>
+<p>just uniformly biased toward the majority label. High accuracy here is an</p>
+<p>artifact of class imbalance within that gene&#x27;s subgroup, not evidence the</p>
+<p>model is examining the sequence and making a real judgment call.</p>
+<br>
+<p><strong>Takeaway:</strong> when accuracy is noticeably higher than AUC for a given gene,</p>
+<p>flag it explicitly as a limitation. It tells a careful reader that for that</p>
+<p>gene, the model&#x27;s confidence scores aren&#x27;t reliably informative, even</p>
+<p>though the final classification looks fine on the surface.</p>
+<br>
+<h4 class="nb-h3">3. Representativeness View vs. Worst-Case View</h4>
+<br>
+<p><code>gene_df</code> is sorted by <code>N</code> (variant count) and truncated to the top 20, so</p>
+<p>the current figure only shows how the model does on the genes with the</p>
+<p>*most* data. It doesn&#x27;t show where the model does *worst*. A gene with</p>
+<p>only 5 variants and an AUC of 0.3 wouldn&#x27;t appear at all if it&#x27;s not in the</p>
+<p>top 20 by count — but that&#x27;s exactly the kind of result a supervisor might</p>
+<p>probe during a viva (&quot;show me where it fails&quot;).</p>
+<br>
+<p><strong>Suggested companion figure:</strong> same code structure, but sort by <code>AUC</code></p>
+<p>ascending instead of <code>N</code> descending, with a minimum N threshold (e.g.,</p>
+<p><code>N &gt;= 5</code>) to avoid noisy single-digit samples dominating the &quot;worst&quot; list.</p>
+<p>This directly answers the failure-mode question and shows the limitation</p>
+<p>was found proactively rather than only presenting favorable results —</p>
+<p>generally a stronger position to defend.</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-54">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 23 — Figure F.11: Performance by NCBI Review Status</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 23 — Figure F.11: Performance by NCBI Review Status</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-55">
     <div class="nb-input-row">
@@ -5106,76 +5649,136 @@ criteria provided, multiple submitters, no co 128     0.805 0.886
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-56">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Figure F.11: Performance by NCBI Review Status</h3></p><p>This is the sibling figure to F.10 — same idea, but instead of grouping by
-gene, it groups by <strong>ClinVar&#x27;s review status</strong> (their confidence/quality
-rating for each variant&#x27;s clinical significance call), captured from
-<code>ncbi_review_status</code> during the Cell 20 NCBI lookup.</p><p><h4 class="nb-h3">What ClinVar Review Status Means</h4></p><p>This is ClinVar&#x27;s &quot;star rating&quot; system for how much curatorial rigor sits
-behind a pathogenicity label — it reflects trust in the *label*, not
-anything about the variant itself:</p><p>- <strong>0 stars</strong> — &quot;no assertion criteria provided&quot;: a single lab submitted a
-  classification with no documented evidence criteria
-- <strong>1 star</strong> — &quot;criteria provided, single submitter&quot;: one lab submitted a
-  classification following standard evidence criteria (e.g. ACMG/AMP
-  guidelines)
-- <strong>2 stars</strong> — &quot;criteria provided, multiple submitters, no conflicts&quot;:
-  multiple independent labs agree, each following criteria
-- <strong>3 stars</strong> — &quot;reviewed by expert panel&quot;: a dedicated expert panel (e.g.
-  ClinGen) formally reviewed the evidence
-- (4 stars, &quot;practice guideline,&quot; does not appear in this dataset)</p><p>So this figure answers a different question than F.10 — not &quot;does the
-model generalize across genes,&quot; but **&quot;is the model more accurate on
-variants where the ground truth itself is more trustworthy?&quot;**</p><p><h4 class="nb-h3">Results</h4></p><p>| Review Status | Stars | N | Accuracy | AUC |
-|---|---|---|---|---|
-| Reviewed by expert panel | ★★★ | 8 | 1.000 | 1.000 |
-| Criteria provided, single submitter | ★ | 730 | 0.816 | 0.930 |
-| Criteria provided, multiple submitters, no conflicts | ★★ | 128 | 0.805 | 0.886 |
-| No assertion criteria provided | 0 | 76 | 0.908 | 0.879 |</p><p><h4 class="nb-h3">Interpretation</h4></p><p>- <strong>Expert-panel variants (n=8, 3 stars)</strong> — perfect score, but n=8 is far
-  too small to claim anything statistically. Worth mentioning as an
-  anecdote, not as evidence.
-- <strong>The bulk of the data (730 + 128 = 858 of 942, ~91%)</strong> sits in the 1–2
-  star range — this is where the real signal is: AUC around 0.89–0.93,
-  accuracy around 0.81–0.82. This is the genuinely representative result.
-- <strong>The 0-star group is the interesting anomaly</strong>: it has the *highest*
-  accuracy (0.908) among the well-populated groups, but a *lower* AUC
-  (0.879) than the 1-star group. This mirrors the accuracy/AUC divergence
-  pattern seen with ABCD1 in Figure F.10 — it suggests this group&#x27;s labels
-  may be less balanced (so a biased model still &quot;looks&quot; accurate), or that
-  ClinVar&#x27;s own least-scrutinized labels are themselves noisier ground
-  truth, capping how well any model&#x27;s probability ranking can align with
-  them. This ambiguity — model weakness vs. label noise — can&#x27;t be fully
-  disentangled from this data alone, and is worth stating explicitly rather
-  than resolving one way or the other.</p><p><h4 class="nb-h3">Why This Matters for the Thesis</h4></p><p>Intuitively, one might expect a clean trend — performance improving as
-review status improves, since better-reviewed labels should be closer to
-ground truth. The data does not show that cleanly (0-star accuracy beats
-1-star and 2-star accuracy), which is worth discussing rather than
-glossing over.</p><p><strong>Suggested framing:</strong></p><p><blockquote class="nb-quote">&quot;Model accuracy did not increase monotonically with ClinVar review tier,</blockquote>
-<blockquote class="nb-quote">though the ROC-AUC — a threshold-independent measure — was highest for</blockquote>
-<blockquote class="nb-quote">the best-populated high-confidence tier (1-star, n=730), suggesting the</blockquote>
-<blockquote class="nb-quote">model&#x27;s probability ranking is most reliable where label quality and</blockquote>
-<blockquote class="nb-quote">sample size are both adequate. The expert-panel tier (n=8) is too small</blockquote>
-<blockquote class="nb-quote">to draw firm conclusions despite its perfect score.&quot;</blockquote></p><p>This is a more careful and defensible claim than &quot;the model gets better
-with better review status,&quot; which the numbers do not actually support.</p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Figure F.11: Performance by NCBI Review Status</h3>
+<br>
+<p>This is the sibling figure to F.10 — same idea, but instead of grouping by</p>
+<p>gene, it groups by <strong>ClinVar&#x27;s review status</strong> (their confidence/quality</p>
+<p>rating for each variant&#x27;s clinical significance call), captured from</p>
+<p><code>ncbi_review_status</code> during the Cell 20 NCBI lookup.</p>
+<br>
+<h4 class="nb-h3">What ClinVar Review Status Means</h4>
+<br>
+<p>This is ClinVar&#x27;s &quot;star rating&quot; system for how much curatorial rigor sits</p>
+<p>behind a pathogenicity label — it reflects trust in the *label*, not</p>
+<p>anything about the variant itself:</p>
+<br>
+<ul class="nb-list">
+<li><strong>0 stars</strong> — &quot;no assertion criteria provided&quot;: a single lab submitted a</li>
+</ul>
+<p>  classification with no documented evidence criteria</p>
+<ul class="nb-list">
+<li><strong>1 star</strong> — &quot;criteria provided, single submitter&quot;: one lab submitted a</li>
+</ul>
+<p>  classification following standard evidence criteria (e.g. ACMG/AMP</p>
+<p>  guidelines)</p>
+<ul class="nb-list">
+<li><strong>2 stars</strong> — &quot;criteria provided, multiple submitters, no conflicts&quot;:</li>
+</ul>
+<p>  multiple independent labs agree, each following criteria</p>
+<ul class="nb-list">
+<li><strong>3 stars</strong> — &quot;reviewed by expert panel&quot;: a dedicated expert panel (e.g.</li>
+</ul>
+<p>  ClinGen) formally reviewed the evidence</p>
+<ul class="nb-list">
+<li>(4 stars, &quot;practice guideline,&quot; does not appear in this dataset)</li>
+</ul>
+<br>
+<p>So this figure answers a different question than F.10 — not &quot;does the</p>
+<p>model generalize across genes,&quot; but **&quot;is the model more accurate on</p>
+<p>variants where the ground truth itself is more trustworthy?&quot;**</p>
+<br>
+<h4 class="nb-h3">Results</h4>
+<br>
+<p>| Review Status | Stars | N | Accuracy | AUC |</p>
+<p>|---|---|---|---|---|</p>
+<p>| Reviewed by expert panel | ★★★ | 8 | 1.000 | 1.000 |</p>
+<p>| Criteria provided, single submitter | ★ | 730 | 0.816 | 0.930 |</p>
+<p>| Criteria provided, multiple submitters, no conflicts | ★★ | 128 | 0.805 | 0.886 |</p>
+<p>| No assertion criteria provided | 0 | 76 | 0.908 | 0.879 |</p>
+<br>
+<h4 class="nb-h3">Interpretation</h4>
+<br>
+<ul class="nb-list">
+<li><strong>Expert-panel variants (n=8, 3 stars)</strong> — perfect score, but n=8 is far</li>
+</ul>
+<p>  too small to claim anything statistically. Worth mentioning as an</p>
+<p>  anecdote, not as evidence.</p>
+<ul class="nb-list">
+<li><strong>The bulk of the data (730 + 128 = 858 of 942, ~91%)</strong> sits in the 1–2</li>
+</ul>
+<p>  star range — this is where the real signal is: AUC around 0.89–0.93,</p>
+<p>  accuracy around 0.81–0.82. This is the genuinely representative result.</p>
+<ul class="nb-list">
+<li><strong>The 0-star group is the interesting anomaly</strong>: it has the *highest*</li>
+</ul>
+<p>  accuracy (0.908) among the well-populated groups, but a *lower* AUC</p>
+<p>  (0.879) than the 1-star group. This mirrors the accuracy/AUC divergence</p>
+<p>  pattern seen with ABCD1 in Figure F.10 — it suggests this group&#x27;s labels</p>
+<p>  may be less balanced (so a biased model still &quot;looks&quot; accurate), or that</p>
+<p>  ClinVar&#x27;s own least-scrutinized labels are themselves noisier ground</p>
+<p>  truth, capping how well any model&#x27;s probability ranking can align with</p>
+<p>  them. This ambiguity — model weakness vs. label noise — can&#x27;t be fully</p>
+<p>  disentangled from this data alone, and is worth stating explicitly rather</p>
+<p>  than resolving one way or the other.</p>
+<br>
+<h4 class="nb-h3">Why This Matters for the Thesis</h4>
+<br>
+<p>Intuitively, one might expect a clean trend — performance improving as</p>
+<p>review status improves, since better-reviewed labels should be closer to</p>
+<p>ground truth. The data does not show that cleanly (0-star accuracy beats</p>
+<p>1-star and 2-star accuracy), which is worth discussing rather than</p>
+<p>glossing over.</p>
+<br>
+<p><strong>Suggested framing:</strong></p>
+<br>
+<p><blockquote class="nb-quote">&quot;Model accuracy did not increase monotonically with ClinVar review tier,</blockquote></p>
+<p><blockquote class="nb-quote">though the ROC-AUC — a threshold-independent measure — was highest for</blockquote></p>
+<p><blockquote class="nb-quote">the best-populated high-confidence tier (1-star, n=730), suggesting the</blockquote></p>
+<p><blockquote class="nb-quote">model&#x27;s probability ranking is most reliable where label quality and</blockquote></p>
+<p><blockquote class="nb-quote">sample size are both adequate. The expert-panel tier (n=8) is too small</blockquote></p>
+<p><blockquote class="nb-quote">to draw firm conclusions despite its perfect score.&quot;</blockquote></p>
+<br>
+<p>This is a more careful and defensible claim than &quot;the model gets better</p>
+<p>with better review status,&quot; which the numbers do not actually support.</p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-57">
-    <div class="nb-md-content"><p><h3 class="nb-h2">NCBI ClinVar Review Status Categories</h3></p><p>ClinVar review status indicates the <strong>level of evidence and confidence</strong> supporting a variant&#x27;s clinical significance classification. It reflects <strong>how the classification was determined</strong>, not whether the variant is benign or pathogenic.</p><p>| Review Status | Stars | Definition |
-|---------------|:-----:|------------|
-| <strong>Reviewed by expert panel</strong> | ★★★ | The variant classification has been reviewed and agreed upon by a recognized expert panel (e.g., ClinGen Variant Curation Expert Panel). This represents one of the highest confidence levels in ClinVar, as experts systematically evaluate all available evidence before reaching a consensus. |
-| <strong>Criteria provided, multiple submitters, no conflicts</strong> | ★★ | Two or more independent laboratories submitted classifications using documented evaluation criteria (typically ACMG/AMP guidelines), and all agreed on the clinical significance. Independent agreement increases confidence in the classification. |
-| <strong>Criteria provided, single submitter</strong> | ★ | A single laboratory or organization classified the variant and documented the criteria or evidence used to support its interpretation. Although the methodology is transparent, the classification has not been independently confirmed by other submitters. |
-| <strong>No assertion criteria provided</strong> | 0 | A clinical significance classification was submitted, but the submitter did not provide the criteria, evidence, or methodology used to reach that conclusion. The classification is available, but its supporting rationale cannot be independently assessed, making it the lowest confidence review category among definitive ClinVar labels. |</p><p><h4 class="nb-h3">Confidence Hierarchy</h4></p><p>From highest to lowest confidence:</p><p><code></code>`text
-Reviewed by expert panel (★★★)
-        ↓
-Criteria provided, multiple submitters, no conflicts (★★)
-        ↓
-Criteria provided, single submitter (★)
-        ↓
-No assertion criteria provided (0★)
-<code></code>`</p><p><h4 class="nb-h3">Interpretation</h4></p><p>- <strong>Reviewed by expert panel:</strong> Highest-confidence classifications based on expert consensus.
-- <strong>Criteria provided, multiple submitters, no conflicts:</strong> High-confidence classifications supported by agreement among multiple independent submitters.
-- <strong>Criteria provided, single submitter:</strong> Moderate-confidence classifications supported by documented evidence from a single submitter.
-- <strong>No assertion criteria provided:</strong> Lower-confidence classifications because the submitter did not provide supporting evidence or evaluation criteria.</p><p><blockquote class="nb-quote"><strong>Note:</strong> ClinVar review status measures the <strong>confidence in the supporting evidence</strong>, whereas <strong>clinical significance</strong> (e.g., *Benign* or *Pathogenic*) indicates the actual interpretation of the variant. These are independent attributes.</blockquote></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">NCBI ClinVar Review Status Categories</h3>
+<br>
+<p>ClinVar review status indicates the <strong>level of evidence and confidence</strong> supporting a variant&#x27;s clinical significance classification. It reflects <strong>how the classification was determined</strong>, not whether the variant is benign or pathogenic.</p>
+<br>
+<p>| Review Status | Stars | Definition |</p>
+<p>|---------------|:-----:|------------|</p>
+<p>| <strong>Reviewed by expert panel</strong> | ★★★ | The variant classification has been reviewed and agreed upon by a recognized expert panel (e.g., ClinGen Variant Curation Expert Panel). This represents one of the highest confidence levels in ClinVar, as experts systematically evaluate all available evidence before reaching a consensus. |</p>
+<p>| <strong>Criteria provided, multiple submitters, no conflicts</strong> | ★★ | Two or more independent laboratories submitted classifications using documented evaluation criteria (typically ACMG/AMP guidelines), and all agreed on the clinical significance. Independent agreement increases confidence in the classification. |</p>
+<p>| <strong>Criteria provided, single submitter</strong> | ★ | A single laboratory or organization classified the variant and documented the criteria or evidence used to support its interpretation. Although the methodology is transparent, the classification has not been independently confirmed by other submitters. |</p>
+<p>| <strong>No assertion criteria provided</strong> | 0 | A clinical significance classification was submitted, but the submitter did not provide the criteria, evidence, or methodology used to reach that conclusion. The classification is available, but its supporting rationale cannot be independently assessed, making it the lowest confidence review category among definitive ClinVar labels. |</p>
+<br>
+<h4 class="nb-h3">Confidence Hierarchy</h4>
+<br>
+<p>From highest to lowest confidence:</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;Reviewed by expert panel (★★★)</p>
+<p>        ↓</p>
+<p>Criteria provided, multiple submitters, no conflicts (★★)</p>
+<p>        ↓</p>
+<p>Criteria provided, single submitter (★)</p>
+<p>        ↓</p>
+<p>No assertion criteria provided (0★)&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<h4 class="nb-h3">Interpretation</h4>
+<br>
+<ul class="nb-list">
+<li><strong>Reviewed by expert panel:</strong> Highest-confidence classifications based on expert consensus.</li>
+<li><strong>Criteria provided, multiple submitters, no conflicts:</strong> High-confidence classifications supported by agreement among multiple independent submitters.</li>
+<li><strong>Criteria provided, single submitter:</strong> Moderate-confidence classifications supported by documented evidence from a single submitter.</li>
+<li><strong>No assertion criteria provided:</strong> Lower-confidence classifications because the submitter did not provide supporting evidence or evaluation criteria.</li>
+</ul>
+<br>
+<p><blockquote class="nb-quote"><strong>Note:</strong> ClinVar review status measures the <strong>confidence in the supporting evidence</strong>, whereas <strong>clinical significance</strong> (e.g., *Benign* or *Pathogenic*) indicates the actual interpretation of the variant. These are independent attributes.</blockquote></p></div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-58">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 24 — Prospective External Validation on Model-Unseen Variants</h3>
-</p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 24 — Prospective External Validation on Model-Unseen Variants</h3>
+<br></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-59">
     <div class="nb-input-row">
@@ -5384,7 +5987,7 @@ Saved: prospective_external_eval.csv</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-60">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 25 — LLM-Powered Variant Explanation (Gemini)</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 25 — LLM-Powered Variant Explanation (Gemini)</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-61">
     <div class="nb-input-row">
@@ -5502,7 +6105,7 @@ Saved: /kaggle/working/llm_explanation_sample.txt</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-62">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 26 — Final Verification Checklist</h3></p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 26 — Final Verification Checklist</h3></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-63">
     <div class="nb-input-row">
@@ -5611,8 +6214,8 @@ REF [500:530]  : TGAAGGTGAAGTCACGGCCCTGCCCCTCCT</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-64">
-    <div class="nb-md-content"><p><h3 class="nb-h2">Cell 27 — Architectural Ablation Study (thesis Table 2)</h3>
-</p></div>
+    <div class="nb-md-content"><h3 class="nb-h2">Cell 27 — Architectural Ablation Study (thesis Table 2)</h3>
+<br></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-65">
     <div class="nb-input-row">
@@ -5816,65 +6419,163 @@ Saved: ablation_results.csv</pre>
     </div>
   </div>
   <div class="nb-cell nb-markdown" id="nb-cell-66">
-    <div class="nb-md-content"><p><h2 class="nb-h1">27. Architectural Ablation Study</h2></p><p>This experiment evaluates the contribution of each major component of the proposed architecture by systematically removing or modifying one component at a time while keeping all other experimental conditions identical.</p><p>Unlike the final model evaluation, all architectures are trained on the <strong>same subset of the training data</strong>, using the <strong>same validation set</strong>, <strong>same optimizer</strong>, <strong>same random seed</strong>, <strong>same number of epochs</strong>, and <strong>same hyperparameters</strong>. This ensures that any performance differences are attributable solely to the architectural changes rather than differences in training conditions.</p><p>---</p><p><h3 class="nb-h2">Experimental Procedure</h3></p><p>The ablation study follows the workflow below:</p><p><code></code>`text
-Training Subset (120,000 samples)
-            │
-            ├────────► Proposed Framework
-            ├────────► Baseline A
-            ├────────► Baseline B
-            ├────────► Baseline C
-            └────────► Baseline D
-                     │
-                     ▼
-             Train for 6 Epochs
-                     │
-                     ▼
-Validation Subset (30,000 samples)
-                     │
-                     ▼
-         Performance Evaluation
-<code></code>`</p><p>Each architecture is trained independently before being evaluated on the identical validation dataset.</p><p>---</p><p><h3 class="nb-h2">Ablation Configurations</h3></p><p>Five model configurations are evaluated:</p><p>| Configuration | Description |
-|---------------|-------------|
-| <strong>Proposed Framework (Full)</strong> | Complete architecture with all proposed components enabled. |
-| <strong>Baseline A: Without Delta Learning</strong> | Removes the delta-learning mechanism while retaining the remaining architecture. |
-| <strong>Baseline B: Without Transformer</strong> | Removes the Transformer encoder and evaluates the CNN branch alone. |
-| <strong>Baseline C: Without Multi-Kernel CNN</strong> | Removes the multi-kernel convolutional feature extractor while retaining the Transformer branch. |
-| <strong>Baseline D: Single Sequence</strong> | Uses only a single DNA sequence instead of jointly processing the reference and alternative sequences. |</p><p>---</p><p><h3 class="nb-h2">Model Evaluation</h3></p><p>After training each architecture, predictions are generated for every sample in the validation set.</p><p>The evaluation function returns:</p><p><code></code>`python
-ys
-<code></code>`</p><p>Ground-truth labels:</p><p><code></code>`text
-0 = Benign
-1 = Pathogenic
-<code></code>`</p><p>and</p><p><code></code>`python
-probs
-<code></code>`</p><p>Predicted pathogenicity probabilities:</p><p><code></code>`text
-0.03
-0.92
-0.76
-0.11
-...
-<code></code>`</p><p>Binary predictions are then obtained using a threshold of 0.5:</p><p><code></code>`python
-preds = (probs &gt;= 0.5).astype(int)
-<code></code>`</p><p>---</p><p><h3 class="nb-h2">Performance Metrics</h3></p><p>Each architecture is evaluated using the following metrics.</p><p><h4 class="nb-h3">ROC-AUC</h4></p><p>Measures the model&#x27;s ability to distinguish between benign and pathogenic variants across all classification thresholds.</p><p>Higher values indicate better discrimination.</p><p>---</p><p><h4 class="nb-h3">Area Under the Precision-Recall Curve (AUPRC)</h4></p><p>Evaluates the trade-off between precision and recall, particularly useful for imbalanced datasets.</p><p>---</p><p><h4 class="nb-h3">Matthews Correlation Coefficient (MCC)</h4></p><p>Measures the overall quality of binary classification by considering all elements of the confusion matrix.</p><p>\[
-MCC=
-\frac{TP\times TN-FP\times FN}
-{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}
-\]</p><p>Values range from:</p><p>- <strong>+1</strong> : Perfect prediction
-- <strong>0</strong> : Random prediction
-- <strong>−1</strong> : Complete disagreement</p><p>---</p><p><h4 class="nb-h3">Balanced Accuracy</h4></p><p>Instead of conventional accuracy, this study reports <strong>Balanced Accuracy</strong>, which compensates for class imbalance.</p><p>\[
-Balanced\ Accuracy
-=
-\frac{Sensitivity+Specificity}{2}
-\]</p><p>where</p><p>\[
-Sensitivity=\frac{TP}{TP+FN}
-\]</p><p>and</p><p>\[
-Specificity=\frac{TN}{TN+FP}
-\]</p><p>Balanced Accuracy provides a more reliable estimate of classification performance when the dataset contains unequal numbers of benign and pathogenic variants.</p><p>---</p><p><h3 class="nb-h2">Fair Comparison</h3></p><p>All architectures are evaluated under identical experimental settings:</p><p>- Same training subset (120,000 variants)
-- Same validation subset (30,000 variants)
-- Same random seed
-- Same optimizer (AdamW)
-- Same learning rate
-- Same batch size
-- Same number of training epochs (6)</p><p>Consequently, differences in ROC-AUC, AUPRC, MCC, and Balanced Accuracy directly reflect the contribution of the architectural component that was removed or modified, providing a fair assessment of the effectiveness of each component within the proposed framework.</p></div>
+    <div class="nb-md-content"><h2 class="nb-h1">27. Architectural Ablation Study</h2>
+<br>
+<p>This experiment evaluates the contribution of each major component of the proposed architecture by systematically removing or modifying one component at a time while keeping all other experimental conditions identical.</p>
+<br>
+<p>Unlike the final model evaluation, all architectures are trained on the <strong>same subset of the training data</strong>, using the <strong>same validation set</strong>, <strong>same optimizer</strong>, <strong>same random seed</strong>, <strong>same number of epochs</strong>, and <strong>same hyperparameters</strong>. This ensures that any performance differences are attributable solely to the architectural changes rather than differences in training conditions.</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">Experimental Procedure</h3>
+<br>
+<p>The ablation study follows the workflow below:</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;Training Subset (120,000 samples)</p>
+<p>            │</p>
+<p>            ├────────► Proposed Framework</p>
+<p>            ├────────► Baseline A</p>
+<p>            ├────────► Baseline B</p>
+<p>            ├────────► Baseline C</p>
+<p>            └────────► Baseline D</p>
+<p>                     │</p>
+<p>                     ▼</p>
+<p>             Train for 6 Epochs</p>
+<p>                     │</p>
+<p>                     ▼</p>
+<p>Validation Subset (30,000 samples)</p>
+<p>                     │</p>
+<p>                     ▼</p>
+<p>         Performance Evaluation&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>Each architecture is trained independently before being evaluated on the identical validation dataset.</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">Ablation Configurations</h3>
+<br>
+<p>Five model configurations are evaluated:</p>
+<br>
+<p>| Configuration | Description |</p>
+<p>|---------------|-------------|</p>
+<p>| <strong>Proposed Framework (Full)</strong> | Complete architecture with all proposed components enabled. |</p>
+<p>| <strong>Baseline A: Without Delta Learning</strong> | Removes the delta-learning mechanism while retaining the remaining architecture. |</p>
+<p>| <strong>Baseline B: Without Transformer</strong> | Removes the Transformer encoder and evaluates the CNN branch alone. |</p>
+<p>| <strong>Baseline C: Without Multi-Kernel CNN</strong> | Removes the multi-kernel convolutional feature extractor while retaining the Transformer branch. |</p>
+<p>| <strong>Baseline D: Single Sequence</strong> | Uses only a single DNA sequence instead of jointly processing the reference and alternative sequences. |</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">Model Evaluation</h3>
+<br>
+<p>After training each architecture, predictions are generated for every sample in the validation set.</p>
+<br>
+<p>The evaluation function returns:</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;ys&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>Ground-truth labels:</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;0 = Benign</p>
+<p>1 = Pathogenic&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>and</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;probs&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>Predicted pathogenicity probabilities:</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;0.03</p>
+<p>0.92</p>
+<p>0.76</p>
+<p>0.11</p>
+<p>...&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>Binary predictions are then obtained using a threshold of 0.5:</p>
+<br>
+<p>&lt;pre class=&quot;nb-md-codeblock&quot;&gt;&lt;code&gt;preds = (probs &amp;gt;= 0.5).astype(int)&lt;/code&gt;&lt;/pre&gt;</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">Performance Metrics</h3>
+<br>
+<p>Each architecture is evaluated using the following metrics.</p>
+<br>
+<h4 class="nb-h3">ROC-AUC</h4>
+<br>
+<p>Measures the model&#x27;s ability to distinguish between benign and pathogenic variants across all classification thresholds.</p>
+<br>
+<p>Higher values indicate better discrimination.</p>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">Area Under the Precision-Recall Curve (AUPRC)</h4>
+<br>
+<p>Evaluates the trade-off between precision and recall, particularly useful for imbalanced datasets.</p>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">Matthews Correlation Coefficient (MCC)</h4>
+<br>
+<p>Measures the overall quality of binary classification by considering all elements of the confusion matrix.</p>
+<br>
+<p>\[</p>
+<p>MCC=</p>
+<p>\frac{TP\times TN-FP\times FN}</p>
+<p>{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}</p>
+<p>\]</p>
+<br>
+<p>Values range from:</p>
+<br>
+<ul class="nb-list">
+<li><strong>+1</strong> : Perfect prediction</li>
+<li><strong>0</strong> : Random prediction</li>
+<li><strong>−1</strong> : Complete disagreement</li>
+</ul>
+<br>
+<p>---</p>
+<br>
+<h4 class="nb-h3">Balanced Accuracy</h4>
+<br>
+<p>Instead of conventional accuracy, this study reports <strong>Balanced Accuracy</strong>, which compensates for class imbalance.</p>
+<br>
+<p>\[</p>
+<p>Balanced\ Accuracy</p>
+<p>=</p>
+<p>\frac{Sensitivity+Specificity}{2}</p>
+<p>\]</p>
+<br>
+<p>where</p>
+<br>
+<p>\[</p>
+<p>Sensitivity=\frac{TP}{TP+FN}</p>
+<p>\]</p>
+<br>
+<p>and</p>
+<br>
+<p>\[</p>
+<p>Specificity=\frac{TN}{TN+FP}</p>
+<p>\]</p>
+<br>
+<p>Balanced Accuracy provides a more reliable estimate of classification performance when the dataset contains unequal numbers of benign and pathogenic variants.</p>
+<br>
+<p>---</p>
+<br>
+<h3 class="nb-h2">Fair Comparison</h3>
+<br>
+<p>All architectures are evaluated under identical experimental settings:</p>
+<br>
+<ul class="nb-list">
+<li>Same training subset (120,000 variants)</li>
+<li>Same validation subset (30,000 variants)</li>
+<li>Same random seed</li>
+<li>Same optimizer (AdamW)</li>
+<li>Same learning rate</li>
+<li>Same batch size</li>
+<li>Same number of training epochs (6)</li>
+</ul>
+<br>
+<p>Consequently, differences in ROC-AUC, AUPRC, MCC, and Balanced Accuracy directly reflect the contribution of the architectural component that was removed or modified, providing a fair assessment of the effectiveness of each component within the proposed framework.</p></div>
   </div>
   <div class="nb-cell nb-code" id="nb-cell-67">
     <div class="nb-input-row">
