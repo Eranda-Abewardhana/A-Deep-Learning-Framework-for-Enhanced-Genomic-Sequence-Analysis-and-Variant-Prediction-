@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRCA Mutation Pathogenicity Predictor — Thesis Demo (2026)</title>
+<meta name="description" content="Genomic variant pathogenicity prediction framework using a dual-branch CNN+Transformer with delta-learning.">
+<style>
+:root {
+  --bg: #090d16;
+  --surface: #111726;
+  --card: #171e2e;
+  --card-hover: #1e273a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --text: #f1f5f9;
+  --text-dim: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --accent-subtle: rgba(99, 102, 241, 0.12);
+  --green: #10b981;
+  --red: #f43f5e;
+  --amber: #f59e0b;
+  --blue: #0ea5e9;
+  --nuc-a: #10b981;
+  --nuc-c: #0ea5e9;
+  --nuc-g: #f59e0b;
+  --nuc-t: #f43f5e;
+  --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+}
+
+/* ── Light Theme Variables ─────────────────────────── */
+body.light-mode {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --card: #f1f5f9;
+  --card-hover: #e2e8f0;
+  --border: rgba(0, 0, 0, 0.1);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --text: #0f172a;
+  --text-dim: #475569;
+  --text-muted: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #4338ca;
+  --accent-subtle: rgba(79, 70, 229, 0.08);
+  --green: #059669;
+  --red: #e11d48;
+  --amber: #d97706;
+  --blue: #0284c7;
+  --nuc-a: #059669;
+  --nuc-c: #0284c7;
+  --nuc-g: #d97706;
+  --nuc-t: #e11d48;
+}
+body.light-mode header,
+body.light-mode .tabs-container,
+body.light-mode .basics-progress-bar {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+body.light-mode textarea {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+body.light-mode .seq-row,
+body.light-mode .zoom-display-box,
+body.light-mode .glossary-item,
+body.light-mode .visual-stage,
+body.light-mode .sample-card-item,
+body.light-mode .analogy-pane,
+body.light-mode .definition-pane,
+body.light-mode .onehot-cell,
+body.light-mode .arch-box,
+body.light-mode .arch-flow .step {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+body.light-mode .nuc-badge.A { background: rgba(5,150,105,0.12); color: #047857; border-color: rgba(5,150,105,0.3); }
+body.light-mode .nuc-badge.C { background: rgba(2,132,199,0.12); color: #0369a1; border-color: rgba(2,132,199,0.3); }
+body.light-mode .nuc-badge.G { background: rgba(217,119,6,0.12); color: #b45309; border-color: rgba(217,119,6,0.3); }
+body.light-mode .nuc-badge.T { background: rgba(225,29,72,0.12); color: #be123c; border-color: rgba(225,29,72,0.3); }
+body.light-mode .nuc-badge.N { background: rgba(100,116,139,0.12); color: #475569; border-color: rgba(100,116,139,0.3); }
+body.light-mode .drag-hint-bar {
+  background: rgba(79, 70, 229, 0.05);
+  border-color: rgba(79, 70, 229, 0.25);
+  color: #4338ca;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Top Highlight Bar ─────────────────────────────── */
+.top-bar {
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1 0%, #0ea5e9 50%, #10b981 100%);
+}
+
+/* ── Header ─────────────────────────────────────────── */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  transition: background 0.3s ease;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(14, 165, 233, 0.2));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-light);
+}
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.brand-subtitle {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.thesis-tag {
+  background: var(--accent-subtle);
+  color: var(--accent-light);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+.theme-toggle-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  transform: translateY(-1px);
+}
+
+#status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+#status-pill.demo {
+  background: rgba(245,158,11,0.1);
+  color: var(--amber);
+  border: 1px solid rgba(245,158,11,0.25);
+}
+#status-pill.live {
+  background: rgba(16,185,129,0.1);
+  color: var(--green);
+  border: 1px solid rgba(16,185,129,0.25);
+}
+#status-pill .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+#status-pill.demo .dot { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+#status-pill.live .dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+/* ── Tab Navigation ─────────────────────────────────── */
+.tabs-container {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2.5rem;
+  transition: background 0.3s ease;
+}
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  padding: 0.95rem 1.25rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--accent-light); }
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2.5px;
+  background: var(--accent);
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 -2px 8px var(--accent);
+}
+.tab-panel { display: none; padding: 2.5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+.tab-panel.active { display: block; }
+
+/* ── Cards & Containers ─────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Learn the Basics Styles ── */
+.basics-progress-bar {
+  position: sticky;
+  top: 12px;
+  z-index: 90;
+  background: rgba(17, 23, 38, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease;
+}
+.step-indicators {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.step-nav-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.step-nav-dot:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.step-nav-dot.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.skip-link-btn {
+  background: var(--accent-subtle);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: var(--accent-light);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.skip-link-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.concept-section {
+  scroll-margin-top: 90px;
+}
+.concept-header-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.concept-num {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  background: var(--accent-subtle);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+.concept-title-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.split-explain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 768px) {
+  .split-explain-grid { grid-template-columns: 1fr; }
+}
+
+.analogy-pane {
+  background: rgba(99, 102, 241, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem;
+}
+.pane-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.analogy-pane .pane-title { color: var(--accent-light); }
+.definition-pane .pane-title { color: var(--text-dim); }
+
+.definition-pane {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem;
+}
+.pane-body {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.pane-body strong { color: var(--text); }
+
+.term-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  color: var(--accent-light);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  font-family: var(--mono);
+  font-weight: 600;
+}
+
+/* Base Badge System */
+.nuc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.nuc-badge.A { background: rgba(16,185,129,0.15); color: var(--nuc-a); border: 1px solid rgba(16,185,129,0.4); }
+.nuc-badge.C { background: rgba(14,165,233,0.15); color: var(--nuc-c); border: 1px solid rgba(14,165,233,0.4); }
+.nuc-badge.G { background: rgba(245,158,11,0.15); color: var(--nuc-g); border: 1px solid rgba(245,158,11,0.4); }
+.nuc-badge.T { background: rgba(244,63,94,0.15); color: var(--nuc-t); border: 1px solid rgba(244,63,94,0.4); }
+.nuc-badge.N { background: rgba(100,116,139,0.15); color: var(--text-muted); border: 1px solid var(--border); }
+
+.visual-stage {
+  background: var(--bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Helix Visual */
+.dna-strip-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  min-height: 70px;
+}
+
+/* Dual sequence diff */
+.side-seq-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: var(--mono);
+}
+.seq-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--surface);
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.seq-label-tag {
+  width: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.seq-base-list {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.mut-highlight {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 10px rgba(244,63,94,0.4);
+  transform: scale(1.1);
+}
+
+/* Zoom Slider */
+.zoom-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.zoom-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.zoom-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.zoom-display-box {
+  min-height: 110px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Variant Type Tabs */
+.variant-type-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.vtab-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.vtab-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Pathogenicity Gauge */
+.gauge-container {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+.gauge-track {
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--green) 0%, var(--amber) 50%, var(--red) 100%);
+  position: relative;
+  margin: 1.5rem 0 1rem 0;
+}
+.gauge-thumb {
+  width: 18px;
+  height: 28px;
+  background: #fff;
+  border: 2px solid var(--bg);
+  border-radius: 5px;
+  position: absolute;
+  top: -4px;
+  left: 10%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: left 0.4s ease;
+}
+.gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* One-Hot Grid */
+.onehot-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 1fr);
+  gap: 0.4rem;
+  font-family: var(--mono);
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+.onehot-cell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.45rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.onehot-cell.active-one {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Glossary Grid */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.glossary-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+}
+.glossary-item h5 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  margin-bottom: 0.25rem;
+}
+.glossary-item p {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.45;
+}
+
+/* Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Architecture Tab ───────────────────────────────── */
+.arch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.arch-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.arch-box:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+}
+.arch-box .icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-light);
+}
+.arch-box h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.arch-box p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.arch-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.arch-flow .step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-sm);
+}
+.arch-flow .arrow { color: var(--accent-light); font-size: 1.1rem; }
+
+/* ── Ablation Chart ─────────────────────────────────── */
+.ablation-chart {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.ablation-bar-group {
+  margin-bottom: 1.1rem;
+}
+.ablation-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  display: flex;
+  justify-content: space-between;
+}
+.ablation-bar-track {
+  height: 26px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.ablation-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ── Live Predictor ─────────────────────────────────── */
+.predictor-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+@media (max-width: 768px) {
+  .predictor-layout { grid-template-columns: 1fr; }
+}
+
+.seq-input-group {
+  position: relative;
+}
+.seq-input label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.seq-input textarea {
+  width: 100%;
+  height: 140px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  padding: 0.75rem;
+  resize: vertical;
+  transition: all 0.2s ease;
+  line-height: 1.6;
+}
+.seq-input textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+.seq-input.drop-active textarea {
+  border-color: var(--accent) !important;
+  background: rgba(99, 102, 241, 0.08) !important;
+  box-shadow: 0 0 0 3px var(--accent-subtle) !important;
+  outline: 2px dashed var(--accent-light) !important;
+}
+.seq-input .char-count {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 0.3rem;
+}
+
+/* Draggable Sample Palette */
+.sample-palette {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.sample-card-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.sample-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.sample-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.sample-sub {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+.sample-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Enhanced 1-Click Load Button Design */
+.load-direct-btn {
+  background: linear-gradient(135deg, var(--accent-subtle), rgba(14, 165, 233, 0.12));
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  color: var(--accent-light);
+  padding: 0.4rem 0.95rem;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.load-direct-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+.load-direct-btn:active {
+  transform: translateY(0);
+}
+.load-direct-btn.loaded {
+  background: var(--green) !important;
+  color: #ffffff !important;
+  border-color: var(--green) !important;
+}
+
+.drag-chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: grab;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+.drag-chip:hover {
+  border-color: var(--accent);
+  background: var(--card-hover);
+  color: var(--accent-light);
+}
+.drag-chip:active, .drag-chip.dragging {
+  cursor: grabbing;
+  opacity: 0.6;
+  border-color: var(--accent-light);
+}
+.drag-chip.ref-chip { border-left: 3px solid var(--green); }
+.drag-chip.alt-chip { border-left: 3px solid var(--red); }
+.drag-chip.pair-chip { border-left: 3px solid var(--accent); }
+
+.drag-hint-bar {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px dashed rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+  font-size: 0.78rem;
+  color: var(--accent-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#run-btn {
+  background: linear-gradient(135deg, var(--accent), #4f46e5);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2.25rem;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+#run-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+#run-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Result Panel */
+#result-panel { display: none; }
+#result-panel.visible { display: block; }
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.prob-circle {
+  width: 105px; height: 105px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  position: relative;
+}
+.prob-circle .sub {
+  font-size: 0.68rem;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+.prob-circle.benign {
+  background: rgba(16,185,129,0.12);
+  border: 2px solid var(--green);
+  color: var(--green);
+}
+.prob-circle.pathogenic {
+  background: rgba(244,63,94,0.12);
+  border: 2px solid var(--red);
+  color: var(--red);
+}
+.result-meta { font-size: 0.82rem; color: var(--text-dim); line-height: 1.8; }
+.result-meta strong { color: var(--text); }
+
+/* Attribution Heatmap */
+.heatmap-container {
+  overflow-x: auto;
+  margin-top: 1.25rem;
+}
+.heatmap-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.heatmap-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-bottom: 0.85rem;
+}
+#heatmap-canvas {
+  border-radius: 8px;
+  display: block;
+  max-width: 100%;
+}
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.65rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.legend-bar {
+  width: 130px;
+  height: 10px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #0d1b2a, #1b4965, #62b6cb, #e0c862, #e76f51, #9b2226);
+}
+
+/* Error Banner & Spinner */
+#error-banner {
+  display: none;
+  background: rgba(244,63,94,0.12);
+  border: 1px solid rgba(244,63,94,0.3);
+  color: var(--red);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+}
+#error-banner.visible { display: block; }
+
+.spinner {
+  display: inline-block;
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+footer {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="brand">
+    <div class="brand-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M7 7l10 10M7 17L17 7"/></svg>
+    </div>
+    <div>
+      <div class="brand-title">BRCA Pathogenicity Predictor</div>
+      <div class="brand-subtitle">
+        Genomic Variant Classification with &Delta;-Learning
+        <span class="thesis-tag">BSc AI Thesis (2026)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-controls">
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light / Dark Theme">
+      <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg id="theme-icon-moon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="theme-text">Light Mode</span>
+    </button>
+
+    <div id="status-pill" class="demo">
+      <span class="dot"></span>
+      <span id="status-text">Connecting...</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ TABS ═══ -->
+<div class="tabs-container">
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" data-tab="basics" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Learn the Basics
+    </button>
+    <button class="tab-btn" data-tab="arch" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="8" height="8" rx="2"/><rect x="14" y="2" width="8" height="8" rx="2"/><rect x="8" y="14" width="8" height="8" rx="2"/><path d="M6 10v4h6M18 10v4h-6"/></svg>
+      Architecture
+    </button>
+    <button class="tab-btn" data-tab="ablation" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      Ablation Evidence
+    </button>
+    <button class="tab-btn" data-tab="predict" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      Live Predictor
+    </button>
+  </nav>
+</div>
+
+<!-- ═══ TAB 0: Learn the Basics ═══ -->
+<section class="tab-panel active" id="panel-basics" role="tabpanel">
+  <div class="basics-container">
+
+    <!-- Sticky Navigation Progress Bar -->
+    <div class="basics-progress-bar">
+      <div class="step-indicators">
+        <a href="#concept-1" class="step-nav-dot active" title="1. DNA Sequence">1</a>
+        <a href="#concept-2" class="step-nav-dot" title="2. Gene Concept">2</a>
+        <a href="#concept-3" class="step-nav-dot" title="3. Mutation">3</a>
+        <a href="#concept-4" class="step-nav-dot" title="4. REF vs ALT">4</a>
+        <a href="#concept-5" class="step-nav-dot" title="5. Variant Types">5</a>
+        <a href="#concept-6" class="step-nav-dot" title="6. Pathogenicity">6</a>
+        <a href="#concept-7" class="step-nav-dot" title="7. One-Hot Encoding">7</a>
+        <a href="#concept-8" class="step-nav-dot" title="8. ClinVar & Glossary">8</a>
+      </div>
+      <button class="skip-link-btn" onclick="switchToTab('arch')">Skip to Demo &rarr;</button>
+    </div>
+
+    <!-- Concept 1 -->
+    <div class="card concept-section" id="concept-1">
+      <div class="concept-header-line">
+        <span class="concept-num">01</span>
+        <div class="concept-title-text">DNA is a sequence of letters</div>
+      </div>
+      <div class="split-explain-grid">
+        <div class="analogy-pane">
+          <div class="pane-title">Real-World Analogy</div>
+          <div class="pane-body">
+            Think of human DNA as a massive instruction manual. Instead of 26 English letters, this manuscript uses an alphabet of just 4 chemical letters: <strong>A</strong>, <strong>C</strong>, <strong>G</strong>, and <strong>T</strong>.
+          </div>
+        </div>
+        <div class="definition-pane">
+          <div class="pane-title">Genomic Definition</div>
+          <div class="pane-body">
+            <strong>DNA (Deoxyribonucleic Acid)</strong> is a linear polymer composed of nucleotide bases: Adenine (<span class="term-tag">A</span>), Cytosine (<span class="term-tag">C</span>), Guanine (<span class="term-tag">G</span>), and Thymine (<span class="term-tag">T</span>).
+          </div>
+        </div>
+      </div>
+      <div class="visual-stage">
+        <div style="font-size:0.75rem; color:var(--text-dim); text-align:center; margin-bottom:0.75rem;">
+          Double-helix unwinding into a 1D sequence of nucleotide base badges
+        </div>
+        <div class="dna-strip-container">
+          <span class="nuc-badge A">A</span>
+          <span class="nuc-badge C">C</span>
+          <span class="nuc-badge G">G</span>
+          <span class="nuc-badge T">T</span>
+          <span class="nuc-badge G">G</span>
+          <span class="nuc-badge A">A</span>
+          <span class="nuc-badge C">C</span>
+          <span class="nuc-badge T">T</span>
+          <span class="nuc-badge A">A</span>
+          <span class="nuc-badge G">G</span>
+          <span class="nuc-badge C">C</span>
+          <span class="nuc-badge T">T</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 2 -->
+    <div class="card concept-section" id="concept-2">
+      <div class="concept-header-line">
+        <span class="concept-num">02</span>
+        <div class="concept-title-text">A gene is a meaningful chunk of that text</div>
+      </div>
+      <div class="split-explain-grid">
+        <div class="analogy-pane">
+          <div class="pane-title">Real-World Analogy</div>
+          <div class="pane-body">
+            If the entire human genome is an encyclopedia set, a <strong>gene</strong> is a single chapter containing specific instructions for building a protein (like tumor suppression).
+          </div>
+        </div>
+        <div class="definition-pane">
+          <div class="pane-title">Genomic Definition</div>
+          <div class="pane-body">
+            A <strong>Gene</strong> is a distinct genomic region containing coding exons (e.g. <em>BRCA1</em> on Chr17q21 / <em>BRCA2</em> on Chr13q13). The model uses a <strong>1,024 bp window</strong> around target variants.
+          </div>
+        </div>
+      </div>
+      <div class="visual-stage zoom-stage">
+        <div class="zoom-controls">
+          <button class="zoom-btn" onclick="setZoomLevel(0)">Chromosome</button>
+          <button class="zoom-btn active" onclick="setZoomLevel(1)">BRCA1 Gene</button>
+          <button class="zoom-btn" onclick="setZoomLevel(2)">1024bp Window</button>
+          <button class="zoom-btn" onclick="setZoomLevel(3)">Nucleotide Base</button>
+        </div>
+        <div class="zoom-display-box" id="zoom-display"></div>
+      </div>
+    </div>
+
+    <!-- Concept 3 -->
+    <div class="card concept-section" id="concept-3">
+      <div class="concept-header-line">
+        <span class="concept-num">03</span>
+        <div class="concept-title-text">A mutation (variant) is a single letter change</div>
+      </div>
+      <div class="split-explain-grid">
+        <div class="analogy-pane">
+          <div class="pane-title">Real-World Analogy</div>
+          <div class="pane-body">
+            A <strong>mutation</strong> is like a typo in a recipe. Changing "Bake for 30 minutes" to "Bake for 80 minutes" completely alters the result. Most typos are harmless, but some break the instruction.
+          </div>
+        </div>
+        <div class="definition-pane">
+          <div class="pane-title">Genomic Definition</div>
+          <div class="pane-body">
+            A <strong>Genetic Variant</strong> is any sequence alteration in genomic DNA compared to the standard reference sequence.
+          </div>
+        </div>
+      </div>
+      <div class="visual-stage">
+        <div class="side-seq-box">
+          <div class="seq-row">
+            <span class="seq-label-tag">REF</span>
+            <div class="seq-base-list">
+              <span class="nuc-badge G">G</span><span class="nuc-badge A">A</span><span class="nuc-badge T">T</span><span class="nuc-badge C">C</span><span class="nuc-badge T">T</span><span class="nuc-badge G">G</span><span class="nuc-badge C">C</span><span class="nuc-badge A">A</span>
+            </div>
+          </div>
+          <div class="seq-row">
+            <span class="seq-label-tag">ALT</span>
+            <div class="seq-base-list">
+              <span class="nuc-badge G">G</span><span class="nuc-badge A">A</span><span class="nuc-badge T">T</span><span class="nuc-badge C">C</span><span class="nuc-badge T">T</span><span class="nuc-badge A mut-highlight">A</span><span class="nuc-badge C">C</span><span class="nuc-badge A">A</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 4 -->
+    <div class="card concept-section" id="concept-4">
+      <div class="concept-header-line">
+        <span class="concept-num">04</span>
+        <div class="concept-title-text">REF vs ALT — what the model compares</div>
+      </div>
+      <div class="split-explain-grid">
+        <div class="analogy-pane">
+          <div class="pane-title">Real-World Analogy</div>
+          <div class="pane-body">
+            <strong>REF</strong> (Reference) is the standard baseline spelling. <strong>ALT</strong> (Alternate) is a patient's version. The model compares both side-by-side to isolate what changed.
+          </div>
+        </div>
+        <div class="definition-pane">
+          <div class="pane-title">Genomic Definition</div>
+          <div class="pane-body">
+            <strong>REF</strong> is the baseline allele from GRCh38. <strong>ALT</strong> is the patient variant. The thesis model uses an explicit <strong>&Delta;-learning module</strong> (<span class="term-tag">&Delta; = REF - ALT</span>) to extract the mutation footprint.
+          </div>
+        </div>
+      </div>
+      <div class="visual-stage">
+        <div class="side-seq-box">
+          <div class="seq-row">
+            <span class="seq-label-tag">REF</span>
+            <div class="seq-base-list">
+              <span class="nuc-badge C">C</span><span class="nuc-badge T">T</span><span class="nuc-badge G">G</span><span class="nuc-badge A">A</span><span class="nuc-badge C">C</span><span class="nuc-badge T">T</span>
+            </div>
+          </div>
+          <div class="seq-row" style="border-color:var(--accent);">
+            <span class="seq-label-tag" style="color:var(--accent-light);">ALT</span>
+            <div class="seq-base-list">
+              <span class="nuc-badge C">C</span><span class="nuc-badge T">T</span><span class="nuc-badge A mut-highlight">A</span><span class="nuc-badge A">A</span><span class="nuc-badge C">C</span><span class="nuc-badge T">T</span>
+            </div>
+          </div>
+          <div style="font-size:0.8rem; color:var(--accent-light); margin-top:0.5rem; text-align:center; font-family:var(--mono);">
+            ▲ Difference (&Delta;) isolated at position 3: G &rarr; A
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 5 -->
+    <div class="card concept-section" id="concept-5">
+      <div class="concept-header-line">
+        <span class="concept-num">05</span>
+        <div class="concept-title-text">SNV, Insertion, Deletion &amp; Indels</div>
+      </div>
+      <div class="split-explain-grid">
+        <div class="analogy-pane">
+          <div class="pane-title">Real-World Analogy</div>
+          <div class="pane-body">
+            Text can change in 3 ways: <strong>SNV</strong> (swapping a letter), <strong>Insertion</strong> (adding extra letters), and <strong>Deletion</strong> (erasing letters).
+          </div>
+        </div>
+        <div class="definition-pane">
+          <div class="pane-title">Genomic Definition</div>
+          <div class="pane-body">
+            <strong>SNV</strong>: 1-base substitution.<br>
+            <strong>Insertion/Deletion</strong>: Small-scale gain or loss of base pairs.<br>
+            All are centered at index 512 in a 1024bp window.
+          </div>
+        </div>
+      </div>
+      <div class="visual-stage">
+        <div class="variant-type-tabs">
+          <button class="vtab-btn active" onclick="showVarType('snv')">SNV (Swap)</button>
+          <button class="vtab-btn" onclick="showVarType('ins')">Insertion (Add)</button>
+          <button class="vtab-btn" onclick="showVarType('del')">Deletion (Remove)</button>
+        </div>
+        <div id="vtype-display" class="side-seq-box"></div>
+      </div>
+    </div>
+
+    <!-- Concept 6 -->
+    <div class="card concept-section" id="concept-6">
+      <div class="concept-header-line">
+        <span class="concept-num">06</span>
+        <div class="concept-title-text">Pathogenic vs. Benign vs. VUS</div>
+      </div>
+      <div class="split-explain-grid">
+        <div class="analogy-pane">
+          <div class="pane-title">Real-World Analogy</div>
+          <div class="pane-body">
+            <strong>Benign</strong> = harmless typo that doesn't change protein function.<br>
+            <strong>Pathogenic</strong> = harmful typo that breaks protein function.<br>
+            <strong>VUS</strong> = variant of uncertain significance.
+          </div>
+        </div>
+        <div class="definition-pane">
+          <div class="pane-title">Genomic Definition</div>
+          <div class="pane-body">
+            <strong>Pathogenic</strong> (Label 1): Disease-causing variant.<br>
+            <strong>Benign</strong> (Label 0): Harmless natural variation.<br>
+            <strong>VUS</strong>: Ambiguous variant needing computational triage.
+          </div>
+        </div>
+      </div>
+      <div class="visual-stage">
+        <div class="gauge-container">
+          <div class="gauge-labels">
+            <span style="color:var(--green)">0.0 (Benign)</span>
+            <span style="color:var(--amber)">0.5 (VUS)</span>
+            <span style="color:var(--red)">1.0 (Pathogenic)</span>
+          </div>
+          <div class="gauge-track">
+            <div class="gauge-thumb" id="gauge-thumb"></div>
+          </div>
+          <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:1rem;">
+            <button class="zoom-btn" onclick="moveGauge(0.05)">Set Benign (0.05)</button>
+            <button class="zoom-btn" onclick="moveGauge(0.50)">Set VUS (0.50)</button>
+            <button class="zoom-btn" onclick="moveGauge(0.92)">Set Pathogenic (0.92)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 7 -->
+    <div class="card concept-section" id="concept-7">
+      <div class="concept-header-line">
+        <span class="concept-num">07</span>
+        <div class="concept-title-text">How computers read DNA (5-Channel Matrix)</div>
+      </div>
+      <div class="split-explain-grid">
+        <div class="analogy-pane">
+          <div class="pane-title">Real-World Analogy</div>
+          <div class="pane-body">
+            Computers cannot read letters directly. We convert each letter into a 5-row grid of numbers ($1\text{s}$ and $0\text{s}$), where each row represents a base or unknown channel.
+          </div>
+        </div>
+        <div class="definition-pane">
+          <div class="pane-title">Genomic Definition</div>
+          <div class="pane-body">
+            <strong>5-Channel One-Hot Tensor</strong>: Converts sequence $L$ into shape $(5, L)$ for channels <code>[A, C, G, T, N]</code>.
+          </div>
+        </div>
+      </div>
+      <div class="visual-stage">
+        <div class="onehot-grid">
+          <div class="onehot-cell" style="color:var(--text-muted)">Base</div>
+          <div class="onehot-cell" style="color:var(--nuc-a)">A</div>
+          <div class="onehot-cell" style="color:var(--nuc-c)">C</div>
+          <div class="onehot-cell" style="color:var(--nuc-g)">G</div>
+          <div class="onehot-cell" style="color:var(--nuc-t)">T</div>
+          <div class="onehot-cell" style="color:var(--text-muted)">N</div>
+
+          <div class="onehot-cell" style="color:var(--nuc-a)">Ch 0 (A)</div><div class="onehot-cell active-one">1</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div>
+          <div class="onehot-cell" style="color:var(--nuc-c)">Ch 1 (C)</div><div class="onehot-cell">0</div><div class="onehot-cell active-one">1</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div>
+          <div class="onehot-cell" style="color:var(--nuc-g)">Ch 2 (G)</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell active-one">1</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div>
+          <div class="onehot-cell" style="color:var(--nuc-t)">Ch 3 (T)</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell active-one">1</div><div class="onehot-cell">0</div>
+          <div class="onehot-cell" style="color:var(--text-muted)">Ch 4 (N)</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell">0</div><div class="onehot-cell active-one">1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 8 -->
+    <div class="card concept-section" id="concept-8">
+      <div class="concept-header-line">
+        <span class="concept-num">08</span>
+        <div class="concept-title-text">ClinVar &amp; Complete Biological Glossary</div>
+      </div>
+      <div class="split-explain-grid">
+        <div class="analogy-pane">
+          <div class="pane-title">Real-World Analogy</div>
+          <div class="pane-body">
+            <strong>ClinVar</strong> is a global library of solved cases where clinical labs upload medical evidence on whether specific mutations caused disease in patients.
+          </div>
+        </div>
+        <div class="definition-pane">
+          <div class="pane-title">Genomic Definition</div>
+          <div class="pane-body">
+            <strong>ClinVar</strong> is a public NIH database linking human genomic variants to disease outcomes. The thesis model was trained on 713,882 gene-balanced ClinVar records.
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:0.85rem; font-weight:700; color:var(--text); margin:1.25rem 0 0.5rem 0;">
+        📚 Complete Thesis Biological Glossary Reference
+      </div>
+
+      <div class="glossary-grid">
+        <div class="glossary-item">
+          <h5>GRCh38 Reference Genome</h5>
+          <p>Standardized human reference genome assembly used for coordinate alignment and sequence extraction.</p>
+        </div>
+        <div class="glossary-item">
+          <h5>BRCA1 / BRCA2</h5>
+          <p>Key tumor suppressor genes. Pathogenic variants impair DNA repair, increasing hereditary cancer risk.</p>
+        </div>
+        <div class="glossary-item">
+          <h5>Anchor Crop / Pad (1024 bp)</h5>
+          <p>Centers the variant site at position 512 inside a 1,024 base pair context window.</p>
+        </div>
+        <div class="glossary-item">
+          <h5>SNV (Single Nucleotide Variant)</h5>
+          <p>Single base substitution (e.g. G &rarr; A). Most common small-scale genetic variation.</p>
+        </div>
+        <div class="glossary-item">
+          <h5>Indel / Insertion / Deletion</h5>
+          <p>Small-scale alterations involving addition or removal of base pairs.</p>
+        </div>
+        <div class="glossary-item">
+          <h5>Pathogenic vs. Benign</h5>
+          <p>Pathogenic variants cause disease; Benign variants are harmless natural variations.</p>
+        </div>
+        <div class="glossary-item">
+          <h5>VUS (Uncertain Significance)</h5>
+          <p>Variants with ambiguous or conflicting clinical evidence requiring AI computational prioritization.</p>
+        </div>
+        <div class="glossary-item">
+          <h5>Explainable AI (XAI / Attribution)</h5>
+          <p>Methods (Integrated Gradients, Guided AbsoluteGrad, ISM) attributing pathogenicity back to nucleotide positions.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:1.5rem;">
+        <button class="skip-link-btn" style="font-size:0.88rem; padding:0.6rem 1.4rem;" onclick="switchToTab('arch')">
+          Ready to see how the AI model works? Proceed to Architecture &rarr;
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ TAB 1: Architecture ═══ -->
+<section class="tab-panel" id="panel-arch" role="tabpanel">
+  <div class="card">
+    <h3>Model Overview &mdash; MutationAwareBRCAClassifierV2</h3>
+    <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:1.5rem">
+      A dual-branch architecture that processes reference and alternate allele sequences
+      independently through multi-kernel CNNs and a shared Transformer encoder, then
+      computes an explicit element-wise difference (&Delta;-representation) to capture
+      mutation-specific signal before gated attention pooling and classification.
+    </p>
+
+    <div class="arch-flow">
+      <span class="step">DNA&nbsp;(REF&nbsp;+&nbsp;ALT)</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">One-Hot&nbsp;(5ch)</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">Multi-Kernel&nbsp;CNN</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">1&times;1&nbsp;Proj</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">Pos&nbsp;Enc</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">Transformer&nbsp;&times;2</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">&Delta;&nbsp;=&nbsp;REF&minus;ALT</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">Gated&nbsp;Pool</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">MLP&nbsp;&rarr;&nbsp;P(path)</span>
+    </div>
+  </div>
+
+  <div class="arch-grid">
+    <div class="arch-box">
+      <div class="icon">&#x1F9EC;</div>
+      <h4>Dual-Branch Input</h4>
+      <p>Reference and alternate allele sequences are one-hot encoded with a 5th
+         mutation-marker channel, then processed by <em>separate</em> multi-kernel
+         CNNs (kernel sizes 3, 7, 15) to capture motifs at multiple resolutions.</p>
+    </div>
+    <div class="arch-box">
+      <div class="icon">&#x1F504;</div>
+      <h4>Shared Transformer</h4>
+      <p>After projection to 128-d, both branches pass through a shared 2-layer
+         Transformer encoder (4 heads, FFN=256) with sinusoidal positional encoding
+         to capture long-range dependencies.</p>
+    </div>
+    <div class="arch-box">
+      <div class="icon">&#x2206;</div>
+      <h4>&Delta;-Learning Module</h4>
+      <p>Element-wise difference between contextualized REF and ALT representations
+         isolates the mutation-specific signal. Ablation shows this is the single most
+         important component (ROC AUC drops from 0.836 to 0.551 without it).</p>
+    </div>
+    <div class="arch-box">
+      <div class="icon">&#x1F3AF;</div>
+      <h4>Gated Attention Pooling</h4>
+      <p>Separate learned attention gates for REF, ALT, and &Delta; streams weight
+         each position's contribution before concatenation into a 384-d vector
+         for the classification MLP (256&rarr;64&rarr;1).</p>
+    </div>
+    <div class="arch-box">
+      <div class="icon">&#x1F50D;</div>
+      <h4>Attribution via |Grad&times;Input|</h4>
+      <p>Per-position importance scores are computed by backpropagating through the
+         full model and taking the absolute value of gradient&times;input, summed
+         over the 4 base channels. The heatmap concentrates near the mutation site.</p>
+    </div>
+    <div class="arch-box">
+      <div class="icon">&#x1F4CA;</div>
+      <h4>Training &amp; Evaluation</h4>
+      <p>Trained on ClinVar BRCA1/BRCA2 variants with cross-validation.
+         Evaluated prospectively on NCBI variants (943 samples).
+         Full model: ROC&nbsp;AUC&nbsp;0.836, AUPRC&nbsp;0.578, MCC&nbsp;0.413.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TAB 2: Ablation Evidence ═══ -->
+<section class="tab-panel" id="panel-ablation" role="tabpanel">
+  <div class="card">
+    <h3>Ablation Study &mdash; Component Contribution to ROC AUC</h3>
+    <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:1.5rem">
+      Each bar shows the ROC AUC when the named component is <em>removed</em>.
+      The full proposed framework achieves 0.836; every component removal degrades performance.
+    </p>
+    <div class="ablation-chart" id="ablation-chart"></div>
+  </div>
+
+  <div class="card">
+    <h3>Key Findings</h3>
+    <div class="arch-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+      <div class="arch-box">
+        <h4 style="color:var(--red)">&Delta;-Learning is Critical</h4>
+        <p>Without the delta module, AUC drops to 0.551 &mdash; near random.
+           The model cannot distinguish pathogenic from benign variants without
+           explicitly comparing REF and ALT representations.</p>
+      </div>
+      <div class="arch-box">
+        <h4 style="color:var(--amber)">Transformer Adds Context</h4>
+        <p>Removing the Transformer drops AUC to 0.677. Long-range sequence context
+           is important but less critical than the &Delta;-learning mechanism.</p>
+      </div>
+      <div class="arch-box">
+        <h4 style="color:var(--blue)">Multi-Kernel CNN &gt; Single-Scale</h4>
+        <p>Multi-kernel CNN contributes meaningfully (AUC 0.794 without it),
+           confirming that multi-resolution motif detection helps feature extraction.</p>
+      </div>
+      <div class="arch-box">
+        <h4 style="color:var(--green)">Dual Input &gt; Single Sequence</h4>
+        <p>A single-sequence baseline achieves only 0.619, proving that
+           separately encoding REF and ALT is superior to concatenation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TAB 3: Live Predictor ═══ -->
+<section class="tab-panel" id="panel-predict" role="tabpanel">
+  <div class="card">
+    <h3>
+      <span>Sample Genomic Variants</span>
+      <span style="font-size:0.75rem; font-weight:600; color:var(--accent-light);">⚡ 1-Click Load OR Drag &amp; Drop Chips Below</span>
+    </h3>
+
+    <div class="drag-hint-bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+      <span>Drag any <strong>REF</strong>, <strong>ALT</strong>, or <strong>Pair</strong> chip directly into the input textareas below, or click <strong>⚡ 1-Click Load</strong>.</span>
+    </div>
+
+    <div class="sample-palette" id="sample-palette">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+
+  <div id="error-banner"></div>
+
+  <div class="card">
+    <h3>Input Sequences</h3>
+    <div class="predictor-layout">
+      <div class="seq-input" id="ref-dropzone">
+        <label for="ref-seq">
+          <span>Reference Sequence (REF)</span>
+          <span style="font-size:0.72rem; color:var(--accent-light);">[Drop REF sequence here]</span>
+        </label>
+        <textarea id="ref-seq" placeholder="Paste or drag reference DNA sequence (ACGT)..."></textarea>
+        <div class="char-count"><span id="ref-len">0</span> bp</div>
+      </div>
+      <div class="seq-input" id="alt-dropzone">
+        <label for="alt-seq">
+          <span>Alternate Sequence (ALT)</span>
+          <span style="font-size:0.72rem; color:var(--accent-light);">[Drop ALT sequence here]</span>
+        </label>
+        <textarea id="alt-seq" placeholder="Paste or drag alternate DNA sequence (ACGT)..."></textarea>
+        <div class="char-count"><span id="alt-len">0</span> bp</div>
+      </div>
+    </div>
+    <button id="run-btn" disabled>Run Prediction</button>
+  </div>
+
+  <div id="result-panel" class="card">
+    <h3>Prediction Result</h3>
+    <div class="result-header">
+      <div id="prob-circle" class="prob-circle benign">
+        <span id="prob-value">--</span>
+        <span class="sub" id="prob-label">--</span>
+      </div>
+      <div class="result-meta" id="result-meta"></div>
+    </div>
+
+    <div class="heatmap-container">
+      <div class="heatmap-title">Attribution Heatmap &mdash; |Gradient &times; Input|</div>
+      <div class="heatmap-subtitle">
+        Top row = REF, bottom row = ALT.
+        <strong style="color:#fff; background:#555; padding:1px 4px; border-radius:3px;">White column</strong> = mutation site.
+        Colour intensity shows per-position importance.
+      </div>
+      <canvas id="heatmap-canvas" width="1024" height="80"></canvas>
+      <div class="heatmap-legend">
+        <span>Low</span>
+        <div class="legend-bar"></div>
+        <span>High</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  BSc (Hons) Artificial Intelligence &mdash; Genomic Variant Pathogenicity Prediction
+  &mdash; &copy; 2026
+</footer>
+
+<script>
+/* ────────────────────────────────────────────────────────────────────────────
+   CONFIG & THEME SWITCHER
+   ──────────────────────────────────────────────────────────────────────────── */
+const API_BASE = (location.hash.slice(1) || 'http://localhost:8000').replace(/\/+$/, '');
+let isLive = false;
+let samples = [];
+
+// Theme Toggle Handler
+const themeBtn = document.getElementById('theme-toggle');
+function setTheme(theme) {
+  if (theme === 'light') {
+    document.body.classList.add('light-mode');
+    document.getElementById('theme-icon-sun').style.display = 'none';
+    document.getElementById('theme-icon-moon').style.display = 'block';
+    document.getElementById('theme-text').textContent = 'Dark Mode';
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.body.classList.remove('light-mode');
+    document.getElementById('theme-icon-sun').style.display = 'block';
+    document.getElementById('theme-icon-moon').style.display = 'none';
+    document.getElementById('theme-text').textContent = 'Light Mode';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+themeBtn.addEventListener('click', () => {
+  const isLight = document.body.classList.contains('light-mode');
+  setTheme(isLight ? 'dark' : 'light');
+});
+
+if (localStorage.getItem('theme') === 'light') {
+  setTheme('light');
+}
+
+/* ── Tab switching ───────────────────────────────────── */
+function switchToTab(tabName) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  const targetPanel = document.getElementById('panel-' + tabName);
+  if (targetBtn && targetPanel) {
+    targetBtn.classList.add('active');
+    targetPanel.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchToTab(btn.dataset.tab);
+  });
+});
+
+/* ── Learn the Basics Interactive Logic ──────────────── */
+const zoomData = [
+  { label: 'Chromosome Level', desc: 'Human Cell Nucleus containing 23 pairs of chromosomes. The genome spans ~3 billion base pairs.', scale: 'Macro Scale (10^8 bp)' },
+  { label: 'BRCA1 Gene Region', desc: 'Genomic locus on Chromosome 17q21 spanning 81,189 base pairs with 24 coding exons.', scale: 'Gene Scale (81,189 bp)' },
+  { label: 'Sequence Window', desc: 'Model Context Window centering 1,024 base pairs around the target variant site (anchor position 512).', scale: 'Model Scale (1,024 bp)' },
+  { label: 'Single Nucleotide', desc: 'Individual molecular base pair (A, C, G, T, or N) at a specific genomic position.', scale: 'Micro Scale (1 bp)' }
+];
+
+function setZoomLevel(idx) {
+  document.querySelectorAll('.zoom-controls .zoom-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', i === idx);
+  });
+  const display = document.getElementById('zoom-display');
+  if (display) {
+    const item = zoomData[idx];
+    display.innerHTML = `
+      <div style="font-size:0.75rem; color:var(--accent-light); font-weight:700; text-transform:uppercase;">${item.scale}</div>
+      <div style="font-size:1.05rem; font-weight:700; color:var(--text); margin:0.3rem 0;">${item.label}</div>
+      <div style="font-size:0.82rem; color:var(--text-dim); text-align:center; max-width:500px;">${item.desc}</div>
+    `;
+  }
+}
+setZoomLevel(1);
+
+const varTypes = {
+  snv: {
+    title: 'SNV (Single Nucleotide Variant)',
+    ref: ['A', 'C', 'G', 'T', 'A', 'C'],
+    alt: ['A', 'C', 'G', 'G', 'A', 'C'],
+    mutIdx: 3,
+    note: 'Position 4: T is substituted by G.'
+  },
+  ins: {
+    title: 'Insertion Variant',
+    ref: ['A', 'C', 'G', '-', '-', 'T'],
+    alt: ['A', 'C', 'G', 'A', 'A', 'T'],
+    mutIdx: 3,
+    note: 'Positions 4-5: Extra bases AA are inserted.'
+  },
+  del: {
+    title: 'Deletion Variant',
+    ref: ['A', 'C', 'G', 'T', 'A', 'C'],
+    alt: ['A', 'C', 'G', '-', '-', 'C'],
+    mutIdx: 3,
+    note: 'Positions 4-5: Bases TA are deleted.'
+  }
+};
+
+function showVarType(type) {
+  document.querySelectorAll('.variant-type-tabs .vtab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('onclick').includes(type));
+  });
+  const container = document.getElementById('vtype-display');
+  if (!container) return;
+  const data = varTypes[type];
+
+  let refHtml = data.ref.map((b, i) => `<span class="nuc-badge ${b}">${b}</span>`).join('');
+  let altHtml = data.alt.map((b, i) => `<span class="nuc-badge ${b} ${i >= data.mutIdx ? 'mut-highlight' : ''}">${b}</span>`).join('');
+
+  container.innerHTML = `
+    <div style="font-size:0.85rem; font-weight:700; color:var(--accent-light); margin-bottom:0.4rem;">${data.title}</div>
+    <div class="seq-row"><span class="seq-label-tag">REF</span><div class="seq-base-list">${refHtml}</div></div>
+    <div class="seq-row"><span class="seq-label-tag">ALT</span><div class="seq-base-list">${altHtml}</div></div>
+    <div style="font-size:0.78rem; color:var(--text-dim); margin-top:0.3rem;">${data.note}</div>
+  `;
+}
+showVarType('snv');
+
+function moveGauge(val) {
+  const thumb = document.getElementById('gauge-thumb');
+  if (thumb) {
+    thumb.style.left = (val * 100) + '%';
+  }
+}
+moveGauge(0.05);
+
+// Intersection Observer for Progress Dots
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      document.querySelectorAll('.step-nav-dot').forEach(dot => {
+        dot.classList.toggle('active', dot.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('.concept-section').forEach(card => {
+  observer.observe(card);
+});
+
+/* ── Ablation chart ─────────────────────────────────── */
+const ablationData = [
+  { name: 'Proposed Framework (Full)',   auc: 0.8361, color: 'var(--accent)' },
+  { name: 'W/o Multi-Kernel CNN',       auc: 0.7944, color: 'var(--blue)' },
+  { name: 'W/o Transformer',            auc: 0.6767, color: 'var(--amber)' },
+  { name: 'W/o Single → Dual Sequence', auc: 0.6192, color: 'var(--green)' },
+  { name: 'W/o Delta Learning',         auc: 0.5509, color: 'var(--red)' },
+];
+
+function renderAblationChart() {
+  const container = document.getElementById('ablation-chart');
+  if (!container) return;
+  container.innerHTML = '';
+  ablationData.forEach(d => {
+    const pct = (d.auc / 1.0) * 100;
+    container.innerHTML += `
+      <div class="ablation-bar-group">
+        <div class="ablation-label">
+          <span>${d.name}</span>
+          <span style="color:${d.color}">${d.auc.toFixed(4)}</span>
+        </div>
+        <div class="ablation-bar-track">
+          <div class="ablation-bar-fill" style="width:${pct}%;background:${d.color}">${d.auc.toFixed(4)}</div>
+        </div>
+      </div>`;
+  });
+}
+renderAblationChart();
+
+/* ── Textarea character count & Drag/Drop setup ─────── */
+const refTA = document.getElementById('ref-seq');
+const altTA = document.getElementById('alt-seq');
+const refLen = document.getElementById('ref-len');
+const altLen = document.getElementById('alt-len');
+const runBtn = document.getElementById('run-btn');
+
+function cleanSeq(s) { return s.toUpperCase().replace(/[^ACGT]/g, ''); }
+function updateCounts() {
+  const r = cleanSeq(refTA.value).length;
+  const a = cleanSeq(altTA.value).length;
+  refLen.textContent = r;
+  altLen.textContent = a;
+  runBtn.disabled = (r < 10 || a < 10);
+}
+refTA.addEventListener('input', updateCounts);
+altTA.addEventListener('input', updateCounts);
+
+// Drag & Drop event bindings
+function setupDropTarget(containerEl, targetType) {
+  ['dragover', 'dragenter'].forEach(evt => {
+    containerEl.addEventListener(evt, (e) => {
+      e.preventDefault();
+      containerEl.classList.add('drop-active');
+    });
+  });
+  ['dragleave', 'dragend'].forEach(evt => {
+    containerEl.addEventListener(evt, () => {
+      containerEl.classList.remove('drop-active');
+    });
+  });
+  containerEl.addEventListener('drop', (e) => {
+    e.preventDefault();
+    containerEl.classList.remove('drop-active');
+    
+    const plainText = e.dataTransfer.getData('text/plain');
+    const jsonStr = e.dataTransfer.getData('application/json');
+
+    if (jsonStr) {
+      try {
+        const payload = JSON.parse(jsonStr);
+        if (payload.type === 'genomic_seq') {
+          if (payload.kind === 'pair') {
+            refTA.value = payload.ref;
+            altTA.value = payload.alt;
+          } else if (targetType === 'ref') {
+            refTA.value = payload.text;
+          } else if (targetType === 'alt') {
+            altTA.value = payload.text;
+          }
+          updateCounts();
+          return;
+        }
+      } catch(err) {}
+    }
+
+    if (plainText) {
+      const cleaned = cleanSeq(plainText);
+      if (targetType === 'ref') refTA.value = cleaned;
+      else if (targetType === 'alt') altTA.value = cleaned;
+      updateCounts();
+    }
+  });
+}
+
+setupDropTarget(document.getElementById('ref-dropzone'), 'ref');
+setupDropTarget(document.getElementById('alt-dropzone'), 'alt');
+setupDropTarget(refTA, 'ref');
+setupDropTarget(altTA, 'alt');
+
+/* ── Backend connectivity & Sample Palette ───────────── */
+async function checkBackend() {
+  const pill = document.getElementById('status-pill');
+  const txt  = document.getElementById('status-text');
+  try {
+    const resp = await fetch(API_BASE + '/health', { signal: AbortSignal.timeout(3000) });
+    const data = await resp.json();
+    if (data.model_loaded) {
+      pill.className = 'live';
+      txt.textContent = 'Live backend \u00B7 checkpoint loaded';
+      isLive = true;
+    } else {
+      pill.className = 'demo';
+      txt.textContent = 'Backend up \u00B7 model NOT loaded';
+    }
+  } catch {
+    pill.className = 'demo';
+    txt.textContent = 'Demo mode \u00B7 backend offline';
+    isLive = false;
+  }
+}
+
+async function loadSamples() {
+  const container = document.getElementById('sample-palette');
+  try {
+    const resp = await fetch(API_BASE + '/samples', { signal: AbortSignal.timeout(3000) });
+    samples = await resp.json();
+  } catch {
+    /* Use fallback demo samples */
+    samples = [
+      {
+        id: 'demo_pathogenic',
+        label: 'Pathogenic (BRCA1 c.5137G>A)',
+        gene: 'BRCA1',
+        variant: 'G>A at exon 18',
+        ref: 'GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGCACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTGGATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTCTTTCAAGCTCAGCCAGACTGCTCTCTTCAGAAATATCACTTGCATGGCCTGGAAAGCCAGCTCTTCTACCATCCATGTCAGAGTCATGGAAACACTCTCTAACCTCCTTTGTTTTACCTCTATCTTGTACTCCATAAACCTCTCAGTACAGAACATACAACTGATCACCCTGAATGGATCCCAAAGAGCTGATAAATATAAATTGTGCTTAATTAAGAAGTCTTCCTTCAAAGAAGCAATGGCCAATCTAGTGAAGAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATATTTTTAGAGATCTCTTGAGAATCTGATCAGAAAATCTAATGGATGCAAAGCTATTTAAGCATTGTACC',
+        alt: 'GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGCACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTGGATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTCTTTCAAGCTCAGCCAGACTGCTCTCTTCAGAAATATCACTTGCATGGCCTGGAAAGCCAGCTCTTCTACCATCCATGTCAGAGTCATGGAAACACTCTCTAACCTCCTTTGTTTTACCTCTATCTTGTACTCCATAAACCTCTCAGTACAGAACATACAACTGATCACCCTGAATGGATCCCAAAGAGCTGATAAATATAAATTGTGCTTAATTAAGAAGTCTTCCTTCAAAGAAGCAATGGCCAATCTAGTAAAGAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATATTTTTAGAGATCTCTTGAGAATCTGATCAGAAAATCTAATGGATGCAAAGCTATTTAAGCATTGTACC'
+      },
+      {
+        id: 'demo_benign',
+        label: 'Benign (ARHGAP21 G>A)',
+        gene: 'ARHGAP21',
+        variant: 'G>A SNV',
+        ref: 'GGATCTCCGATTTCTCCCTCTGCTAAAGGTCAGAGGTACTGGTGCGTAGGCCGTTCCCTGGCCCAGCCAGTCTCGGCATTCACTTTCCTCTCCCGCTCTGCTCTCATTCTCCCTAGTGTATATCTGCGCCGGATGCTTTTCCTTTTTAGCAGTCTCGGCATTCATCCCGCAGGGGGCTCTGGGGTCTCAGTTTTAACCG',
+        alt: 'GGATCTCCGATTTCTCCCTCTGCTAAAGGTCAGAGGTACTGGTGCGTAGGCCGTTCCCTGGCCCAGCCAGTCTCGGCATTCACTTTCCTCTCCCGCTCTGCTCTCATTCTCCCTAGTGTATATCTGCGCCGGATGCTTTTCCTTTTTAGCAGTCTCGGCATTCATCCCGCAGGGGGCTCTGGGGTCTCAGTTTTAACCG'
+      }
+    ];
+  }
+
+  container.innerHTML = '';
+  samples.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'sample-card-item';
+    
+    card.innerHTML = `
+      <div class="sample-info">
+        <div class="sample-title">${s.label}</div>
+        <div class="sample-sub">Gene: ${s.gene || 'BRCA'} &bull; ${s.ref.length} bp</div>
+      </div>
+      <div class="sample-actions">
+        <button class="load-direct-btn" id="load-btn-${i}" onclick="loadSampleDirect(${i}, this)">
+          <span>⚡</span> 1-Click Load
+        </button>
+        <div class="drag-chip ref-chip" draggable="true" id="chip-ref-${i}">
+          <span>⋮⋮</span> Drag REF
+        </div>
+        <div class="drag-chip alt-chip" draggable="true" id="chip-alt-${i}">
+          <span>⋮⋮</span> Drag ALT
+        </div>
+        <div class="drag-chip pair-chip" draggable="true" id="chip-pair-${i}">
+          <span>⋮⋮</span> Drag Pair
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+
+    // Bind dragstart events
+    const refChip = card.querySelector(`#chip-ref-${i}`);
+    const altChip = card.querySelector(`#chip-alt-${i}`);
+    const pairChip = card.querySelector(`#chip-pair-${i}`);
+
+    function attachDrag(el, kind, text) {
+      el.addEventListener('dragstart', (e) => {
+        el.classList.add('dragging');
+        e.dataTransfer.setData('text/plain', text);
+        e.dataTransfer.setData('application/json', JSON.stringify({
+          type: 'genomic_seq',
+          kind: kind,
+          text: text,
+          ref: s.ref,
+          alt: s.alt
+        }));
+      });
+      el.addEventListener('dragend', () => {
+        el.classList.remove('dragging');
+      });
+    }
+
+    attachDrag(refChip, 'ref', s.ref);
+    attachDrag(altChip, 'alt', s.alt);
+    attachDrag(pairChip, 'pair', s.ref);
+  });
+}
+
+function loadSampleDirect(index, btnEl) {
+  const s = samples[index];
+  if (!s) return;
+  refTA.value = s.ref;
+  altTA.value = s.alt;
+  updateCounts();
+
+  if (btnEl) {
+    btnEl.classList.add('loaded');
+    btnEl.innerHTML = '<span>✓</span> Loaded!';
+    setTimeout(() => {
+      btnEl.classList.remove('loaded');
+      btnEl.innerHTML = '<span>⚡</span> 1-Click Load';
+    }, 1200);
+  }
+}
+
+/* ── Prediction ──────────────────────────────────────── */
+async function runPrediction() {
+  const errBanner = document.getElementById('error-banner');
+  errBanner.className = '';
+  errBanner.style.display = 'none';
+
+  const refSeq = cleanSeq(refTA.value);
+  const altSeq = cleanSeq(altTA.value);
+
+  if (refSeq.length < 10 || altSeq.length < 10) {
+    errBanner.textContent = 'Both sequences must be at least 10 bp.';
+    errBanner.className = 'visible';
+    errBanner.style.display = 'block';
+    return;
+  }
+
+  runBtn.disabled = true;
+  runBtn.innerHTML = '<span class="spinner"></span>Running...';
+
+  try {
+    let result;
+    if (isLive) {
+      const resp = await fetch(API_BASE + '/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ref_seq: refSeq, alt_seq: altSeq }),
+        signal: AbortSignal.timeout(30000),
+      });
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({}));
+        throw new Error(err.detail || `Server error ${resp.status}`);
+      }
+      result = await resp.json();
+    } else {
+      /* Client-side synthetic demo fallback */
+      result = generateDemoResult(refSeq, altSeq);
+    }
+
+    displayResult(result);
+  } catch (err) {
+    errBanner.textContent = 'Prediction failed: ' + err.message;
+    errBanner.className = 'visible';
+    errBanner.style.display = 'block';
+  } finally {
+    runBtn.disabled = false;
+    runBtn.innerHTML = 'Run Prediction';
+  }
+}
+
+runBtn.addEventListener('click', runPrediction);
+
+/* ── Synthetic fallback ──────────────────────────────── */
+function generateDemoResult(ref, alt) {
+  const len = 1024;
+  const mut = Math.floor(len / 2);
+  const attr = [];
+  for (let i = 0; i < len; i++) {
+    const dist = Math.abs(i - mut);
+    const base = Math.exp(-dist / 40) * 0.5 + Math.random() * 0.05;
+    const rb = (ref[i] || 'N');
+    const ab = (alt[i] || 'N');
+    attr.push({
+      pos: i,
+      ref_base: rb,
+      alt_base: ab,
+      ref_attr: base * (0.8 + Math.random() * 0.4),
+      alt_attr: base * (0.8 + Math.random() * 0.4),
+    });
+  }
+  return {
+    probability: 0.42 + Math.random() * 0.15,
+    label: 'Pathogenic',
+    seq_len_used: len,
+    mutation_pos: mut,
+    attribution: attr,
+  };
+}
+
+/* ── Display result ──────────────────────────────────── */
+function displayResult(result) {
+  const panel = document.getElementById('result-panel');
+  panel.classList.add('visible');
+
+  const prob = result.probability;
+  const label = result.label;
+
+  const circle = document.getElementById('prob-circle');
+  circle.className = 'prob-circle ' + (prob >= 0.5 ? 'pathogenic' : 'benign');
+  document.getElementById('prob-value').textContent = prob.toFixed(3);
+  document.getElementById('prob-label').textContent = label;
+
+  const meta = document.getElementById('result-meta');
+  meta.innerHTML = `
+    <div><strong>Pathogenicity probability:</strong> ${prob.toFixed(6)}</div>
+    <div><strong>Classification:</strong> ${label}</div>
+    <div><strong>Model window:</strong> ${result.seq_len_used} bp</div>
+    <div><strong>Mutation centred at position:</strong> ${result.mutation_pos}</div>
+    <div><strong>Source:</strong> ${isLive ? 'Live backend (real checkpoint)' : 'Client-side demo (synthetic)'}</div>
+  `;
+
+  drawHeatmap(result.attribution, result.mutation_pos);
+
+  // Scroll to result
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── Heatmap drawing ─────────────────────────────────── */
+function drawHeatmap(attr, mutPos) {
+  const canvas = document.getElementById('heatmap-canvas');
+  const ctx = canvas.getContext('2d');
+
+  const W = attr.length;
+  const CELL_W = Math.max(1, Math.floor(1024 / W));
+  const ROW_H = 30;
+  const GAP = 4;
+  const LABEL_H = 16;
+
+  canvas.width = W * CELL_W;
+  canvas.height = ROW_H * 2 + GAP + LABEL_H;
+
+  // Find max for normalisation
+  let maxVal = 0;
+  for (const a of attr) {
+    maxVal = Math.max(maxVal, a.ref_attr, a.alt_attr);
+  }
+  if (maxVal === 0) maxVal = 1;
+
+  function valToColor(v) {
+    const t = Math.min(v / maxVal, 1);
+    // Dark blue → teal → yellow → orange → dark red
+    const stops = [
+      [13, 27, 42],    // 0.0
+      [27, 73, 101],   // 0.2
+      [98, 182, 203],  // 0.4
+      [224, 200, 98],  // 0.6
+      [231, 111, 81],  // 0.8
+      [155, 34, 38],   // 1.0
+    ];
+    const idx = t * (stops.length - 1);
+    const lo = Math.floor(idx);
+    const hi = Math.min(lo + 1, stops.length - 1);
+    const frac = idx - lo;
+    const r = Math.round(stops[lo][0] + (stops[hi][0] - stops[lo][0]) * frac);
+    const g = Math.round(stops[lo][1] + (stops[hi][1] - stops[lo][1]) * frac);
+    const b = Math.round(stops[lo][2] + (stops[hi][2] - stops[lo][2]) * frac);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  // Draw REF row
+  for (let i = 0; i < W; i++) {
+    ctx.fillStyle = valToColor(attr[i].ref_attr);
+    ctx.fillRect(i * CELL_W, 0, CELL_W, ROW_H);
+  }
+
+  // Draw ALT row
+  for (let i = 0; i < W; i++) {
+    ctx.fillStyle = valToColor(attr[i].alt_attr);
+    ctx.fillRect(i * CELL_W, ROW_H + GAP, CELL_W, ROW_H);
+  }
+
+  // Mutation site marker (white line)
+  if (mutPos >= 0 && mutPos < W) {
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    ctx.fillRect(mutPos * CELL_W, 0, Math.max(CELL_W, 2), ROW_H * 2 + GAP);
+  }
+
+  // Row labels
+  ctx.fillStyle = document.body.classList.contains('light-mode') ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.6)';
+  ctx.font = '10px Inter, sans-serif';
+  ctx.fillText('REF', 4, 12);
+  ctx.fillText('ALT', 4, ROW_H + GAP + 12);
+
+  // Position ticks
+  ctx.fillStyle = document.body.classList.contains('light-mode') ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.3)';
+  ctx.font = '9px Inter, sans-serif';
+  const tickInterval = W <= 256 ? 50 : 100;
+  for (let i = 0; i < W; i += tickInterval) {
+    const x = i * CELL_W;
+    ctx.fillRect(x, ROW_H * 2 + GAP, 1, 4);
+    ctx.fillText(String(i), x + 2, ROW_H * 2 + GAP + LABEL_H - 2);
+  }
+}
+
+/* ── Initialise ──────────────────────────────────────── */
+async function init() {
+  await checkBackend();
+  await loadSamples();
+}
+init();
+</script>
+
+</body>
+</html>

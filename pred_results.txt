@@ -1,0 +1,2 @@
+Sample 1 (BRCA1): prob=0.206205, mut_pos=402
+Sample 2 (ARHGAP21): prob=0.410493, mut_pos=535

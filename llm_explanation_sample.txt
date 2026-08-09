@@ -1,0 +1,20 @@
+Gene     : ARHGAP21
+Variant  : G -> A
+Type     : single nucleotide variant
+Pred prob: 0.0234
+Label    : Benign
+============================================================
+
+Here is an explanation of the findings for a biomedical researcher:
+
+### 1. Variant Description and Location
+This report describes a single nucleotide variant (SNV) located within the *ARHGAP21* gene on chromosome 10 at genomic position 24585182. Specifically, it involves a substitution where the reference allele Guanine (G) is replaced by an Adenine (A). This G>A change is the focus of the deep learning model's analysis.
+
+### 2. Interpretation of Model's Predicted Probability
+The deep learning model predicted a pathogenicity probability of 0.0234, which is very low. This low probability leads to an interpretation of "LOW risk / likely benign." In a clinical context, this suggests that the variant is highly unlikely to cause disease or have any significant pathological effect, aligning with a benign classification.
+
+### 3. Attribution Analysis Insights
+The attribution analysis indicates which positions in the sequence window most influenced the model's prediction. While the mutation site itself (position 512) contributed significantly, the strongest influences came from positions immediately upstream: 511, 510, 508, and 507. This suggests that the sequence context surrounding the G>A change, particularly the upstream bases, played a crucial role in the model's determination of a likely benign outcome.
+
+### 4. Alignment with True Clinical Label
+The model's prediction of "LOW risk / likely benign" is in strong agreement with the provided true clinical label, which is "Benign." This indicates that the deep learning model accurately classified this particular variant, demonstrating good performance for this specific case.

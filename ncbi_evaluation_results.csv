@@ -1,0 +1,943 @@
+VariationID,GeneSymbol,Type,original_label,model_prob,model_pred,ncbi_significance,ncbi_review_status,ncbi_label
+2968514,MTHFD1,single nucleotide variant,0,0.25859037041664124,0,Likely benign,"criteria provided, single submitter",0
+3356671,ERBB4,single nucleotide variant,0,0.18957200646400452,0,Likely benign,no assertion criteria provided,0
+2009201,IL6R,single nucleotide variant,0,0.1887402981519699,0,Likely benign,"criteria provided, single submitter",0
+4683494,PKLR,single nucleotide variant,0,0.21511948108673096,0,Likely benign,"criteria provided, single submitter",0
+2128954,JUP,single nucleotide variant,0,0.09980074316263199,0,Likely benign,"criteria provided, single submitter",0
+1627552,HPS3,single nucleotide variant,0,0.1195308044552803,0,Likely benign,"criteria provided, single submitter",0
+1231272,PRSS56,single nucleotide variant,0,0.01677839271724224,0,Benign,"criteria provided, single submitter",0
+1591674,MME,single nucleotide variant,0,0.8319289088249207,1,Likely benign,"criteria provided, single submitter",0
+505320,ACTG1,single nucleotide variant,0,2.6240366423735395e-05,0,Likely benign,"criteria provided, single submitter",0
+1140404,LAMC2,single nucleotide variant,0,0.8479762673377991,1,Likely benign,"criteria provided, single submitter",0
+4201608,WNK2,single nucleotide variant,0,5.125760435475968e-05,0,Likely benign,"criteria provided, single submitter",0
+338526,CTSA,single nucleotide variant,0,0.19628165662288666,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+3852868,GARIN4,single nucleotide variant,0,0.6369353532791138,1,Likely benign,"criteria provided, single submitter",0
+1671104,PSAP,single nucleotide variant,0,0.003355956170707941,0,Likely benign,"criteria provided, single submitter",0
+3071679,TPM1,single nucleotide variant,0,0.03473955765366554,0,Likely benign,"criteria provided, single submitter",0
+589395,PQBP1,single nucleotide variant,0,0.0026380911003798246,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+4045094,KRT7,single nucleotide variant,0,0.696348249912262,1,Likely benign,"criteria provided, single submitter",0
+506320,PHKG2,single nucleotide variant,0,0.00769076868891716,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+2140699,PRKDC,single nucleotide variant,0,0.0003359337861184031,0,Likely benign,"criteria provided, single submitter",0
+1288918,OTOG,single nucleotide variant,0,0.963443398475647,1,Benign,"criteria provided, multiple submitters, no conflicts",0
+3260768,BEAN1,single nucleotide variant,0,0.0005719073815271258,0,Likely benign,"criteria provided, single submitter",0
+1544212,SBF1,single nucleotide variant,0,3.89874048778438e-06,0,Likely benign,"criteria provided, single submitter",0
+2784898,PAX5,single nucleotide variant,0,0.037812527269124985,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+2377502,TEP1,single nucleotide variant,0,0.12879733741283417,0,Likely benign,"criteria provided, single submitter",0
+2661267,DOCK11,single nucleotide variant,0,0.9353417754173279,1,Likely benign,"criteria provided, single submitter",0
+1560091,CIB2,single nucleotide variant,0,0.00039567382191307843,0,Likely benign,"criteria provided, single submitter",0
+3025360,FMN2,single nucleotide variant,0,0.0010380137246102095,0,Likely benign,"criteria provided, single submitter",0
+2958950,CCDC39,single nucleotide variant,0,0.07729237526655197,0,Likely benign,"criteria provided, single submitter",0
+3607097,DDR2,single nucleotide variant,0,0.014775513671338558,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1574390,CABP4,single nucleotide variant,0,0.12155934423208237,0,Likely benign,"criteria provided, single submitter",0
+2004434,STING1,single nucleotide variant,0,0.000428526516770944,0,Likely benign,"criteria provided, single submitter",0
+761290,HDAC6,single nucleotide variant,0,0.001263028010725975,0,Likely benign,"criteria provided, single submitter",0
+774873,DDX56,single nucleotide variant,0,0.28222793340682983,0,Benign,"criteria provided, single submitter",0
+3641619,DOCK2,single nucleotide variant,0,0.056094102561473846,0,Likely benign,"criteria provided, single submitter",0
+2571759,WDR87,single nucleotide variant,0,0.2760433554649353,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1649406,SLC6A19,single nucleotide variant,0,0.0005778452614322305,0,Likely benign,"criteria provided, single submitter",0
+2160071,TMEM67,single nucleotide variant,0,0.02353423647582531,0,Likely benign,"criteria provided, single submitter",0
+3649170,SH3KBP1,single nucleotide variant,0,0.05847829207777977,0,Likely benign,"criteria provided, single submitter",0
+386712,RARS1,single nucleotide variant,0,0.03369930386543274,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+2869938,TBX3,single nucleotide variant,0,0.001439330168068409,0,Likely benign,"criteria provided, single submitter",0
+1583448,STAC3,single nucleotide variant,0,0.035786502063274384,0,Likely benign,"criteria provided, single submitter",0
+403107,MRPL4,single nucleotide variant,0,1.9819567569356877e-06,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+2012728,SH3BP2,single nucleotide variant,0,0.030769916251301765,0,Likely benign,"criteria provided, single submitter",0
+1921518,NUP107,single nucleotide variant,0,0.013935579918324947,0,Likely benign,"criteria provided, single submitter",0
+3050065,KCNH7,single nucleotide variant,0,0.2806433141231537,0,Likely benign,no assertion criteria provided,0
+36884,TNNT2,single nucleotide variant,0,0.0009836499812081456,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+758912,WRN,single nucleotide variant,0,0.0011299529578536749,0,Likely benign,"criteria provided, single submitter",0
+2192097,PIGV,single nucleotide variant,0,0.0229533351957798,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+2894190,INVS,single nucleotide variant,0,0.0003646248369477689,0,Likely benign,"criteria provided, single submitter",0
+3887411,PDIA2,single nucleotide variant,0,0.8568881750106812,1,Likely benign,"criteria provided, single submitter",0
+139206,SLC9A6,single nucleotide variant,0,0.32534632086753845,0,Benign,reviewed by expert panel,0
+3777919,PLXNB2,single nucleotide variant,0,2.208404112025164e-06,0,Likely benign,"criteria provided, single submitter",0
+2718230,HNF1A,single nucleotide variant,0,7.780631131026894e-05,0,Likely benign,"criteria provided, single submitter",0
+2793887,TMPO,single nucleotide variant,0,0.0010531839216127992,0,Likely benign,"criteria provided, single submitter",0
+1672946,SLC52A2,single nucleotide variant,0,0.00010526792902965099,0,Likely benign,"criteria provided, single submitter",0
+2726583,MYO6,single nucleotide variant,0,0.009826770052313805,0,Likely benign,"criteria provided, single submitter",0
+1529973,POMP,single nucleotide variant,0,9.397484245710075e-05,0,Benign,"criteria provided, single submitter",0
+1694739,HERC2,single nucleotide variant,0,8.689448441145942e-05,0,Likely benign,"criteria provided, single submitter",0
+294359,ALDH4A1,single nucleotide variant,0,0.008200829848647118,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+1351116,ENTPD1,single nucleotide variant,0,0.44278019666671753,0,Likely benign,"criteria provided, single submitter",0
+1637969,PCGF2,single nucleotide variant,0,0.000456902664154768,0,Likely benign,"criteria provided, single submitter",0
+1233043,ESRRB,single nucleotide variant,0,0.09188364446163177,0,Benign,"criteria provided, single submitter",0
+3119905,LRCH3,single nucleotide variant,0,0.7508382797241211,1,Likely benign,"criteria provided, single submitter",0
+710152,FAM110A,single nucleotide variant,0,0.037055935710668564,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+1110257,NEB,single nucleotide variant,0,0.11408767849206924,0,Likely benign,"criteria provided, single submitter",0
+1663310,FBN3,single nucleotide variant,0,0.07393112778663635,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+745803,P4HA2,single nucleotide variant,0,0.00032824769732542336,0,Likely benign,"criteria provided, single submitter",0
+3714118,PROS1,single nucleotide variant,0,0.001067920122295618,0,Likely benign,"criteria provided, single submitter",0
+746780,GABRR2,single nucleotide variant,0,0.6227416396141052,1,Likely benign,"criteria provided, single submitter",0
+1120442,HBB,single nucleotide variant,0,0.002050447976216674,0,Likely benign,"criteria provided, single submitter",0
+507359,FBLN5,single nucleotide variant,0,3.467420901870355e-05,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1576124,ADAMTS2,single nucleotide variant,0,0.0003967058437410742,0,Likely benign,"criteria provided, single submitter",0
+1079198,MAP2K2,single nucleotide variant,0,0.2350284904241562,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1246612,DIAPH3,single nucleotide variant,0,0.04088534414768219,0,Benign,"criteria provided, single submitter",0
+4719106,SOD1,single nucleotide variant,0,0.030436348170042038,0,Likely benign,"criteria provided, single submitter",0
+2744090,LOXL3,single nucleotide variant,0,0.09782726317644119,0,Likely benign,"criteria provided, single submitter",0
+4108944,ANKS1A,single nucleotide variant,0,0.39677074551582336,0,Likely benign,"criteria provided, single submitter",0
+1024540,RAD50,single nucleotide variant,0,0.7236380577087402,1,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+2966288,SLC27A4,single nucleotide variant,0,0.00024061877047643065,0,Likely benign,"criteria provided, single submitter",0
+1157186,ZAP70,single nucleotide variant,0,0.0002088494220515713,0,Likely benign,"criteria provided, single submitter",0
+3828080,CCDC116,single nucleotide variant,0,0.06369839608669281,0,Likely benign,"criteria provided, single submitter",0
+3937533,PRAMEF11,single nucleotide variant,0,0.005450241267681122,0,Likely benign,"criteria provided, single submitter",0
+2044690,CTSC,single nucleotide variant,0,0.00013998216309119016,0,Likely benign,"criteria provided, single submitter",0
+1580979,C3,single nucleotide variant,0,0.018419427797198296,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1266192,EDNRA,single nucleotide variant,0,0.1430453062057495,0,Benign,"criteria provided, single submitter",0
+2847791,HACE1,single nucleotide variant,0,0.011493588797748089,0,Likely benign,"criteria provided, single submitter",0
+1577909,SMARCB1,single nucleotide variant,0,0.0609593540430069,0,Likely benign,"criteria provided, single submitter",0
+1182792,DDB2,single nucleotide variant,0,0.030950915068387985,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+2778396,BBS5,single nucleotide variant,0,0.0015358984237536788,0,Likely benign,"criteria provided, single submitter",0
+3613109,RFX5,single nucleotide variant,0,0.029205013066530228,0,Likely benign,"criteria provided, single submitter",0
+2962642,GRIN2D,single nucleotide variant,0,0.00010505563841434196,0,Likely benign,"criteria provided, single submitter",0
+1188256,MPV17,single nucleotide variant,0,0.022807009518146515,0,Likely benign,"criteria provided, single submitter",0
+2062327,PNLIP,single nucleotide variant,0,0.0072682392783463,0,Likely benign,"criteria provided, single submitter",0
+3826333,ACTN2,single nucleotide variant,0,0.41810575127601624,0,Likely benign,"criteria provided, single submitter",0
+3641537,NKX2-5,single nucleotide variant,0,0.016583267599344254,0,Likely benign,"criteria provided, single submitter",0
+3052327,PPFIA1,single nucleotide variant,0,0.011156536638736725,0,Likely benign,no assertion criteria provided,0
+4696976,PLOD3,single nucleotide variant,0,0.03927251324057579,0,Likely benign,"criteria provided, single submitter",0
+1291096,BRK1,single nucleotide variant,0,0.01256475318223238,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+771189,FRY,single nucleotide variant,0,0.09687501937150955,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+2158087,SLC35C1,single nucleotide variant,0,5.976372995064594e-05,0,Likely benign,"criteria provided, single submitter",0
+1971786,ZBTB18,single nucleotide variant,0,3.77792093786411e-06,0,Likely benign,"criteria provided, single submitter",0
+1528604,DYRK1A,single nucleotide variant,0,0.000591302989050746,0,Likely benign,"criteria provided, single submitter",0
+1796946,MRAS,single nucleotide variant,0,5.151197183295153e-05,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+138123,LIAS,single nucleotide variant,0,0.005584621336311102,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+2076378,FAM186B,single nucleotide variant,0,0.1341208815574646,0,Likely benign,"criteria provided, single submitter",0
+3753070,TCTN1,single nucleotide variant,0,2.081099864881253e-06,0,Likely benign,"criteria provided, single submitter",0
+725183,CCDC88A,single nucleotide variant,0,0.2709242105484009,0,Benign,"criteria provided, single submitter",0
+129808,NOP56,single nucleotide variant,0,0.073592908680439,0,Benign,"criteria provided, single submitter",0
+1205405,CENPF,single nucleotide variant,0,0.007379686459898949,0,Likely benign,"criteria provided, single submitter",0
+709177,KLB,single nucleotide variant,0,1.09334614535328e-05,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1244093,INSR,single nucleotide variant,0,0.19955042004585266,0,Benign,"criteria provided, single submitter",0
+2638723,ZNF684,single nucleotide variant,0,0.0844043493270874,0,Likely benign,"criteria provided, single submitter",0
+670893,RTN2,single nucleotide variant,0,0.04705509915947914,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+2673147,RNF170,single nucleotide variant,0,0.013418611139059067,0,Likely benign,"criteria provided, single submitter",0
+2407633,OR4X1,single nucleotide variant,0,0.06172392889857292,0,Likely benign,"criteria provided, single submitter",0
+766560,COG4,single nucleotide variant,0,0.3124306797981262,0,Likely benign,"criteria provided, single submitter",0
+3037843,SPRY1,single nucleotide variant,0,0.024370888248085976,0,Likely benign,no assertion criteria provided,0
+2971513,CCND2,single nucleotide variant,0,0.0008409926667809486,0,Likely benign,"criteria provided, single submitter",0
+1915166,NAA10,single nucleotide variant,0,0.0018143359338864684,0,Likely benign,"criteria provided, single submitter",0
+1398390,GLB1,single nucleotide variant,0,0.00228324206545949,0,Likely benign,"criteria provided, single submitter",0
+776010,ENPEP,single nucleotide variant,0,0.7678653001785278,1,Benign,"criteria provided, multiple submitters, no conflicts",0
+1588266,SLC25A12,single nucleotide variant,0,5.3250845667207614e-05,0,Likely benign,"criteria provided, single submitter",0
+2085535,TSPEAR,single nucleotide variant,0,0.00015219156921375543,0,Likely benign,"criteria provided, single submitter",0
+885801,NIPA1,single nucleotide variant,0,0.76750248670578,1,Benign,"criteria provided, single submitter",0
+3659011,CFB,single nucleotide variant,0,0.2934021055698395,0,Likely benign,"criteria provided, single submitter",0
+2500179,CAPN10,single nucleotide variant,1,0.9777332544326782,1,Pathogenic,"criteria provided, single submitter",1
+951857,EDAR,single nucleotide variant,1,0.6087896227836609,1,Pathogenic,"criteria provided, single submitter",1
+521902,CREBBP,single nucleotide variant,1,0.7329819798469543,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+919,CA2,single nucleotide variant,1,0.9884737133979797,1,Pathogenic,no assertion criteria provided,1
+13786,PAX8,single nucleotide variant,1,0.9322583675384521,1,Pathogenic,no assertion criteria provided,1
+2678871,SLC25A20,single nucleotide variant,1,0.2645581066608429,0,Likely pathogenic,"criteria provided, single submitter",1
+3346730,ABCB4,single nucleotide variant,1,0.9829098582267761,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+156008,PIK3R1,single nucleotide variant,1,0.9986892342567444,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1067483,TMEM126A,single nucleotide variant,1,0.9705317616462708,1,Likely pathogenic,"criteria provided, single submitter",1
+44634,RAF1,single nucleotide variant,1,0.4496749937534332,0,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1067340,F9,single nucleotide variant,1,0.7740656137466431,1,Likely pathogenic,"criteria provided, single submitter",1
+2867240,FKTN,single nucleotide variant,1,0.9943006038665771,1,Likely pathogenic,"criteria provided, single submitter",1
+2129735,GAD1,single nucleotide variant,1,0.995966911315918,1,Likely pathogenic,"criteria provided, single submitter",1
+223001,VMA12,single nucleotide variant,1,0.9970476031303406,1,Pathogenic,no assertion criteria provided,1
+2429375,F13A1,single nucleotide variant,1,0.3721824884414673,0,Likely pathogenic,"criteria provided, single submitter",1
+4538103,KDM2B,single nucleotide variant,1,0.9651650786399841,1,Likely pathogenic,"criteria provided, single submitter",1
+2856657,ABCD1,single nucleotide variant,1,0.8581196665763855,1,Likely pathogenic,"criteria provided, single submitter",1
+5252,CYLD,single nucleotide variant,1,0.9775701761245728,1,Pathogenic,"criteria provided, single submitter",1
+2111246,CD40LG,single nucleotide variant,1,0.9718946218490601,1,Pathogenic,"criteria provided, single submitter",1
+4785,SOST,single nucleotide variant,1,0.9911231994628906,1,Pathogenic,"criteria provided, single submitter",1
+253094,DNAJC6,single nucleotide variant,1,0.6783769130706787,1,Pathogenic,no assertion criteria provided,1
+444268,TMEM126A,single nucleotide variant,1,0.9987136125564575,1,Likely pathogenic,"criteria provided, single submitter",1
+4819158,CHAMP1,single nucleotide variant,1,0.1566724181175232,0,Pathogenic,"criteria provided, single submitter",1
+1344521,KIF23,single nucleotide variant,1,0.7328501343727112,1,Likely pathogenic,"criteria provided, single submitter",1
+531690,PMP22,single nucleotide variant,1,0.983787477016449,1,Pathogenic,"criteria provided, single submitter",1
+631794,MC2R,single nucleotide variant,1,0.8615461587905884,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+14260,MAPT,single nucleotide variant,1,0.9745792150497437,1,Pathogenic,no assertion criteria provided,1
+619065,TP63,single nucleotide variant,1,0.9761984348297119,1,Pathogenic,no assertion criteria provided,1
+10537,PHKA2,single nucleotide variant,1,0.9226709604263306,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+834097,ZC4H2,single nucleotide variant,1,0.726498007774353,1,Pathogenic,no assertion criteria provided,1
+9923,PHKA1,single nucleotide variant,1,0.9932904243469238,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2734873,RUNX2,single nucleotide variant,1,0.5738440752029419,1,Pathogenic,"criteria provided, single submitter",1
+2584481,ADK,single nucleotide variant,1,0.9969218373298645,1,Likely pathogenic,"criteria provided, single submitter",1
+6161,BBS5,single nucleotide variant,1,0.5118765234947205,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1342837,ZBTB7A,single nucleotide variant,1,0.9985094666481018,1,Pathogenic,no assertion criteria provided,1
+2953131,CACNA1S,single nucleotide variant,1,0.11093323677778244,0,Pathogenic,"criteria provided, single submitter",1
+223024,TYMP,single nucleotide variant,1,0.16390495002269745,0,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1324640,L1CAM,single nucleotide variant,1,0.9962640404701233,1,Likely pathogenic,"criteria provided, single submitter",1
+8696,PPOX,single nucleotide variant,1,0.0004645849403459579,0,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+11524,ARSL,single nucleotide variant,1,0.7708040475845337,1,Pathogenic,no assertion criteria provided,1
+917881,ARID1A,single nucleotide variant,1,0.6149325966835022,1,Likely pathogenic,"criteria provided, single submitter",1
+691794,RALGAPA1,single nucleotide variant,1,0.9939846396446228,1,Pathogenic,"criteria provided, single submitter",1
+3065245,SETD2,single nucleotide variant,1,0.22779817879199982,0,Likely pathogenic,"criteria provided, single submitter",1
+1029630,AHI1,single nucleotide variant,1,0.8978816270828247,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2980753,RTN4IP1,single nucleotide variant,1,0.9602428078651428,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+4086437,HMBS,single nucleotide variant,1,0.977466881275177,1,Likely pathogenic,"criteria provided, single submitter",1
+2690680,PKLR,single nucleotide variant,1,0.9395222663879395,1,Likely pathogenic,"criteria provided, single submitter",1
+1067394,PDE6B,single nucleotide variant,1,0.7054097652435303,1,Likely pathogenic,"criteria provided, single submitter",1
+2962260,HFE,single nucleotide variant,1,0.9845199584960938,1,Pathogenic,"criteria provided, single submitter",1
+2991390,ENPP1,single nucleotide variant,1,0.8016985654830933,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2572745,EEF1A2,single nucleotide variant,1,0.8378419876098633,1,Likely pathogenic,"criteria provided, single submitter",1
+3418,IRF6,single nucleotide variant,1,0.7387783527374268,1,Pathogenic,no assertion criteria provided,1
+3577092,IVD,single nucleotide variant,1,0.8467956185340881,1,Likely pathogenic,"criteria provided, single submitter",1
+633811,ALOXE3,single nucleotide variant,1,0.9945883750915527,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+389576,CALM3,single nucleotide variant,1,0.7906894087791443,1,Likely pathogenic,"criteria provided, single submitter",1
+3068304,DGKE,single nucleotide variant,1,0.9992644190788269,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+9748,SRY,single nucleotide variant,1,0.9717158079147339,1,Pathogenic,no assertion criteria provided,1
+2443713,SLF2,single nucleotide variant,1,0.9856207370758057,1,Pathogenic,no assertion criteria provided,1
+618858,RASA1,single nucleotide variant,1,0.9902777075767517,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+4065793,DCLRE1C,single nucleotide variant,1,0.9881767630577087,1,Likely pathogenic,"criteria provided, single submitter",1
+4739836,ADA2,single nucleotide variant,1,0.40010297298431396,0,Likely pathogenic,"criteria provided, single submitter",1
+4058082,MMUT,single nucleotide variant,1,0.9960447549819946,1,Likely pathogenic,"criteria provided, single submitter",1
+1098848,TBC1D2B,single nucleotide variant,1,0.9294254183769226,1,Pathogenic,no assertion criteria provided,1
+7075,TUBA1A,single nucleotide variant,1,0.9760429263114929,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2945326,CASR,single nucleotide variant,1,0.994746744632721,1,Likely pathogenic,"criteria provided, single submitter",1
+770,SACK1H,single nucleotide variant,1,0.9935534000396729,1,Pathogenic,"criteria provided, single submitter",1
+2007661,PPP2CA,single nucleotide variant,1,0.9990208148956299,1,Likely pathogenic,"criteria provided, single submitter",1
+1705531,RPL11,single nucleotide variant,1,0.9937847852706909,1,Pathogenic,"criteria provided, single submitter",1
+393552,ZMYND11,single nucleotide variant,1,0.9899308681488037,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+829802,TFAP2A,single nucleotide variant,1,0.5629628300666809,1,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3645406,C2CD3,single nucleotide variant,1,0.9848378896713257,1,Likely pathogenic,"criteria provided, single submitter",1
+5979,ITM2B,single nucleotide variant,1,0.6999477744102478,1,Pathogenic,no assertion criteria provided,1
+4077465,ROBO1,single nucleotide variant,1,0.9291996359825134,1,Likely pathogenic,"criteria provided, single submitter",1
+389162,FARS2,single nucleotide variant,1,0.9349207282066345,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+12766,SURF1,single nucleotide variant,1,0.8072069883346558,1,Pathogenic,"criteria provided, single submitter",1
+7790,PEX7,single nucleotide variant,1,0.5198881030082703,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3779058,CFAP69,single nucleotide variant,1,0.7477198839187622,1,Likely pathogenic,"criteria provided, single submitter",1
+2984992,SCLT1,single nucleotide variant,1,0.46961843967437744,0,Pathogenic,"criteria provided, single submitter",1
+1705409,ASPA,single nucleotide variant,1,0.4197661280632019,0,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+633292,MAN2B1,single nucleotide variant,1,0.9967694282531738,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3777700,PNPLA8,single nucleotide variant,1,0.9636609554290771,1,Pathogenic,no assertion criteria provided,1
+2168774,HARS2,single nucleotide variant,1,0.9538325071334839,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2842908,MUTYH,single nucleotide variant,1,0.9735508561134338,1,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+12034,KLKB1,single nucleotide variant,1,0.9111511707305908,1,Pathogenic,no assertion criteria provided,1
+4292908,WBP11,single nucleotide variant,1,0.9953365921974182,1,Likely pathogenic,"criteria provided, single submitter",1
+2110466,PDE6B,single nucleotide variant,1,0.9989871382713318,1,Likely pathogenic,"criteria provided, single submitter",1
+1073417,SMARCD2,single nucleotide variant,1,0.9347354769706726,1,Pathogenic,"criteria provided, single submitter",1
+11560,FHL1,single nucleotide variant,1,0.9937512278556824,1,Pathogenic,no assertion criteria provided,1
+4764697,FZD4,single nucleotide variant,1,0.9319515824317932,1,Pathogenic,"criteria provided, single submitter",1
+2104557,CHD5,single nucleotide variant,1,0.998164713382721,1,Pathogenic,"criteria provided, single submitter",1
+88763,RARB,single nucleotide variant,1,0.07567676901817322,0,Pathogenic,no assertion criteria provided,1
+996692,DPAGT1,single nucleotide variant,1,0.8652539253234863,1,Likely pathogenic,no assertion criteria provided,1
+66091,FBXL4,single nucleotide variant,1,0.9792361855506897,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+429148,DICER1,single nucleotide variant,1,0.9931621551513672,1,Pathogenic,reviewed by expert panel,1
+548146,EML1,single nucleotide variant,1,0.9739132523536682,1,Pathogenic,"criteria provided, single submitter",1
+1493281,IQCB1,single nucleotide variant,1,0.9990611672401428,1,Likely pathogenic,"criteria provided, single submitter",1
+4294084,CYP11B1,single nucleotide variant,1,0.9910858273506165,1,Pathogenic,"criteria provided, single submitter",1
+4088166,FLG,single nucleotide variant,1,0.9135968685150146,1,Pathogenic,"criteria provided, single submitter",1
+3065112,SYCP2,single nucleotide variant,1,0.9887611269950867,1,Likely pathogenic,"criteria provided, single submitter",1
+30270,MGAT2,single nucleotide variant,1,0.44117847084999084,0,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+631983,POLH,single nucleotide variant,1,0.9160193204879761,1,Pathogenic,"criteria provided, single submitter",1
+1498862,EVC2,single nucleotide variant,1,0.9416821599006653,1,Likely pathogenic,"criteria provided, single submitter",1
+2961923,MED17,single nucleotide variant,1,0.999510645866394,1,Likely pathogenic,"criteria provided, single submitter",1
+2506363,SUZ12,single nucleotide variant,1,0.001557940966449678,0,Likely pathogenic,"criteria provided, single submitter",1
+12340,TNFRSF1A,single nucleotide variant,1,0.8879824876785278,1,Pathogenic,no assertion criteria provided,1
+7261,FOXC2,single nucleotide variant,1,0.9252979755401611,1,Pathogenic,"criteria provided, single submitter",1
+3601086,ESRRB,single nucleotide variant,1,0.9082059860229492,1,Likely pathogenic,"criteria provided, single submitter",1
+1691259,ASPH,single nucleotide variant,1,0.917782187461853,1,Likely pathogenic,"criteria provided, single submitter",1
+3657966,PMP22,single nucleotide variant,1,0.9925097227096558,1,Pathogenic,"criteria provided, single submitter",1
+4808706,OSGEP,single nucleotide variant,1,0.9804972410202026,1,Pathogenic,"criteria provided, single submitter",1
+869468,GATA3,single nucleotide variant,1,0.7904933094978333,1,Pathogenic,"criteria provided, single submitter",1
+1721121,GNAO1,single nucleotide variant,1,0.4028034806251526,0,Likely pathogenic,"criteria provided, single submitter",1
+985417,CUL7,single nucleotide variant,1,0.9955700039863586,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+374797,EBF3,single nucleotide variant,1,0.6029511094093323,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1071207,LOXHD1,single nucleotide variant,1,0.9923365712165833,1,Pathogenic,"criteria provided, single submitter",1
+4689709,VWF,single nucleotide variant,1,0.9922717809677124,1,Pathogenic,"criteria provided, single submitter",1
+217031,FLI1,single nucleotide variant,1,0.49273785948753357,0,Pathogenic,"criteria provided, single submitter",1
+4730561,DDC,single nucleotide variant,1,0.9480264186859131,1,Pathogenic,"criteria provided, single submitter",1
+4528371,FLT3,single nucleotide variant,1,0.6360442042350769,1,Likely pathogenic,"criteria provided, single submitter",1
+801983,FOXP1,single nucleotide variant,1,0.791877806186676,1,Likely pathogenic,"criteria provided, single submitter",1
+566581,CHEK2,single nucleotide variant,1,0.8855953216552734,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3773933,INS,single nucleotide variant,1,0.023361951112747192,0,Likely pathogenic,"criteria provided, single submitter",1
+4279683,TUBA1A,single nucleotide variant,1,0.445441335439682,0,Likely pathogenic,"criteria provided, single submitter",1
+8777,CSRP3,single nucleotide variant,1,0.9081389307975769,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1687053,SLC38A3,single nucleotide variant,1,0.854546070098877,1,Pathogenic,no assertion criteria provided,1
+3008892,MME,Deletion,0,0.004067851696163416,0,Likely benign,"criteria provided, single submitter",0
+1681865,COA8,Deletion,0,0.002861719112843275,0,Likely benign,"criteria provided, single submitter",0
+218513,KARS1,Deletion,0,5.922034688410349e-05,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+1247152,YME1L1,Deletion,0,0.31926023960113525,0,Benign,"criteria provided, single submitter",0
+3610647,RBFOX2,Deletion,0,0.08161244541406631,0,Likely benign,"criteria provided, single submitter",0
+1239007,TBXA2R,Deletion,0,0.001402988564223051,0,Benign,"criteria provided, single submitter",0
+1257559,COL9A2,Deletion,0,0.9486749768257141,1,Benign,"criteria provided, single submitter",0
+1294980,MACF1,Deletion,0,0.004080561455339193,0,Benign,"criteria provided, single submitter",0
+2799901,CRB2,Deletion,0,0.9382159113883972,1,Likely benign,"criteria provided, single submitter",0
+1229601,PRKN,Deletion,0,0.9374731183052063,1,Benign,"criteria provided, single submitter",0
+3054394,ACVR2B,Deletion,0,0.5877604484558105,1,Likely benign,no assertion criteria provided,0
+1201659,SGCE,Deletion,0,0.23523418605327606,0,Likely benign,"criteria provided, single submitter",0
+1941784,FCHO1,Deletion,0,0.25217926502227783,0,Likely benign,"criteria provided, single submitter",0
+1594501,NFU1,Deletion,0,0.06964575499296188,0,Likely benign,"criteria provided, single submitter",0
+281166,TMEM67,Deletion,0,0.0014682498294860125,0,Benign,"criteria provided, single submitter",0
+1557490,PPT1,Deletion,0,0.8432108163833618,1,Likely benign,"criteria provided, single submitter",0
+1574841,JAG1,Deletion,0,0.1435815840959549,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+2977230,SIN3A,Deletion,0,0.4345463216304779,0,Benign,"criteria provided, single submitter",0
+166981,DBT,Deletion,0,0.0009639623458497226,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+2730302,KLHL41,Deletion,0,0.14714005589485168,0,Benign,"criteria provided, single submitter",0
+2837445,MDH2,Deletion,0,0.033592987805604935,0,Likely benign,"criteria provided, single submitter",0
+1339686,AP3B1,Deletion,0,0.003577139927074313,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+2843889,DHX32,Deletion,0,0.604638934135437,1,Likely benign,"criteria provided, single submitter",0
+214756,NDUFAF7,Deletion,0,0.9968595504760742,1,Benign,"criteria provided, single submitter",0
+1174625,SCN1A,Deletion,0,0.009183313697576523,0,Likely benign,no assertion criteria provided,0
+435348,GP1BA,Deletion,0,0.9250367879867554,1,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+768656,TRMT5,Deletion,0,0.0012568454258143902,0,Benign,"criteria provided, single submitter",0
+1287104,HNRNPK,Deletion,0,0.001471379422582686,0,Benign,"criteria provided, single submitter",0
+2819287,ADAMTSL4,Deletion,0,0.7809423208236694,1,Likely benign,"criteria provided, single submitter",0
+1216749,NARS2,Deletion,0,0.4329116940498352,0,Likely benign,"criteria provided, single submitter",0
+3719429,DNAJB11,Deletion,0,0.15610258281230927,0,Likely benign,"criteria provided, single submitter",0
+4741453,WRN,Deletion,0,0.2364959567785263,0,Likely benign,"criteria provided, single submitter",0
+2004080,PTCH2,Deletion,0,0.0066334037110209465,0,Benign,"criteria provided, single submitter",0
+681331,GLI3,Deletion,0,0.08869944512844086,0,Benign,"criteria provided, single submitter",0
+1246384,ERMARD,Deletion,0,0.7820459008216858,1,Benign,"criteria provided, single submitter",0
+1393101,NPRL3,Deletion,0,0.29107266664505005,0,Likely benign,"criteria provided, single submitter",0
+1549972,PCDH15,Deletion,0,0.763779878616333,1,Likely benign,"criteria provided, single submitter",0
+1254568,PHYH,Deletion,0,7.436753094225423e-06,0,Likely benign,"criteria provided, single submitter",0
+1166695,IL17RC,Deletion,0,0.6920697689056396,1,Benign,"criteria provided, single submitter",0
+1933789,RB1,Deletion,0,0.2889675498008728,0,Likely benign,"criteria provided, single submitter",0
+1180874,SCO1,Deletion,0,0.0008896251092664897,0,Likely benign,"criteria provided, single submitter",0
+1225586,RFT1,Deletion,0,0.9250462651252747,1,Benign,"criteria provided, single submitter",0
+1938911,CHRNB2,Deletion,0,0.008575065061450005,0,Likely benign,"criteria provided, single submitter",0
+1208300,PPP2R5D,Deletion,0,0.9848248362541199,1,Likely benign,"criteria provided, single submitter",0
+1563325,SCN2A,Deletion,0,0.3236587941646576,0,Likely benign,"criteria provided, single submitter",0
+1174178,GFPT1,Deletion,0,0.001981547335162759,0,Benign,"criteria provided, single submitter",0
+1252612,SH3PXD2B,Deletion,0,0.7545833587646484,1,Benign,"criteria provided, single submitter",0
+2860780,SEPSECS,Deletion,0,0.7404208183288574,1,Likely benign,"criteria provided, single submitter",0
+1943040,ALB,Deletion,0,0.5532415509223938,1,Benign,"criteria provided, single submitter",0
+3681826,IFT88,Deletion,0,0.6170823574066162,1,Likely benign,"criteria provided, single submitter",0
+1189998,EYA1,Deletion,0,0.5313275456428528,1,Likely benign,"criteria provided, single submitter",0
+1208779,CHD8,Deletion,0,0.9816063046455383,1,Likely benign,"criteria provided, single submitter",0
+1972009,AGAP1,Deletion,0,0.016530446708202362,0,Likely benign,"criteria provided, single submitter",0
+2921068,PTH1R,Deletion,0,0.8097078204154968,1,Likely benign,"criteria provided, single submitter",0
+2969344,TYMP,Deletion,0,0.3062902092933655,0,Likely benign,"criteria provided, single submitter",0
+2039854,FUS,Deletion,0,0.027029426768422127,0,Likely benign,"criteria provided, single submitter",0
+1242475,OBSL1,Deletion,0,0.7638704180717468,1,Benign,"criteria provided, multiple submitters, no conflicts",0
+1569672,TMEM106B,Deletion,0,0.006238113157451153,0,Benign,"criteria provided, single submitter",0
+541620,SLC35A3,Deletion,0,0.04314115270972252,0,Likely benign,"criteria provided, single submitter",0
+4700944,SLC10A7,Deletion,0,0.009723033756017685,0,Likely benign,"criteria provided, single submitter",0
+3043293,RECQL5,Deletion,0,0.7923327088356018,1,Benign,no assertion criteria provided,0
+3387828,DPM1,Deletion,0,0.7917940020561218,1,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1433746,ALS2,Deletion,0,0.9219035506248474,1,Likely benign,"criteria provided, single submitter",0
+4683624,FAM111B,Deletion,0,0.6684499979019165,1,Benign,"criteria provided, single submitter",0
+1284939,TRIM63,Deletion,0,0.006791977211833,0,Likely benign,"criteria provided, single submitter",0
+2429209,ACTC1,Deletion,0,0.00043653056491166353,0,Likely benign,"criteria provided, single submitter",0
+1100450,XPC,Deletion,0,0.2644559442996979,0,Likely benign,"criteria provided, single submitter",0
+2726763,EHMT1,Deletion,0,0.18741413950920105,0,Likely benign,"criteria provided, single submitter",0
+1134939,TUBGCP4,Deletion,0,0.049439653754234314,0,Likely benign,"criteria provided, single submitter",0
+1286987,MAX,Deletion,0,0.3862913250923157,0,Benign,"criteria provided, single submitter",0
+3055231,PER2,Deletion,0,0.9063776731491089,1,Likely benign,no assertion criteria provided,0
+1661383,SNX10,Deletion,0,0.40293431282043457,0,Benign,"criteria provided, single submitter",0
+1278953,BCOR,Deletion,0,9.985694305214565e-06,0,Benign,"criteria provided, single submitter",0
+3722248,MAP2K1,Deletion,0,0.21351072192192078,0,Likely benign,"criteria provided, single submitter",0
+1178417,NUP155,Deletion,0,0.6577443480491638,1,Benign,"criteria provided, single submitter",0
+2946254,DIAPH1,Deletion,0,0.0002937386161647737,0,Likely benign,"criteria provided, single submitter",0
+1277942,SCN11A,Deletion,0,0.2922317683696747,0,Benign,"criteria provided, single submitter",0
+1584639,PLCG2,Deletion,0,0.1872551292181015,0,Likely benign,"criteria provided, single submitter",0
+3701645,TNFSF11,Deletion,0,0.9541304707527161,1,Likely benign,"criteria provided, single submitter",0
+1990436,IREB2,Deletion,0,0.2714838981628418,0,Likely benign,"criteria provided, single submitter",0
+3006590,PLPBP,Deletion,0,0.5070589780807495,1,Likely benign,"criteria provided, single submitter",0
+402584,CYP4B1,Deletion,0,0.9966488480567932,1,Benign,"criteria provided, single submitter",0
+2823385,ABCD1,Deletion,0,0.5210487842559814,1,Benign,"criteria provided, single submitter",0
+2769842,COL4A3,Deletion,0,0.9254750609397888,1,Likely benign,"criteria provided, single submitter",0
+3017029,CCDC39,Deletion,0,0.12747719883918762,0,Likely benign,"criteria provided, single submitter",0
+2656343,MDC1,Deletion,0,0.9564425945281982,1,Benign,"criteria provided, single submitter",0
+1257055,TMEM237,Deletion,0,0.0004804909694939852,0,Benign,"criteria provided, single submitter",0
+4696096,CBX2,Deletion,0,0.8525498509407043,1,Likely benign,"criteria provided, single submitter",0
+779462,KIF19,Deletion,0,0.9976934790611267,1,Benign,"criteria provided, single submitter",0
+1296275,CALR3,Deletion,0,0.00064421771094203,0,Benign,"criteria provided, single submitter",0
+1642410,TANGO2,Deletion,0,0.9488847255706787,1,Likely benign,"criteria provided, single submitter",0
+1257904,SEC23A,Deletion,0,0.034992069005966187,0,Benign,"criteria provided, single submitter",0
+1277524,ARHGAP31,Deletion,0,8.166475163307041e-05,0,Benign,"criteria provided, single submitter",0
+3251792,TRDN,Deletion,0,3.50028039974859e-06,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1267043,AFF4,Deletion,0,0.3253841996192932,0,Benign,"criteria provided, single submitter",0
+4742082,RPL11,Deletion,0,0.16852203011512756,0,Likely benign,"criteria provided, single submitter",0
+1192619,KNL1,Deletion,0,0.0011800099164247513,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+1238373,BCAP31,Deletion,0,0.00011588319466682151,0,Benign,"criteria provided, single submitter",0
+418599,GATM,Deletion,0,0.09613079577684402,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1227651,ASPH,Deletion,0,0.0006699679070152342,0,Benign,"criteria provided, single submitter",0
+1181717,CSNK2A1,Deletion,0,0.05280571058392525,0,Benign,"criteria provided, single submitter",0
+769334,ZAN,Deletion,0,0.9848810434341431,1,Benign,"criteria provided, single submitter",0
+1274631,DNAJC6,Deletion,0,0.7985226511955261,1,Benign,"criteria provided, single submitter",0
+1582187,ORC4,Deletion,0,0.019492704421281815,0,Likely benign,"criteria provided, single submitter",0
+1296802,NAA15,Deletion,0,0.49671557545661926,0,Benign,"criteria provided, single submitter",0
+3044641,SASH1,Deletion,0,0.0009275418124161661,0,Likely benign,no assertion criteria provided,0
+1976600,SETD5,Deletion,0,0.9079919457435608,1,Likely benign,"criteria provided, single submitter",0
+3614123,PLCG2,Deletion,0,0.8578744530677795,1,Likely benign,"criteria provided, single submitter",0
+1224239,LRP2,Deletion,0,0.9523490071296692,1,Benign,"criteria provided, single submitter",0
+4734703,CDC6,Deletion,0,0.022824572399258614,0,Likely benign,"criteria provided, single submitter",0
+1438935,ABHD12,Deletion,0,0.9513564109802246,1,Likely benign,"criteria provided, single submitter",0
+2694858,C1S,Deletion,0,0.6360873579978943,1,Likely benign,"criteria provided, single submitter",0
+4716333,ROM1,Deletion,0,0.5040498971939087,1,Likely benign,"criteria provided, single submitter",0
+1165553,OTULIN,Deletion,0,0.9619032144546509,1,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1191500,PIK3CA,Deletion,0,0.956978440284729,1,Likely benign,"criteria provided, single submitter",0
+1297327,FHOD3,Deletion,0,0.9310113787651062,1,Benign,"criteria provided, single submitter",0
+2993908,FRAS1,Deletion,0,0.0007767117931507528,0,Benign,"criteria provided, single submitter",0
+496428,ANKRD1,Deletion,0,0.18630686402320862,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+1265898,SLC41A1,Deletion,0,0.750079870223999,1,Benign,"criteria provided, single submitter",0
+1660657,IL23R,Deletion,0,0.07278846949338913,0,Likely benign,"criteria provided, single submitter",0
+1243194,OLFM2,Deletion,0,0.3374704420566559,0,Benign,"criteria provided, single submitter",0
+1216429,BCS1L,Deletion,0,0.9026049971580505,1,Likely benign,"criteria provided, single submitter",0
+4772371,C5,Deletion,0,0.846015453338623,1,Likely benign,"criteria provided, single submitter",0
+1948343,DNASE2,Deletion,0,0.011409756727516651,0,Benign,"criteria provided, single submitter",0
+1229118,TENM3,Deletion,0,0.0010569727746769786,0,Benign,"criteria provided, single submitter",0
+187082,MLH1,Deletion,1,0.9889292120933533,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2915667,SURF1,Deletion,1,0.668792188167572,1,Likely pathogenic,"criteria provided, single submitter",1
+2867130,MECR,Deletion,1,0.9905923008918762,1,Pathogenic,"criteria provided, single submitter",1
+2129086,TAT,Deletion,1,0.9860142469406128,1,Pathogenic,"criteria provided, single submitter",1
+3593429,DCDC2,Deletion,1,0.9953137636184692,1,Likely pathogenic,"criteria provided, single submitter",1
+1679353,NONO,Deletion,1,0.9961599111557007,1,Likely pathogenic,"criteria provided, single submitter",1
+620057,EHMT1,Deletion,1,0.9925635457038879,1,Pathogenic,"criteria provided, single submitter",1
+1724415,MMUT,Deletion,1,0.9898316860198975,1,Likely pathogenic,"criteria provided, single submitter",1
+4076400,SERPINF1,Deletion,1,0.39016154408454895,0,Likely pathogenic,"criteria provided, single submitter",1
+3376162,CDKN1B,Deletion,1,0.9846540093421936,1,Likely pathogenic,"criteria provided, single submitter",1
+3935193,PNKP,Deletion,1,0.9963206052780151,1,Pathogenic,"criteria provided, single submitter",1
+692194,FGFR1,Deletion,1,0.9734468460083008,1,Likely pathogenic,"criteria provided, single submitter",1
+280262,ADNP,Deletion,1,0.9747225046157837,1,Pathogenic,"criteria provided, single submitter",1
+4816887,BBS12,Deletion,1,0.9648358225822449,1,Likely pathogenic,"criteria provided, single submitter",1
+2698074,XPC,Deletion,1,0.9970055222511292,1,Pathogenic,"criteria provided, single submitter",1
+1432308,NKX2-5,Deletion,1,0.9910293817520142,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+419144,FLG,Deletion,1,0.9846599102020264,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+858005,SGCA,Deletion,1,0.9845209717750549,1,Pathogenic,"criteria provided, single submitter",1
+1683477,CUL7,Deletion,1,0.9961262345314026,1,Likely pathogenic,"criteria provided, single submitter",1
+2678225,RAPSN,Deletion,1,0.9812861680984497,1,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+4759492,SSR4,Deletion,1,0.9664545655250549,1,Pathogenic,no assertion criteria provided,1
+2112080,MOCS1,Deletion,1,0.9598471522331238,1,Likely pathogenic,"criteria provided, single submitter",1
+4683142,RPS6KC1,Deletion,1,0.9398186802864075,1,Pathogenic,no assertion criteria provided,1
+802802,KMT2A,Deletion,1,0.8773772120475769,1,Pathogenic,"criteria provided, single submitter",1
+2677487,PCCA,Deletion,1,0.9932416677474976,1,Likely pathogenic,"criteria provided, single submitter",1
+1704245,PRMT9,Deletion,1,0.9829291105270386,1,Pathogenic,"criteria provided, single submitter",1
+3024350,JPH1,Deletion,1,0.9859963059425354,1,Pathogenic,"criteria provided, single submitter",1
+2706851,GATA3,Deletion,1,0.9863170981407166,1,Pathogenic,"criteria provided, single submitter",1
+3677772,PDHB,Deletion,1,0.9931855201721191,1,Pathogenic,"criteria provided, single submitter",1
+1297468,SP9,Deletion,1,0.998235821723938,1,Pathogenic,no assertion criteria provided,1
+4816849,HYLS1,Deletion,1,0.9471694231033325,1,Likely pathogenic,"criteria provided, single submitter",1
+3581250,CHST6,Deletion,1,0.9930821061134338,1,Likely pathogenic,"criteria provided, single submitter",1
+1076483,SPAST,Deletion,1,0.9996824264526367,1,Pathogenic,"criteria provided, single submitter",1
+1074868,MAOA,Deletion,1,0.9906913638114929,1,Pathogenic,"criteria provided, single submitter",1
+3897575,KDM3B,Deletion,1,0.9833676815032959,1,Likely pathogenic,"criteria provided, single submitter",1
+156220,FEZF1,Deletion,1,0.993239164352417,1,Pathogenic,no assertion criteria provided,1
+4770134,UPB1,Deletion,1,0.971459150314331,1,Pathogenic,"criteria provided, single submitter",1
+1325730,GRIN2A,Deletion,1,0.9902122616767883,1,Likely pathogenic,"criteria provided, single submitter",1
+4719817,MBD4,Deletion,1,0.9975215792655945,1,Pathogenic,"criteria provided, single submitter",1
+995770,ALOX12B,Deletion,1,0.9978275895118713,1,Pathogenic,no assertion criteria provided,1
+2694618,MEN1,Deletion,1,0.9857925772666931,1,Pathogenic,"criteria provided, single submitter",1
+488638,VARS2,Deletion,1,0.9580559730529785,1,Likely pathogenic,"criteria provided, single submitter",1
+4769762,LIG4,Deletion,1,0.3600763976573944,0,Pathogenic,"criteria provided, single submitter",1
+4766537,TNFRSF9,Deletion,1,0.9966748952865601,1,Pathogenic,"criteria provided, single submitter",1
+446916,CACNA1A,Deletion,1,0.9990725517272949,1,Pathogenic,"criteria provided, single submitter",1
+817637,NGLY1,Deletion,1,0.9923916459083557,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+280988,SGSH,Deletion,1,0.9961701035499573,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+280322,ANO5,Deletion,1,0.9962899684906006,1,Pathogenic,reviewed by expert panel,1
+2733957,AGL,Deletion,1,0.9660729765892029,1,Pathogenic,"criteria provided, single submitter",1
+2072804,TMEM126B,Deletion,1,0.9959512948989868,1,Pathogenic,"criteria provided, single submitter",1
+981245,ERCC1,Deletion,1,0.7825191020965576,1,Pathogenic,no assertion criteria provided,1
+3069205,GPT2,Deletion,1,0.9972280859947205,1,Pathogenic,"criteria provided, single submitter",1
+436888,STUB1,Deletion,1,0.8373212814331055,1,Likely pathogenic,"criteria provided, single submitter",1
+2761587,MED13L,Deletion,1,0.9888975024223328,1,Pathogenic,"criteria provided, single submitter",1
+559437,CDC14A,Deletion,1,0.8504093885421753,1,Pathogenic,no assertion criteria provided,1
+1693504,MSH4,Deletion,1,0.9875870943069458,1,Pathogenic,no assertion criteria provided,1
+4280124,HYCC1,Deletion,1,0.9664409756660461,1,Likely pathogenic,"criteria provided, single submitter",1
+1074024,DDC,Deletion,1,0.9968024492263794,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3242183,CLCNKB,Deletion,1,0.9744980931282043,1,Likely pathogenic,"criteria provided, single submitter",1
+2505310,LARP7,Deletion,1,0.9906127452850342,1,Likely pathogenic,"criteria provided, single submitter",1
+555573,CLN8,Deletion,1,0.9792535305023193,1,Likely pathogenic,no assertion criteria provided,1
+579876,SEC23B,Deletion,1,0.9914610385894775,1,Pathogenic,"criteria provided, single submitter",1
+2819321,EPS8L2,Deletion,1,0.982220470905304,1,Pathogenic,"criteria provided, single submitter",1
+1701528,AP4M1,Deletion,1,0.9147005677223206,1,Pathogenic,"criteria provided, single submitter",1
+4540618,ATP7B,Deletion,1,0.9735273718833923,1,Likely pathogenic,"criteria provided, single submitter",1
+3367177,TMEM94,Deletion,1,0.9920039772987366,1,Likely pathogenic,"criteria provided, single submitter",1
+3666457,DNMT3A,Deletion,1,0.9239604473114014,1,Pathogenic,"criteria provided, single submitter",1
+3240669,TTPA,Deletion,1,0.9881798028945923,1,Likely pathogenic,"criteria provided, single submitter",1
+438624,GNE,Deletion,1,0.7526201009750366,1,Pathogenic,"criteria provided, single submitter",1
+3581914,HNF1B,Deletion,1,0.9934513568878174,1,Likely pathogenic,"criteria provided, single submitter",1
+842588,OTX2,Deletion,1,0.9584499597549438,1,Pathogenic,"criteria provided, single submitter",1
+4687319,ASH1L,Deletion,1,0.9871004819869995,1,Pathogenic,"criteria provided, single submitter",1
+4715988,ABCD1,Deletion,1,0.9950699806213379,1,Pathogenic,"criteria provided, single submitter",1
+4817942,SGCG,Deletion,1,0.9772294759750366,1,Likely pathogenic,"criteria provided, single submitter",1
+2907496,FA2H,Deletion,1,0.9840788841247559,1,Pathogenic,"criteria provided, single submitter",1
+916299,LOC126861520;KMT2D,Deletion,1,0.8983709812164307,1,Pathogenic,"criteria provided, single submitter",1
+1275771,ZNF462,Deletion,1,0.9946022629737854,1,Pathogenic,"criteria provided, single submitter",1
+1967665,NT5C3A,Deletion,1,0.9940428137779236,1,Pathogenic,"criteria provided, single submitter",1
+3544413,DSC2,Deletion,1,0.9344474077224731,1,Likely pathogenic,"criteria provided, single submitter",1
+2150213,FBXO7,Deletion,1,0.8362904787063599,1,Pathogenic,"criteria provided, single submitter",1
+3727395,CHM,Deletion,1,0.9974299073219299,1,Pathogenic,"criteria provided, single submitter",1
+8101,PROP1,Deletion,1,0.9171795845031738,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2573372,GAA,Deletion,1,0.624448835849762,1,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+802282,RMND1,Deletion,1,0.9580145478248596,1,Likely pathogenic,"criteria provided, single submitter",1
+3689579,ITGA7,Deletion,1,0.9771779775619507,1,Pathogenic,"criteria provided, single submitter",1
+4818642,HBA2,Deletion,1,0.9972251653671265,1,Likely pathogenic,"criteria provided, single submitter",1
+3576566,KIF14,Deletion,1,0.9491135478019714,1,Likely pathogenic,"criteria provided, single submitter",1
+503778,KCNH2,Deletion,1,0.9131411910057068,1,Likely pathogenic,"criteria provided, single submitter",1
+253129,GANAB,Deletion,1,0.9957097768783569,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2442295,TEX15,Deletion,1,0.9281213879585266,1,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+53839,CFTR,Deletion,1,0.8520109057426453,1,Pathogenic,reviewed by expert panel,1
+2693541,HPS3,Deletion,1,0.9870551824569702,1,Pathogenic,"criteria provided, single submitter",1
+1684012,VWF,Deletion,1,0.9976911544799805,1,Likely pathogenic,reviewed by expert panel,1
+2884074,COL1A1,Deletion,1,0.9963480830192566,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2743181,SMARCB1,Deletion,1,0.29204073548316956,0,Pathogenic,"criteria provided, single submitter",1
+3757835,OFD1,Deletion,1,0.9556993246078491,1,Pathogenic,"criteria provided, single submitter",1
+3716791,SMAD9,Deletion,1,0.9947143197059631,1,Pathogenic,"criteria provided, single submitter",1
+3601811,SOX10,Deletion,1,0.8242011666297913,1,Pathogenic,"criteria provided, single submitter",1
+2630416,TRIT1,Deletion,1,0.9661101698875427,1,Likely pathogenic,"criteria provided, single submitter",1
+2636643,WNT1,Deletion,1,0.9812368154525757,1,Likely pathogenic,"criteria provided, single submitter",1
+4817579,GAA,Deletion,1,0.9976890087127686,1,Likely pathogenic,"criteria provided, single submitter",1
+3348888,TSEN54,Deletion,1,0.9995104074478149,1,Likely pathogenic,no assertion criteria provided,1
+1333683,MPDU1,Deletion,1,0.9944679737091064,1,Likely pathogenic,"criteria provided, single submitter",1
+370351,ACADS,Deletion,1,0.9974675178527832,1,Pathogenic,"criteria provided, single submitter",1
+3632802,OCRL,Deletion,1,0.9947139620780945,1,Pathogenic,"criteria provided, single submitter",1
+4740157,CTSK,Deletion,1,0.986404299736023,1,Pathogenic,"criteria provided, single submitter",1
+1970808,RDH12,Deletion,1,0.9943015575408936,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2440523,GLRA1,Deletion,1,0.9843749403953552,1,Likely pathogenic,"criteria provided, single submitter",1
+3699584,ARMC9,Deletion,1,0.990308940410614,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+4685475,HNF1A,Deletion,1,0.9691287875175476,1,Pathogenic,"criteria provided, single submitter",1
+981898,LAMB1,Deletion,1,0.9934529066085815,1,Likely pathogenic,"criteria provided, single submitter",1
+4718029,MTHFD1,Deletion,1,0.9843219518661499,1,Pathogenic,"criteria provided, single submitter",1
+2799703,CEP63,Deletion,1,0.8949418663978577,1,Likely pathogenic,"criteria provided, single submitter",1
+3594417,CLCN1,Deletion,1,0.9949643611907959,1,Likely pathogenic,"criteria provided, single submitter",1
+3255117,WASF1,Deletion,1,0.980348527431488,1,Pathogenic,"criteria provided, single submitter",1
+3032420,ADAM22,Deletion,1,0.9958118200302124,1,Likely pathogenic,no assertion criteria provided,1
+817099,EHMT1,Deletion,1,0.9821595549583435,1,Pathogenic,"criteria provided, single submitter",1
+551276,IVD,Deletion,1,0.9365206956863403,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3757178,TTN,Deletion,1,0.9904560446739197,1,Likely pathogenic,"criteria provided, single submitter",1
+1687468,SLC6A1,Deletion,1,0.9874118566513062,1,Likely pathogenic,"criteria provided, single submitter",1
+1700035,TCEAL1,Deletion,1,0.9817323088645935,1,Likely pathogenic,"criteria provided, single submitter",1
+2769432,PEX14,Deletion,1,0.9212261438369751,1,Likely pathogenic,"criteria provided, single submitter",1
+3593643,POLR1C,Deletion,1,0.9972860813140869,1,Likely pathogenic,"criteria provided, single submitter",1
+4075505,NUP214,Deletion,1,0.9940422177314758,1,Likely pathogenic,"criteria provided, single submitter",1
+2725514,TMC8,Deletion,1,0.9598723649978638,1,Pathogenic,"criteria provided, single submitter",1
+335175,NDUFA10,Insertion,0,0.8878193497657776,1,Benign,"criteria provided, single submitter",0
+1202400,CSNK2A1,Insertion,0,6.730178574798629e-05,0,Likely benign,"criteria provided, single submitter",0
+3017204,SHOC2,Insertion,0,0.00013841989857610315,0,Likely benign,"criteria provided, single submitter",0
+2809070,CCDC88C,Insertion,0,0.6139132976531982,1,Likely benign,"criteria provided, single submitter",0
+3910117,DENND4B,Insertion,0,0.963852047920227,1,Likely benign,"criteria provided, single submitter",0
+2641349,KRTAP5-5,Insertion,0,0.702376127243042,1,Likely benign,"criteria provided, single submitter",0
+1215953,DCDC2,Insertion,0,0.00017827996634878218,0,Likely benign,"criteria provided, single submitter",0
+1279297,DCDC2,Insertion,0,9.574183422955684e-06,0,Benign,"criteria provided, single submitter",0
+1250697,TRAPPC4,Insertion,0,0.4197344481945038,0,Benign,"criteria provided, single submitter",0
+768029,PRDM6,Insertion,0,0.9332550764083862,1,Benign,"criteria provided, single submitter",0
+1245542,FTH1,Insertion,0,0.5349470973014832,1,Benign,"criteria provided, single submitter",0
+403119,MUC4,Insertion,0,0.4397069215774536,0,Benign,"criteria provided, single submitter",0
+2741387,PRIMA1,Insertion,0,0.059583354741334915,0,Likely benign,"criteria provided, single submitter",0
+768335,VAV2,Insertion,0,0.8848034143447876,1,Benign,"criteria provided, single submitter",0
+1233199,TUBA4A,Insertion,0,0.04259705916047096,0,Benign,"criteria provided, single submitter",0
+2653931,PTPRG,Insertion,0,0.003455469850450754,0,Likely benign,"criteria provided, single submitter",0
+2151211,KRT10,Insertion,0,0.9556384682655334,1,Likely benign,"criteria provided, single submitter",0
+324475,SCN4A,Insertion,0,0.03465058654546738,0,Benign,"criteria provided, single submitter",0
+1250430,SLC5A5,Insertion,0,0.4146757423877716,0,Benign,"criteria provided, single submitter",0
+2070689,GUCY2C,Insertion,0,0.09327568113803864,0,Likely benign,"criteria provided, single submitter",0
+1229442,PAX4,Insertion,0,0.7848299741744995,1,Benign,"criteria provided, single submitter",0
+2079002,ST3GAL5,Insertion,0,0.001817982061766088,0,Likely benign,"criteria provided, single submitter",0
+2628303,PSMA3,Insertion,0,0.8687595129013062,1,Benign,"criteria provided, single submitter",0
+801710,MSH6,Insertion,0,0.00011668967636069283,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1692663,DHFR;MSH3,Insertion,0,0.8777512311935425,1,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+4684797,HADH,Insertion,0,0.0014895315980538726,0,Benign,"criteria provided, single submitter",0
+2658210,KMT2C,Insertion,0,0.00010758444113889709,0,Likely benign,"criteria provided, single submitter",0
+1253663,LHX3,Insertion,0,0.8797470331192017,1,Benign,"criteria provided, single submitter",0
+3604694,RIGI,Insertion,0,0.00014084680879022926,0,Likely benign,"criteria provided, single submitter",0
+4772984,ALG9,Insertion,0,0.002655321266502142,0,Likely benign,"criteria provided, single submitter",0
+1547189,CBS,Insertion,0,0.9895395636558533,1,Benign,"criteria provided, single submitter",0
+366592,APTX,Insertion,0,0.00027773159672506154,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+676411,MYPN,Insertion,0,0.0017923315754160285,0,Benign,"criteria provided, single submitter",0
+1362569,CYFIP2,Insertion,0,0.5911270976066589,1,Likely benign,"criteria provided, single submitter",0
+4700334,TFRC,Insertion,0,0.0019645660649985075,0,Likely benign,"criteria provided, single submitter",0
+1680444,RARS1,Insertion,0,1.7146702475656639e-06,0,Likely benign,"criteria provided, single submitter",0
+3030434,TMEM107,Insertion,0,0.9972176551818848,1,Likely benign,no assertion criteria provided,0
+2816327,TBXAS1,Insertion,0,0.8673619031906128,1,Likely benign,"criteria provided, single submitter",0
+1194951,WDR36,Insertion,0,0.00016373785911127925,0,Likely benign,"criteria provided, single submitter",0
+1236082,OTOA,Insertion,0,0.003086075186729431,0,Benign,"criteria provided, single submitter",0
+1235178,NOS1AP,Insertion,0,0.35317331552505493,0,Benign,"criteria provided, single submitter",0
+1230739,RARS1,Insertion,0,5.020697244617622e-06,0,Benign,"criteria provided, single submitter",0
+1596376,FBXO38,Insertion,0,8.441856334684417e-05,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1265757,SPRED1,Insertion,0,0.2722492516040802,0,Benign,"criteria provided, single submitter",0
+1430299,CTU2,Insertion,0,0.08890605717897415,0,Likely benign,"criteria provided, single submitter",0
+1236669,VSX2,Insertion,0,0.5106019973754883,1,Benign,"criteria provided, single submitter",0
+1589727,SNX27,Insertion,0,0.00041380294715054333,0,Likely benign,"criteria provided, single submitter",0
+1567142,NFIA,Insertion,0,0.008417768403887749,0,Likely benign,"criteria provided, single submitter",0
+751541,CBS,Insertion,0,0.9892470240592957,1,Benign,"criteria provided, single submitter",0
+1258835,CA2,Insertion,0,0.03892658278346062,0,Benign,"criteria provided, single submitter",0
+2772503,NHS,Insertion,0,0.9086579084396362,1,Likely benign,"criteria provided, single submitter",0
+1227472,ITGA3,Insertion,0,0.1799696832895279,0,Benign,"criteria provided, single submitter",0
+3612586,APTX,Insertion,0,2.2273152353591286e-06,0,Likely benign,"criteria provided, single submitter",0
+1250346,ENO3,Insertion,0,0.5567206144332886,1,Benign,"criteria provided, single submitter",0
+2039918,SOS2,Insertion,0,0.009471261873841286,0,Likely benign,"criteria provided, single submitter",0
+1238355,MAPT,Insertion,0,0.9656935334205627,1,Benign,"criteria provided, single submitter",0
+2499842,MYBPC1,Insertion,0,0.6979709267616272,1,Likely benign,"criteria provided, single submitter",0
+1680619,TENT5A,Insertion,0,0.9466004967689514,1,Likely benign,"criteria provided, single submitter",0
+1553837,NPC1,Insertion,0,0.002917639911174774,0,Likely benign,"criteria provided, single submitter",0
+1555659,LAMC3,Insertion,0,0.3731424808502197,0,Likely benign,"criteria provided, single submitter",0
+4732664,BCKDK,Insertion,0,8.235254063038155e-05,0,Likely benign,"criteria provided, single submitter",0
+1971503,USP7,Insertion,0,0.00012751563917845488,0,Benign,"criteria provided, single submitter",0
+366769,TPM2,Insertion,0,0.6421646475791931,1,Benign,"criteria provided, multiple submitters, no conflicts",0
+2688105,PRKCD,Insertion,0,0.015824034810066223,0,Benign,"criteria provided, single submitter",0
+1248971,HSD17B4,Insertion,0,0.5239279270172119,1,Benign,"criteria provided, single submitter",0
+683548,COQ2,Insertion,0,0.0006493862019851804,0,Benign,"criteria provided, single submitter",0
+3622341,PPP2R5D,Insertion,0,0.4396393895149231,0,Likely benign,"criteria provided, single submitter",0
+1651262,TFRC,Insertion,0,0.0034385728649795055,0,Likely benign,"criteria provided, single submitter",0
+683039,ALDH18A1,Insertion,0,0.5481659173965454,1,Benign,"criteria provided, single submitter",0
+2841274,USP7,Insertion,0,0.615684449672699,1,Likely benign,"criteria provided, single submitter",0
+1123112,LGI1,Insertion,0,0.0014171083457767963,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1222500,SLC30A10,Insertion,0,0.009068958461284637,0,Benign,"criteria provided, single submitter",0
+2927836,DOK7,Insertion,0,0.0011507316958159208,0,Likely benign,"criteria provided, single submitter",0
+4683442,PRDM12,Insertion,0,0.6231040358543396,1,Benign,"criteria provided, single submitter",0
+1229464,F7,Insertion,0,0.36588388681411743,0,Benign,"criteria provided, single submitter",0
+1272323,PAF1,Insertion,0,0.46363815665245056,0,Benign,"criteria provided, single submitter",0
+2187533,PSAT1,Insertion,0,0.40684565901756287,0,Likely benign,"criteria provided, single submitter",0
+1129891,MCOLN1,Insertion,0,0.909492552280426,1,Likely benign,"criteria provided, single submitter",0
+1948274,BBS9,Insertion,0,0.00574089540168643,0,Likely benign,"criteria provided, single submitter",0
+1221598,FAH,Insertion,0,0.9180172085762024,1,Benign,"criteria provided, single submitter",0
+1973155,CTU2,Insertion,0,0.07563157379627228,0,Likely benign,"criteria provided, single submitter",0
+1589627,UPF3B,Insertion,0,0.6721461415290833,1,Likely benign,"criteria provided, single submitter",0
+1260588,EIF2AK4,Insertion,0,0.0176144540309906,0,Benign,"criteria provided, single submitter",0
+2657326,CRPPA,Insertion,0,0.1453673094511032,0,Likely benign,"criteria provided, single submitter",0
+1287218,DSTYK,Insertion,0,8.946032721723896e-06,0,Benign,"criteria provided, single submitter",0
+1257237,ACTN1,Insertion,0,0.894105076789856,1,Benign,"criteria provided, multiple submitters, no conflicts",0
+3723682,HADHB,Insertion,0,0.5130282640457153,1,Likely benign,"criteria provided, single submitter",0
+221008,SPAG1,Insertion,0,0.9752943515777588,1,Benign,"criteria provided, multiple submitters, no conflicts",0
+504858,CLPP,Insertion,0,0.9775066375732422,1,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+2144418,ANKRD1,Insertion,0,0.0002207584766438231,0,Likely benign,"criteria provided, single submitter",0
+3697743,AICDA,Insertion,0,0.0010699996491894126,0,Likely benign,"criteria provided, single submitter",0
+1282188,FLI1,Insertion,0,0.9893388152122498,1,Benign,"criteria provided, single submitter",0
+4799065,DLST,Insertion,0,3.2847448892425746e-05,0,Likely benign,"criteria provided, single submitter",0
+1294841,LAMC1,Insertion,0,5.61927845410537e-05,0,Benign,"criteria provided, single submitter",0
+2971744,CCBE1,Insertion,0,0.14185652136802673,0,Likely benign,"criteria provided, single submitter",0
+542550,IL17RC,Insertion,0,0.8850159049034119,1,Benign,"criteria provided, multiple submitters, no conflicts",0
+1615008,PLCG2,Insertion,0,9.234929166268557e-06,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1342728,SLC25A1,Insertion,0,0.7039371728897095,1,Benign,"criteria provided, single submitter",0
+768033,SRA1,Insertion,0,0.9873079657554626,1,Benign,"criteria provided, multiple submitters, no conflicts",0
+403397,RSU1,Insertion,0,5.069772305432707e-05,0,Benign,"criteria provided, single submitter",0
+4762137,ZMYND11,Insertion,0,0.0077201290987432,0,Likely benign,"criteria provided, single submitter",0
+1254593,WDR36,Insertion,0,5.582867015618831e-05,0,Likely benign,"criteria provided, single submitter",0
+2935650,AIFM1,Insertion,0,0.0013808149378746748,0,Likely benign,"criteria provided, single submitter",0
+1277790,PDGFRA,Insertion,0,0.9873122572898865,1,Benign,"criteria provided, single submitter",0
+1899202,NBAS,Insertion,0,0.008043373934924603,0,Likely benign,"criteria provided, single submitter",0
+3051131,DNHD1,Insertion,0,0.8204905390739441,1,Likely benign,no assertion criteria provided,0
+1266603,ENPP1,Insertion,0,7.183437901403522e-06,0,Benign,"criteria provided, single submitter",0
+1316317,RSPH3,Insertion,0,0.5297105312347412,1,Likely benign,"criteria provided, single submitter",0
+210375,ATN1,Insertion,0,0.6490399837493896,1,Likely benign,"criteria provided, single submitter",0
+2086524,STAT3,Insertion,0,0.00011832119344035164,0,Likely benign,"criteria provided, single submitter",0
+2129308,AIP,Insertion,0,0.03361329808831215,0,Likely benign,"criteria provided, single submitter",0
+2749918,TSEN54,Insertion,0,0.08774151653051376,0,Likely benign,"criteria provided, single submitter",0
+4772081,CNGB3,Insertion,0,0.003043896285817027,0,Likely benign,"criteria provided, single submitter",0
+1259244,CHRND,Insertion,0,0.9342517256736755,1,Benign,"criteria provided, single submitter",0
+3708928,ALG9,Insertion,0,0.0015749413287267089,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1629583,APTX,Insertion,0,1.235760373674566e-05,0,Likely benign,"criteria provided, single submitter",0
+1201155,HGF,Insertion,0,0.9645324349403381,1,Likely benign,"criteria provided, single submitter",0
+782683,TNNI3K,Insertion,0,0.9963436722755432,1,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+3353041,ADCY3,Insertion,0,0.007118347566574812,0,Likely benign,no assertion criteria provided,0
+2722665,CCDC39,Insertion,0,0.0009401664137840271,0,Likely benign,"criteria provided, single submitter",0
+1249016,SHH,Insertion,0,0.848251223564148,1,Benign,"criteria provided, single submitter",0
+1238371,PHKA1,Insertion,0,0.5682954788208008,1,Benign,"criteria provided, single submitter",0
+332392,ITGA6,Insertion,0,0.6369810104370117,1,Benign,"criteria provided, single submitter",0
+2929389,DOK7,Insertion,0,0.008858459070324898,0,Likely benign,"criteria provided, single submitter",0
+1188105,TGFB1,Insertion,0,0.00028863505576737225,0,Likely benign,"criteria provided, single submitter",0
+1724095,ALG6,Insertion,1,0.9869120121002197,1,Likely pathogenic,"criteria provided, single submitter",1
+1725307,SACS,Insertion,1,0.9871737957000732,1,Likely pathogenic,"criteria provided, single submitter",1
+1074326,WAS,Insertion,1,0.9364513158798218,1,Pathogenic,"criteria provided, single submitter",1
+1878669,OPHN1,Insertion,1,0.9830886721611023,1,Likely pathogenic,"criteria provided, single submitter",1
+4806579,KIF14,Insertion,1,0.9873160123825073,1,Pathogenic,"criteria provided, single submitter",1
+2237115,DLG3,Insertion,1,0.9854986667633057,1,Likely pathogenic,"criteria provided, single submitter",1
+4818380,ASPA,Insertion,1,0.9920527935028076,1,Likely pathogenic,"criteria provided, single submitter",1
+2674143,PALB2,Insertion,1,0.9857816100120544,1,Pathogenic,"criteria provided, single submitter",1
+1184852,ALG3,Insertion,1,0.9726117253303528,1,Likely pathogenic,no assertion criteria provided,1
+1709561,PIEZO2,Insertion,1,0.9960525035858154,1,Pathogenic,"criteria provided, single submitter",1
+4725217,MECP2,Insertion,1,0.9937570095062256,1,Pathogenic,"criteria provided, single submitter",1
+2430148,PBX3,Insertion,1,0.9730321168899536,1,Likely pathogenic,no assertion criteria provided,1
+1069725,EVC,Insertion,1,0.9780368208885193,1,Pathogenic,"criteria provided, single submitter",1
+4058945,NPC1,Insertion,1,0.9959344863891602,1,Likely pathogenic,"criteria provided, single submitter",1
+555959,RMRP,Insertion,1,0.9537025094032288,1,Pathogenic,"criteria provided, single submitter",1
+4849474,MAGT1,Insertion,1,0.4173040986061096,0,Likely pathogenic,"criteria provided, single submitter",1
+1456966,RMRP,Insertion,1,0.9839754104614258,1,Pathogenic,"criteria provided, single submitter",1
+627091,GP1BB,Insertion,1,0.9776719212532043,1,Likely pathogenic,"criteria provided, single submitter",1
+2629497,MRPS34,Insertion,1,0.9784162044525146,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2097039,SGSH,Insertion,1,0.9723901748657227,1,Pathogenic,"criteria provided, single submitter",1
+4850343,ESPN,Insertion,1,0.9865459203720093,1,Likely pathogenic,"criteria provided, single submitter",1
+2505389,FGFR1,Insertion,1,0.9939780235290527,1,Pathogenic,"criteria provided, single submitter",1
+3599791,CLP1,Insertion,1,0.9824292659759521,1,Likely pathogenic,"criteria provided, single submitter",1
+672,PROC,Insertion,1,0.9819496273994446,1,Pathogenic,"criteria provided, single submitter",1
+4850714,MED13,Insertion,1,0.8546868562698364,1,Pathogenic,"criteria provided, single submitter",1
+983477,SALL1,Insertion,1,0.9831892251968384,1,Pathogenic,"criteria provided, single submitter",1
+2031831,GATA1,Insertion,1,0.9803463220596313,1,Pathogenic,"criteria provided, single submitter",1
+3779476,CACNA1B,Insertion,1,0.997789740562439,1,Likely pathogenic,"criteria provided, single submitter",1
+594666,UGT1A1,Insertion,1,0.7464539408683777,1,Pathogenic; other,"criteria provided, multiple submitters, no conflicts",1
+3579873,HBA2,Insertion,1,0.9767829179763794,1,Likely pathogenic,"criteria provided, single submitter",1
+1357373,LCA5,Insertion,1,0.9762033224105835,1,Pathogenic,"criteria provided, single submitter",1
+422434,EXT1,Insertion,1,0.32191166281700134,0,Pathogenic,"criteria provided, single submitter",1
+2018943,PAX6,Insertion,1,0.9879563450813293,1,Pathogenic,"criteria provided, single submitter",1
+464132,ACTA1,Insertion,1,0.9865103363990784,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2135166,BSCL2,Insertion,1,0.9965257048606873,1,Pathogenic,"criteria provided, single submitter",1
+3595934,NBN,Insertion,1,0.9921820163726807,1,Likely pathogenic,"criteria provided, single submitter",1
+221275,CEP104,Insertion,1,0.9838085770606995,1,Pathogenic,no assertion criteria provided,1
+2869049,TCN2,Insertion,1,0.9811816811561584,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1960249,RMRP,Insertion,1,0.9885729551315308,1,Pathogenic,"criteria provided, single submitter",1
+1075456,KIF1C,Insertion,1,0.9465569257736206,1,Pathogenic,"criteria provided, single submitter",1
+4817175,RMRP,Insertion,1,0.935206949710846,1,Likely pathogenic,"criteria provided, single submitter",1
+254242,FIBP,Insertion,1,0.9960163235664368,1,Likely pathogenic,"criteria provided, single submitter",1
+1328934,SLC2A1,Insertion,1,0.9934646487236023,1,Pathogenic,no assertion criteria provided,1
+2679984,BBS10,Insertion,1,0.9832943677902222,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+4710774,MFRP,Insertion,1,0.46783170104026794,0,Pathogenic,"criteria provided, single submitter",1
+2580259,IKZF1,Insertion,1,0.9759962558746338,1,Likely pathogenic,"criteria provided, single submitter",1
+190207,XPA,Insertion,1,0.7451065182685852,1,Pathogenic,"criteria provided, single submitter",1
+988560,ATP2A2,Insertion,1,0.9962449669837952,1,Likely pathogenic,"criteria provided, single submitter",1
+2825834,MBD4,Insertion,1,0.9806102514266968,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3377656,ARFGEF1,Insertion,1,0.9925547242164612,1,Likely pathogenic,"criteria provided, single submitter",1
+1677093,TK2,Insertion,1,0.9397954940795898,1,Likely pathogenic,"criteria provided, single submitter",1
+979207,HPDL,Insertion,1,0.9895867109298706,1,Pathogenic,no assertion criteria provided,1
+931775,C12orf4,Insertion,1,0.9982328414916992,1,Likely pathogenic,"criteria provided, single submitter",1
+167813,UBE3A,Insertion,1,0.9825814366340637,1,Pathogenic,"criteria provided, single submitter",1
+4780661,IFT81,Insertion,1,0.9881972670555115,1,Pathogenic,"criteria provided, single submitter",1
+1327519,ZNFX1,Insertion,1,0.9790197014808655,1,Pathogenic,no assertion criteria provided,1
+4070959,DGKH,Insertion,1,0.9674169421195984,1,Pathogenic,no assertion criteria provided,1
+2677675,PEX2,Insertion,1,0.7574202418327332,1,Likely pathogenic,"criteria provided, single submitter",1
+3382396,FOXL2,Insertion,1,0.9413090944290161,1,Likely pathogenic,"criteria provided, single submitter",1
+3061915,MIP,Insertion,1,0.9897119998931885,1,Likely pathogenic,"criteria provided, single submitter",1
+1343495,RFXAP,Insertion,1,0.6571357846260071,1,Likely pathogenic,"criteria provided, single submitter",1
+4526344,REEP1,Insertion,1,0.9863376021385193,1,Pathogenic,"criteria provided, single submitter",1
+424339,ALG1,Insertion,1,0.9693621397018433,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+56041,GLDC,Insertion,1,0.991791844367981,1,Likely pathogenic,no assertion criteria provided,1
+2725344,SLC12A6,Insertion,1,0.6795516610145569,1,Pathogenic,"criteria provided, single submitter",1
+425932,BMPR2,Insertion,1,0.9957777261734009,1,Pathogenic,no assertion criteria provided,1
+624437,UPF3B,Insertion,1,0.9828736186027527,1,Pathogenic,"criteria provided, single submitter",1
+2811229,RMRP,Insertion,1,0.960933268070221,1,Pathogenic,"criteria provided, single submitter",1
+3254773,FOXG1,Insertion,1,0.9995309114456177,1,Pathogenic,"criteria provided, single submitter",1
+2629457,NALCN,Insertion,1,0.9912620782852173,1,Likely pathogenic,"criteria provided, single submitter",1
+1452239,TRNT1,Insertion,1,0.9523921608924866,1,Pathogenic,"criteria provided, single submitter",1
+4725699,FRMD7,Insertion,1,0.9507379531860352,1,Pathogenic,"criteria provided, single submitter",1
+453038,ASXL3,Insertion,1,0.9533449411392212,1,Likely pathogenic,"criteria provided, single submitter",1
+2824256,FH,Insertion,1,0.9897935390472412,1,Pathogenic,"criteria provided, single submitter",1
+4817424,CPT2,Insertion,1,0.9684666395187378,1,Likely pathogenic,"criteria provided, single submitter",1
+2825616,AHI1,Insertion,1,0.9305325150489807,1,Pathogenic,"criteria provided, single submitter",1
+3902248,RMRP,Insertion,1,0.9804983139038086,1,Likely pathogenic,"criteria provided, single submitter",1
+4716975,TBX3,Insertion,1,0.9966296553611755,1,Pathogenic,"criteria provided, single submitter",1
+3064488,BPNT2,Insertion,1,0.969190776348114,1,Likely pathogenic,"criteria provided, single submitter",1
+16130,H6PD,Insertion,1,0.9903382658958435,1,Pathogenic,no assertion criteria provided,1
+4616276,COL4A5,Insertion,1,0.9809737801551819,1,Pathogenic,"criteria provided, single submitter",1
+2123808,ASL,Insertion,1,0.998434841632843,1,Pathogenic,"criteria provided, single submitter",1
+3337767,CKAP2L,Insertion,1,0.9051631093025208,1,Likely pathogenic,"criteria provided, single submitter",1
+4111218,MSH6,Insertion,1,0.995528519153595,1,Pathogenic,"criteria provided, single submitter",1
+3906178,ABCA2,Insertion,1,0.9916022419929504,1,Likely pathogenic,"criteria provided, single submitter",1
+3638160,DONSON,Insertion,1,0.24025113880634308,0,Pathogenic,"criteria provided, single submitter",1
+3240439,SERPINA1,Insertion,1,0.9928104281425476,1,Likely pathogenic,"criteria provided, single submitter",1
+2108252,KIF11,Insertion,1,0.993933379650116,1,Pathogenic,"criteria provided, single submitter",1
+1297112,RPGR,Insertion,1,0.9714922308921814,1,Likely pathogenic,"criteria provided, single submitter",1
+4725597,EYA4,Insertion,1,0.6558771133422852,1,Pathogenic,"criteria provided, single submitter",1
+1428144,GATA1,Insertion,1,0.9839243292808533,1,Pathogenic,"criteria provided, single submitter",1
+3684592,TRPV6,Insertion,1,0.9743795394897461,1,Pathogenic,"criteria provided, single submitter",1
+266229,BRCA1,Insertion,1,0.9766094088554382,1,Pathogenic,reviewed by expert panel,1
+3773731,CSNK2B,Insertion,1,0.9876067042350769,1,Pathogenic,"criteria provided, single submitter",1
+1064473,CNGA3,Insertion,1,0.9897218346595764,1,Likely pathogenic,no assertion criteria provided,1
+4730295,C1S,Insertion,1,0.9988901019096375,1,Pathogenic,"criteria provided, single submitter",1
+987358,CAPN1,Insertion,1,0.9954110980033875,1,Pathogenic,"criteria provided, single submitter",1
+2866703,FOXRED1,Insertion,1,0.997936487197876,1,Pathogenic,"criteria provided, single submitter",1
+3593219,IYD,Insertion,1,0.949222207069397,1,Likely pathogenic,"criteria provided, single submitter",1
+2012161,TET2,Insertion,1,0.975340723991394,1,Pathogenic,"criteria provided, single submitter",1
+4532281,COL9A2;LOC129930261,Insertion,1,0.9622670412063599,1,Pathogenic,"criteria provided, single submitter",1
+872172,STAT2,Insertion,1,0.9922045469284058,1,Pathogenic,"criteria provided, single submitter",1
+4715275,NF1,Insertion,1,0.5473052859306335,1,Pathogenic,"criteria provided, single submitter",1
+1185690,SLC26A4,Insertion,1,0.9907757639884949,1,Pathogenic,no assertion criteria provided,1
+3772257,CD55,Insertion,1,0.9860743880271912,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3336683,FCN3,Insertion,1,0.97259920835495,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+14873,HOXD13,Insertion,1,0.9848248362541199,1,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2113153,THAP1,Insertion,1,0.9997014403343201,1,Pathogenic,"criteria provided, single submitter",1
+2831884,RMRP,Insertion,1,0.8196393847465515,1,Pathogenic,"criteria provided, single submitter",1
+2025299,SGCB,Insertion,1,0.9975244402885437,1,Pathogenic,"criteria provided, single submitter",1
+1702483,SLC26A2,Insertion,1,0.9877141714096069,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2630816,EXT1,Insertion,1,0.9169342517852783,1,Likely pathogenic,"criteria provided, single submitter",1
+2050437,FAM20C,Insertion,1,0.9679331183433533,1,Pathogenic,"criteria provided, single submitter",1
+1453552,LAMB2,Insertion,1,0.9949070811271667,1,Pathogenic,"criteria provided, single submitter",1
+4813693,TRPM6,Insertion,1,0.9075053334236145,1,Likely pathogenic,"criteria provided, single submitter",1
+4818423,AMT,Insertion,1,0.99439936876297,1,Likely pathogenic,"criteria provided, single submitter",1
+1726491,HGD,Insertion,1,0.992901086807251,1,Likely pathogenic,"criteria provided, single submitter",1
+3061928,CCR2,Insertion,1,0.9924875497817993,1,Pathogenic,no assertion criteria provided,1
+958693,PROM1,Insertion,1,0.9489147067070007,1,Pathogenic,"criteria provided, single submitter",1
+1425355,SLC5A1,Insertion,1,0.9900999665260315,1,Pathogenic,"criteria provided, single submitter",1
+1453954,MYH2,Insertion,1,0.9977026581764221,1,Pathogenic,"criteria provided, single submitter",1
+2711294,ZMPSTE24,Insertion,1,0.9865054488182068,1,Pathogenic,"criteria provided, single submitter",1
+3780111,PDHX,Insertion,1,0.9719125032424927,1,Likely pathogenic,"criteria provided, single submitter",1
+870861,PYGL,Insertion,1,0.9985584616661072,1,Likely pathogenic,"criteria provided, single submitter",1
+4293669,GPD1,Insertion,1,0.9975038170814514,1,Pathogenic,"criteria provided, single submitter",1
+3489618,CDKN1B,Indel,0,0.8005187511444092,1,Likely benign,"criteria provided, single submitter",0
+918989,MLH1,Indel,0,0.0008733668364584446,0,Likely benign,"criteria provided, single submitter",0
+559154,TRAP1,Indel,0,0.9342755675315857,1,Benign,"criteria provided, single submitter",0
+949204,KBTBD13,Indel,0,0.021228108555078506,0,Likely benign,"criteria provided, single submitter",0
+476882,SH3TC2,Indel,0,0.14746275544166565,0,Likely benign,"criteria provided, single submitter",0
+3904360,SDHB,Indel,0,0.9300501942634583,1,Benign,"criteria provided, single submitter",0
+559194,DARS2,Indel,0,0.38412684202194214,0,Benign,no assertion criteria provided,0
+514246,CEACAM16,Indel,0,0.5173542499542236,1,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1575771,OTC,Indel,0,0.01478106714785099,0,Likely benign,"criteria provided, single submitter",0
+1742966,FOXP2,Indel,0,0.9723111987113953,1,Likely benign,"criteria provided, single submitter",0
+4683221,ENPP1,Indel,0,0.002272275509312749,0,Likely benign,"criteria provided, single submitter",0
+1175442,VARS2,Indel,0,0.002534098457545042,0,Likely benign,"criteria provided, single submitter",0
+227059,SCNN1A,Indel,0,0.8235766887664795,1,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1672722,SLC18A2,Indel,0,0.14030441641807556,0,Likely benign,"criteria provided, single submitter",0
+1131019,CYP11B1,Indel,0,0.24412958323955536,0,Likely benign,"criteria provided, single submitter",0
+524738,CDKN1C,Indel,0,0.017386935651302338,0,Likely benign,"criteria provided, single submitter",0
+2131561,RASGRP1,Indel,0,0.5541726350784302,1,Likely benign,"criteria provided, single submitter",0
+475448,KIAA0586,Indel,0,0.4675148129463196,0,Benign,"criteria provided, single submitter",0
+4071442,TP53,Indel,0,0.8960702419281006,1,Likely benign,"criteria provided, single submitter",0
+287471,SHROOM4,Indel,0,0.46966686844825745,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1627562,RPL11,Indel,0,0.005526370834559202,0,Likely benign,"criteria provided, single submitter",0
+2105433,KBTBD13,Indel,0,0.005069664679467678,0,Likely benign,"criteria provided, single submitter",0
+2747739,TGFB1,Indel,0,0.0020654385443776846,0,Likely benign,"criteria provided, single submitter",0
+2429813,CIC,Indel,0,0.9826432466506958,1,Likely benign,"criteria provided, single submitter",0
+760171,SYNJ1,Indel,0,0.931922197341919,1,Likely benign,"criteria provided, single submitter",0
+2146985,SPTAN1,Indel,0,0.24463969469070435,0,Likely benign,"criteria provided, single submitter",0
+1984786,TMEM231,Indel,0,0.02877139486372471,0,Likely benign,"criteria provided, single submitter",0
+4689167,CFHR4,Indel,0,0.02215590886771679,0,Likely benign,"criteria provided, single submitter",0
+47961,TMIE,Indel,0,0.9026577472686768,1,Likely benign,"criteria provided, single submitter",0
+982620,WDR45,Indel,0,0.023262355476617813,0,Likely benign,"criteria provided, single submitter",0
+2032823,WWOX,Indel,0,0.0027901490684598684,0,Likely benign,"criteria provided, single submitter",0
+3773168,HOXB13,Indel,0,8.59349820530042e-05,0,Benign,"criteria provided, single submitter",0
+1548152,A2ML1,Indel,0,0.7037164568901062,1,Likely benign,"criteria provided, single submitter",0
+1736615,FLCN,Indel,0,0.0027718301862478256,0,Likely benign,"criteria provided, single submitter",0
+2009872,TELO2,Indel,0,0.12092441320419312,0,Likely benign,"criteria provided, single submitter",0
+1330751,UGT1A7,Indel,0,0.804520308971405,1,Likely benign,"criteria provided, single submitter",0
+2160564,FMN1,Indel,0,0.5309427976608276,1,Likely benign,"criteria provided, single submitter",0
+1111850,CABP4,Indel,0,0.6094478964805603,1,Likely benign,"criteria provided, single submitter",0
+532014,LAMP2,Indel,0,0.35439279675483704,0,Benign/Likely benign,"criteria provided, multiple submitters, no conflicts",0
+1586153,RPS19,Indel,0,0.002366958186030388,0,Likely benign,"criteria provided, single submitter",0
+4848227,GBF1,Indel,0,0.007334270980209112,0,Likely benign,"criteria provided, single submitter",0
+1107322,XPC,Indel,0,0.004486575722694397,0,Likely benign,"criteria provided, single submitter",0
+921757,TPM1,Indel,0,0.9198447465896606,1,Likely benign,"criteria provided, single submitter",0
+524723,CDKN1C,Indel,0,0.6656864881515503,1,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+4634863,WT1,Indel,0,0.5489934086799622,1,Likely benign,"criteria provided, single submitter",0
+1666044,TXNRD2,Indel,0,0.0014533608919009566,0,Likely benign,"criteria provided, single submitter",0
+508217,KCNJ8,Indel,0,0.0071157668717205524,0,Likely benign,"criteria provided, single submitter",0
+3766783,SEC23B,Indel,0,0.0019611341413110495,0,Benign,"criteria provided, single submitter",0
+2065475,MTHFR,Indel,0,0.0014971401542425156,0,Likely benign,"criteria provided, single submitter",0
+1157258,LRIT3,Indel,0,0.005594875663518906,0,Likely benign,"criteria provided, single submitter",0
+982076,NLRC5,Indel,0,0.0400206483900547,0,Benign,"criteria provided, single submitter",0
+792723,ATRX,Indel,0,0.0051012360490858555,0,Likely benign,"criteria provided, single submitter",0
+2571606,PPP3CA,Indel,0,0.0006804522126913071,0,Benign,"criteria provided, single submitter",0
+3671096,PIGQ,Indel,0,0.05084823817014694,0,Likely benign,"criteria provided, single submitter",0
+474799,CD3G,Indel,0,0.36661434173583984,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+1652583,CALM2,Indel,0,0.0025550650898367167,0,Likely benign,"criteria provided, single submitter",0
+1531604,PDE6B,Indel,0,0.28871244192123413,0,Likely benign,"criteria provided, single submitter",0
+3250763,MUC21,Indel,0,0.12970541417598724,0,Likely benign,"criteria provided, single submitter",0
+2065184,CACNA1E,Indel,0,0.6049225926399231,1,Likely benign,"criteria provided, single submitter",0
+4823817,KRT6C,Indel,0,0.03993072360754013,0,Likely benign,"criteria provided, single submitter",0
+3342233,HNRNPU,Indel,0,0.33183637261390686,0,Likely benign,"criteria provided, single submitter",0
+219003,MMAB,Indel,0,0.10876039415597916,0,Benign,"criteria provided, multiple submitters, no conflicts",0
+1462080,PSAT1,Indel,0,0.2951996922492981,0,Likely benign,"criteria provided, single submitter",0
+420496,TGFBR2,Indel,0,0.0020349554251879454,0,Likely benign,"criteria provided, multiple submitters, no conflicts",0
+4539030,CTNNA1,Indel,0,0.04020794481039047,0,Likely benign,"criteria provided, single submitter",0
+2973066,RPS19,Indel,0,0.7901973128318787,1,Benign,"criteria provided, single submitter",0
+4683526,ANKRD1,Indel,0,0.00016847209190018475,0,Likely benign,"criteria provided, single submitter",0
+1928684,RPGR,Indel,1,0.9786496758460999,1,Likely pathogenic,reviewed by expert panel,1
+140729,KIF4A,Indel,1,0.021585609763860703,0,Pathogenic,no assertion criteria provided,1
+1704247,PPP1R35,Indel,1,0.9629588723182678,1,Pathogenic,"criteria provided, single submitter",1
+2110138,ACP5,Indel,1,0.9983878135681152,1,Pathogenic,"criteria provided, single submitter",1
+1676818,CEL,Indel,1,0.990661084651947,1,Likely pathogenic,"criteria provided, single submitter",1
+210905,EBP,Indel,1,0.9864808320999146,1,Pathogenic,"criteria provided, single submitter",1
+2583386,BARD1,Indel,1,0.9943776726722717,1,Pathogenic,"criteria provided, single submitter",1
+3031701,TAOK1,Indel,1,0.9998047947883606,1,Likely pathogenic,no assertion criteria provided,1
+546065,PHF6,Indel,1,0.9976660013198853,1,Pathogenic,"criteria provided, single submitter",1
+2850981,BCOR,Indel,1,0.9701427221298218,1,Pathogenic,"criteria provided, single submitter",1
+3220923,LOXHD1,Indel,1,0.9052900671958923,1,Likely pathogenic,"criteria provided, single submitter",1
+4730686,PKP2,Indel,1,0.8677085638046265,1,Pathogenic,"criteria provided, single submitter",1
+13772,PAX9,Indel,1,0.9927196502685547,1,Pathogenic,no assertion criteria provided,1
+4277590,TWNK,Indel,1,0.29422879219055176,0,Pathogenic,"criteria provided, single submitter",1
+3773765,PRKN,Indel,1,0.9753850698471069,1,Likely pathogenic,"criteria provided, single submitter",1
+3010801,TMEM127,Indel,1,0.935614287853241,1,Pathogenic,"criteria provided, single submitter",1
+2679960,BBS1,Indel,1,0.9579898118972778,1,Likely pathogenic,"criteria provided, single submitter",1
+810668,NPM1,Indel,1,0.9783273339271545,1,Pathogenic,no assertion criteria provided,1
+2081567,L1CAM,Indel,1,0.9906356930732727,1,Likely pathogenic,"criteria provided, single submitter",1
+916636,FREM2,Indel,1,0.9902186989784241,1,Pathogenic,"criteria provided, single submitter",1
+4845465,KPTN,Indel,1,0.9779219031333923,1,Likely pathogenic,"criteria provided, single submitter",1
+664398,MEN1,Indel,1,0.9975403547286987,1,Pathogenic,"criteria provided, single submitter",1
+1698575,PAH,Indel,1,0.982271671295166,1,Pathogenic,"criteria provided, single submitter",1
+2136858,RET,Indel,1,0.891391932964325,1,Pathogenic,"criteria provided, single submitter",1
+4815605,SMARCAL1,Indel,1,0.9928748607635498,1,Likely pathogenic,"criteria provided, single submitter",1
+2948231,DOK7,Indel,1,0.9635706543922424,1,Pathogenic,"criteria provided, single submitter",1
+204200,AGXT,Indel,1,0.9561643004417419,1,Pathogenic,no assertion criteria provided,1
+4850023,MRPS34,Indel,1,0.9959465861320496,1,Likely pathogenic,"criteria provided, single submitter",1
+2577596,SIX3,Indel,1,0.9865129590034485,1,Likely pathogenic,"criteria provided, single submitter",1
+3600146,PC,Indel,1,0.9862051606178284,1,Likely pathogenic,"criteria provided, single submitter",1
+2435099,AVPR2,Indel,1,0.9880267381668091,1,Pathogenic,"criteria provided, single submitter",1
+4081638,DYNC2H1,Indel,1,0.9303900599479675,1,Pathogenic,"criteria provided, single submitter",1
+4849976,BMP4,Indel,1,0.9955877065658569,1,Likely pathogenic,"criteria provided, single submitter",1
+2504567,ATP8A2,Indel,1,0.9882364869117737,1,Pathogenic,"criteria provided, single submitter",1
+989030,CYP7B1,Indel,1,0.9894065260887146,1,Pathogenic,"criteria provided, single submitter",1
+2636405,FREM1,Indel,1,0.9770762324333191,1,Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+974566,MECP2,Indel,1,0.9351575374603271,1,Likely pathogenic,"criteria provided, single submitter",1
+3254622,FGF10,Indel,1,0.8020537495613098,1,Likely pathogenic,"criteria provided, single submitter",1
+435090,ERLIN2,Indel,1,0.9609663486480713,1,Likely pathogenic,"criteria provided, single submitter",1
+192290,MECP2,Indel,1,0.9785657525062561,1,Pathogenic,"criteria provided, single submitter",1
+1343794,CEBPA,Indel,1,0.9987479448318481,1,Likely pathogenic,"criteria provided, single submitter",1
+2573668,KMT5B,Indel,1,0.9895961880683899,1,Pathogenic,"criteria provided, single submitter",1
+4849449,NCAPD2,Indel,1,0.9837149977684021,1,Likely pathogenic,"criteria provided, single submitter",1
+997785,ASPM,Indel,1,0.9179208874702454,1,Pathogenic,no assertion criteria provided,1
+4725966,GAD1,Indel,1,0.9654639363288879,1,Likely pathogenic,"criteria provided, single submitter",1
+965760,PROP1,Indel,1,0.9293235540390015,1,Pathogenic,"criteria provided, single submitter",1
+1453662,NUS1,Indel,1,0.9976547956466675,1,Pathogenic,"criteria provided, single submitter",1
+817452,ASXL3,Indel,1,0.9407310485839844,1,Pathogenic,"criteria provided, single submitter",1
+4817189,RMRP,Indel,1,0.9817472100257874,1,Likely pathogenic,"criteria provided, single submitter",1
+3603868,ADA2,Indel,1,0.0006765439757145941,0,Likely pathogenic,"criteria provided, single submitter",1
+4081206,BLM,Indel,1,0.2345017045736313,0,Likely pathogenic,"criteria provided, single submitter",1
+551312,GRHPR,Indel,1,0.9971520900726318,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1804112,MED12L,Indel,1,0.9320452809333801,1,Likely pathogenic,"criteria provided, single submitter",1
+423947,SMARCE1,Indel,1,0.9675055742263794,1,Likely pathogenic,"criteria provided, single submitter",1
+3598917,ACAT1,Indel,1,0.9238987565040588,1,Likely pathogenic,"criteria provided, single submitter",1
+3650416,SLC34A1,Indel,1,0.6506756544113159,1,Likely pathogenic,"criteria provided, single submitter",1
+2762757,CEP152,Indel,1,0.9952266216278076,1,Pathogenic,"criteria provided, single submitter",1
+3220925,DCLRE1C,Indel,1,0.7654518485069275,1,Likely pathogenic,"criteria provided, single submitter",1
+4784984,FLNA,Indel,1,0.981171727180481,1,Pathogenic,"criteria provided, single submitter",1
+3249303,PEX1,Indel,1,0.9105061888694763,1,Pathogenic,no assertion criteria provided,1
+375384,SYN3,Indel,1,0.9062612652778625,1,Pathogenic,no assertion criteria provided,1
+50356,KAT6B,Indel,1,0.9207862615585327,1,Pathogenic,no assertion criteria provided,1
+652535,IFNGR1,Indel,1,0.9929195046424866,1,Pathogenic,"criteria provided, single submitter",1
+2133786,EML1,Indel,1,0.9522978663444519,1,Pathogenic,"criteria provided, single submitter",1
+504174,GATAD2B,Indel,1,0.9847787022590637,1,Pathogenic,"criteria provided, single submitter",1
+3896574,HBA2,Indel,1,0.8496701121330261,1,Likely pathogenic,"criteria provided, single submitter",1
+3963251,STK11,Indel,1,0.9920033812522888,1,Pathogenic,"criteria provided, single submitter",1
+915952,DEAF1,Indel,1,0.9926425814628601,1,Pathogenic,no assertion criteria provided,1
+2936991,TREX1,Indel,1,0.9615423679351807,1,Pathogenic,"criteria provided, single submitter",1
+4719788,FGFR3,Indel,1,0.037408675998449326,0,Pathogenic,"criteria provided, single submitter",1
+1725575,PEX1,Indel,1,0.98362135887146,1,Likely pathogenic,"criteria provided, single submitter",1
+4815660,ETHE1,Indel,1,0.9882828593254089,1,Likely pathogenic,"criteria provided, single submitter",1
+2431402,LINS1,Indel,1,0.9882137775421143,1,Likely pathogenic,"criteria provided, single submitter",1
+1701817,VIPAS39,Indel,1,0.9328463673591614,1,Pathogenic,no assertion criteria provided,1
+3338008,SERPING1,Indel,1,0.9960383176803589,1,Pathogenic,"criteria provided, single submitter",1
+1209208,HRAS,Indel,1,0.10369904339313507,0,Pathogenic,"criteria provided, multiple submitters, no conflicts",1
+3899223,JAG1,Indel,1,0.8328725099563599,1,Likely pathogenic,"criteria provided, single submitter",1
+1691863,STXBP1,Indel,1,0.987916886806488,1,Pathogenic,"criteria provided, single submitter",1
+2500317,KCNA3,Indel,1,0.9794296026229858,1,Likely pathogenic,"criteria provided, single submitter",1
+3892841,VHL,Indel,1,0.9925988912582397,1,Pathogenic,"criteria provided, single submitter",1
+4081236,CDAN1,Indel,1,0.9859794974327087,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1323104,IFT140,Indel,1,0.9975879192352295,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1300581,PPIB,Indel,1,0.9915613532066345,1,Likely pathogenic,"criteria provided, single submitter",1
+467922,TSC2,Indel,1,0.9983497858047485,1,Pathogenic,"criteria provided, single submitter",1
+4816062,MCOLN1,Indel,1,0.9962201714515686,1,Likely pathogenic,"criteria provided, single submitter",1
+425870,BMPR2,Indel,1,0.9893226027488708,1,Pathogenic,no assertion criteria provided,1
+3041737,CD36,Indel,1,0.755222499370575,1,Likely pathogenic,no assertion criteria provided,1
+867193,IMPG2,Indel,1,0.9583012461662292,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2577398,CCN6,Indel,1,0.10582514852285385,0,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1747539,SLC52A2,Indel,1,0.9956627488136292,1,Likely pathogenic,"criteria provided, single submitter",1
+1723971,MMAA,Indel,1,0.9681329727172852,1,Likely pathogenic,"criteria provided, single submitter",1
+4291143,MAU2,Indel,1,0.9131772518157959,1,Likely pathogenic,"criteria provided, single submitter",1
+1724537,COL4A4,Indel,1,0.9120267629623413,1,Likely pathogenic,"criteria provided, single submitter",1
+4849329,VWA3B,Indel,1,0.9604067206382751,1,Likely pathogenic,"criteria provided, single submitter",1
+1198357,KIF11,Indel,1,0.9831644892692566,1,Pathogenic,"criteria provided, single submitter",1
+1033862,C9,Indel,1,0.9946611523628235,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2571664,GCK,Indel,1,0.9195314049720764,1,Likely pathogenic,reviewed by expert panel,1
+1724964,TPP1,Indel,1,0.9434689879417419,1,Likely pathogenic,"criteria provided, single submitter",1
+2118867,TP53,Indel,1,0.9945257902145386,1,Pathogenic,"criteria provided, single submitter",1
+3573972,DHCR7,Indel,1,0.979468584060669,1,Likely pathogenic,"criteria provided, single submitter",1
+214919,OPA1,Indel,1,0.7911744713783264,1,Pathogenic,"criteria provided, single submitter",1
+44761,GJB2,Indel,1,0.998084306716919,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+1785932,PTEN,Indel,1,0.9967781901359558,1,Likely pathogenic,"criteria provided, single submitter",1
+254358,NPRL3,Indel,1,0.9342147707939148,1,Pathogenic,no assertion criteria provided,1
+4796586,ATP2A1,Indel,1,0.9524961709976196,1,Likely pathogenic,"criteria provided, single submitter",1
+3010199,PROP1,Indel,1,0.9833699464797974,1,Pathogenic,"criteria provided, single submitter",1
+966838,GMPPB,Indel,1,0.9813202619552612,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+2506899,NKX2-1,Indel,1,0.9504842162132263,1,Likely pathogenic,"criteria provided, single submitter",1
+2836340,NDUFS4,Indel,1,0.28147536516189575,0,Pathogenic,"criteria provided, single submitter",1
+438552,PHEX,Indel,1,0.984529435634613,1,Pathogenic,"criteria provided, single submitter",1
+3061147,FOXC2,Indel,1,0.989081859588623,1,Likely pathogenic,no assertion criteria provided,1
+997692,CHAMP1,Indel,1,0.9631596207618713,1,Pathogenic,no assertion criteria provided,1
+635258,H1-4,Indel,1,0.9758147597312927,1,Pathogenic,"criteria provided, single submitter",1
+965702,EFNB1,Indel,1,0.9923920035362244,1,Pathogenic,"criteria provided, single submitter",1
+193463,CCM2,Indel,1,0.7026753425598145,1,Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",1
+917500,IGF2,Indel,1,0.990264892578125,1,Pathogenic,no assertion criteria provided,1
+817014,STXBP1,Indel,1,0.99969482421875,1,Pathogenic,"criteria provided, single submitter",1
+1701451,BRPF1,Indel,1,0.899756669998169,1,Likely pathogenic,"criteria provided, single submitter",1
+2680372,CAPN3,Indel,1,0.994636595249176,1,Likely pathogenic,"criteria provided, single submitter",1
+4850015,SIN3A,Indel,1,0.9889683127403259,1,Pathogenic,"criteria provided, single submitter",1
+2123578,RS1,Indel,1,0.48732420802116394,0,Pathogenic,"criteria provided, single submitter",1
+1251973,MRPL44,Indel,1,0.994443953037262,1,Pathogenic,no assertion criteria provided,1
+1749778,LPL,Indel,1,0.9789405465126038,1,Pathogenic,"criteria provided, single submitter",1
+2633419,TNFRSF13B,Indel,1,0.983842134475708,1,Likely pathogenic,"criteria provided, single submitter",1
+2676458,MCCC1,Indel,1,0.7892351150512695,1,Likely pathogenic,"criteria provided, single submitter",1

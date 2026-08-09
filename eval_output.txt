@@ -1,0 +1,10 @@
+--- EVALUATION OF BACKEND MODEL SAMPLES ---
+Sample [0]: Pathogenic (BRCA1 c.5137G>A)
+  Mutation position: 402
+  Probability: 0.045916
+  Classification: Benign
+
+Sample [1]: Benign (ARHGAP21 G>A)
+  Mutation position: 535
+  Probability: 0.296973
+  Classification: Benign

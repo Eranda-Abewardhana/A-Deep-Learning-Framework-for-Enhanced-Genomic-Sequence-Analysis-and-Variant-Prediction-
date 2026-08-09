@@ -1,0 +1,23 @@
+TOP HIGH SCORES (Pathogenic):
+prob=0.923253 | pos=505 | DEL5 -> DEL5
+prob=0.871819 | pos=495 | DEL5 -> DEL5
+prob=0.825129 | pos=480 | DEL5 -> DEL5
+prob=0.821367 | pos=485 | DEL5 -> DEL5
+prob=0.819335 | pos=500 | DEL5 -> DEL5
+prob=0.761680 | pos=398 | T -> A
+prob=0.760014 | pos=315 | DEL5 -> DEL5
+prob=0.748465 | pos=270 | INS8 -> INS8
+prob=0.739510 | pos=265 | INS8 -> INS8
+prob=0.722731 | pos=180 | DEL5 -> DEL5
+
+TOP LOW SCORES (Benign):
+prob=0.043520 | pos=182 | A -> G
+prob=0.043172 | pos=119 | T -> C
+prob=0.042207 | pos=89 | G -> C
+prob=0.041830 | pos=98 | T -> G
+prob=0.041461 | pos=77 | A -> C
+prob=0.040755 | pos=77 | A -> G
+prob=0.040670 | pos=101 | A -> T
+prob=0.037664 | pos=89 | G -> T
+prob=0.032662 | pos=56 | A -> G
+prob=0.031329 | pos=101 | A -> G

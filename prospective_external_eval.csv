@@ -1,0 +1,247 @@
+VariationID,GeneSymbol,Type,ncbi_significance,ncbi_review_status,var_start,var_end,variant_type,label,model_prob,model_pred
+4857693,COL4A4,Duplication,Likely pathogenic,"criteria provided, single submitter",512,541,duplication,1,0.9835251569747925,1
+4857692,VPS13B,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9895302653312683,1
+4857683,NSD1,single nucleotide variant,Pathogenic,no assertion criteria provided,512,513,single nucleotide variant,1,0.07058519870042801,0
+4857682,ABCA4,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9961835741996765,1
+4857681,PGAP3,Indel,Likely pathogenic,"criteria provided, single submitter",512,521,indel,1,0.9188933968544006,1
+4857678,COL1A1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.61146479845047,1
+4857677,SCNM1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9764024019241333,1
+4857676,GNPTAB,Deletion,Likely pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9754147529602051,1
+4857669,TUBA4A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.26397043466567993,0
+4857667,FIG4,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.07936286926269531,0
+4857663,ABCA2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9952179193496704,1
+4857662,ANTXR2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9419068098068237,1
+4857661,ANTXR2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.13831011950969696,0
+4857659,SPRED2,Duplication,Likely pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9979853630065918,1
+4857658,SPRED2,Duplication,Likely pathogenic,"criteria provided, single submitter",512,515,duplication,1,0.9954559803009033,1
+4857657,SNUPN,Indel,Likely pathogenic,"criteria provided, single submitter",512,514,indel,1,0.8085060715675354,1
+4857656,SNUPN,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9226937294006348,1
+4857655,LOC130005097,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.6619484424591064,1
+4857653,TUBA4A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9552016854286194,1
+4857651,TUBA4A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9544745087623596,1
+4857650,TUBA4A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.2221224308013916,0
+4857649,TUBA4A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.8799554109573364,1
+4857648,TUBA4A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7508566379547119,1
+4857647,TUBA4A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.8057524561882019,1
+4857646,TUBA4A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7841037511825562,1
+4857645,TUBA4A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9176190495491028,1
+4857644,TUBA4A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9770742058753967,1
+4857643,KLHL40,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.4043751358985901,0
+4857642,AUTS2,single nucleotide variant,Likely benign,"criteria provided, single submitter",512,513,single nucleotide variant,0,0.0013701062416657805,0
+4857641,MYSM1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,517,deletion,1,0.9579513072967529,1
+4857640,TGM6,Insertion,Likely pathogenic,"criteria provided, single submitter",512,513,insertion,1,0.9935387969017029,1
+4857639,VPS13D,Deletion,Likely pathogenic,"criteria provided, single submitter",512,517,deletion,1,0.9931541681289673,1
+4857638,SAMD9L,Deletion,Likely pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.980131208896637,1
+4857637,TGM6,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9962498545646667,1
+4857636,ATM,Duplication,Pathogenic,"criteria provided, single submitter",512,528,duplication,1,0.8231905698776245,1
+4857634,SETX,Duplication,Likely pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9520441889762878,1
+4857633,GDAP2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9732869267463684,1
+4857632,ATM,Deletion,Likely pathogenic,"criteria provided, single submitter",512,521,deletion,1,0.9908539056777954,1
+4857631,TGM6,Deletion,Likely pathogenic,"criteria provided, single submitter",512,527,deletion,1,0.9881842136383057,1
+4857630,TPP1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9695116877555847,1
+4857629,F8,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.995743453502655,1
+4857627,F8,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.15643034875392914,0
+4857624,HACE1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9781604409217834,1
+4857622,ZNFX1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.4528646171092987,0
+4857621,RAPSN,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9427443742752075,1
+4857619,SGCA,Insertion,Likely pathogenic,"criteria provided, single submitter",512,513,insertion,1,0.968065619468689,1
+4857614,NF1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9628751873970032,1
+4857613,NF1,Duplication,Likely pathogenic,"criteria provided, single submitter",512,514,duplication,1,0.9679637551307678,1
+4857612,NF1,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9783333539962769,1
+4857611,NF1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9943192601203918,1
+4857610,NF1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.024190446361899376,0
+4857609,NF1,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9916315674781799,1
+4857608,NF1,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9800449013710022,1
+4857607,VPS53,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.43001702427864075,0
+4857606,ABCA4,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.6658210754394531,1
+4857605,NF1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.014855755493044853,0
+4857604,NF1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9961090683937073,1
+4857603,NF1,Indel,Likely pathogenic,"criteria provided, single submitter",512,518,indel,1,0.9230113625526428,1
+4857599,SBF1,Indel,Benign,"criteria provided, single submitter",512,514,indel,0,0.881598949432373,1
+4857598,SBF1,single nucleotide variant,Benign,"criteria provided, single submitter",512,513,single nucleotide variant,0,0.5378470420837402,1
+4857597,RBCK1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9723179340362549,1
+4857596,ADAMTS17,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9796714186668396,1
+4857595,POU3F4,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.04639776051044464,0
+4857594,MYO15A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.14216452836990356,0
+4857592,ACAD9,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.27046164870262146,0
+4857591,DDX3X,single nucleotide variant,Likely benign,"criteria provided, single submitter",512,513,single nucleotide variant,0,0.9943209886550903,1
+4857590,RANBP2,single nucleotide variant,Likely benign,"criteria provided, single submitter",512,513,single nucleotide variant,0,0.5862491726875305,1
+4857589,CACNA1H,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.6208692193031311,1
+4857588,COQ8B,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9804559946060181,1
+4857587,MTOR,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.916732668876648,1
+4857532,TCN2,Duplication,Likely pathogenic,"criteria provided, single submitter",512,516,duplication,1,0.9891417026519775,1
+4857531,TCN2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9462880492210388,1
+4857530,ATR,Deletion,Likely pathogenic,"criteria provided, single submitter",512,529,deletion,1,0.9833417534828186,1
+4857528,CACNA1A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7689469456672668,1
+4857527,SETBP1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9899477362632751,1
+4857525,NR2F2,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9982323050498962,1
+4857523,FUS,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.997684121131897,1
+4857522,CNTN2,Duplication,Likely pathogenic,"criteria provided, single submitter",512,527,duplication,1,0.9778233766555786,1
+4857520,CHD8,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9982041120529175,1
+4857519,YAP1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9776759147644043,1
+4857517,TTN-AS1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,516,deletion,1,0.9945188164710999,1
+4857516,COL2A1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9891092777252197,1
+4857515,MYH9,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9969924688339233,1
+4857514,SETD5,Deletion,Pathogenic,"criteria provided, single submitter",512,524,deletion,1,0.9695675373077393,1
+4857513,MAP1B,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.722679078578949,1
+4857511,ATP2B1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.991942286491394,1
+4857510,CIC,Duplication,Likely pathogenic,"criteria provided, single submitter",512,519,duplication,1,0.9828328490257263,1
+4857507,TUBB,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.5974705219268799,1
+4857505,GRIN2A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9463671445846558,1
+4857504,KRIT1,Indel,Likely pathogenic,"criteria provided, single submitter",512,515,indel,1,0.9886205196380615,1
+4857503,SRSF1,Duplication,Likely pathogenic,"criteria provided, single submitter",512,521,duplication,1,0.9842168092727661,1
+4857501,PPP2R1A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.3593796193599701,0
+4857499,EXT2,Deletion,Likely pathogenic,"criteria provided, single submitter",512,519,deletion,1,0.9977859258651733,1
+4857497,GCK,single nucleotide variant,Likely pathogenic,no assertion criteria provided,512,513,single nucleotide variant,1,0.7688896656036377,1
+4857495,LDLR,Indel,Pathogenic,no assertion criteria provided,512,513,indel,1,0.9873554110527039,1
+4857492,INS,single nucleotide variant,Likely pathogenic,no assertion criteria provided,512,513,single nucleotide variant,1,0.981702983379364,1
+4857491,GRIN2A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9087693095207214,1
+4857489,PRPF31,Deletion,Pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9989558458328247,1
+4857486,ERCC6L2,Deletion,Likely pathogenic,"criteria provided, single submitter",512,516,deletion,1,0.9972146153450012,1
+4857483,ESRRB,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9990975856781006,1
+4857482,HBA1,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9952321648597717,1
+4857480,WDR72,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.541508138179779,1
+4857477,EYA1,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9076476097106934,1
+4857476,MED13,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9816754460334778,1
+4857475,TGFB2,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.8138698935508728,1
+4857474,FRMD7,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.8563101887702942,1
+4857471,FLNC,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9884929060935974,1
+4857469,MPO,Microsatellite,Pathogenic,"criteria provided, single submitter",512,519,microsatellite,1,0.9768681526184082,1
+4857468,SCN3A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.5064504146575928,1
+4857467,NHS,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9061431884765625,1
+4857466,PCK1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9900694489479065,1
+4857462,ACTN2,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9922987818717957,1
+4857461,MYH7,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7809651494026184,1
+4857460,CIC,Deletion,Pathogenic,"criteria provided, single submitter",512,540,deletion,1,0.9156680703163147,1
+4857458,LINS1,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.985491931438446,1
+4857454,PPP1R12A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9961776733398438,1
+4857453,MAGEL2,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7951676249504089,1
+4857450,PGAP2,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.992830216884613,1
+4857449,JAG1,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9591115117073059,1
+4857447,ATRX,Duplication,Likely pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9714913368225098,1
+4857446,COL1A1,Deletion,Pathogenic,"criteria provided, single submitter",512,517,deletion,1,0.9460947513580322,1
+4857445,IGF1R,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.6438351273536682,1
+4857444,TSC2,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9745805859565735,1
+4857443,PCDH12,Microsatellite,Pathogenic,"criteria provided, single submitter",512,517,microsatellite,1,0.9815951585769653,1
+4857442,KAT6A,Deletion,Likely pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9865773916244507,1
+4857438,TTN,Deletion,Pathogenic,"criteria provided, single submitter",512,516,deletion,1,0.9520100355148315,1
+4857437,RALGAPA1,Duplication,Pathogenic,"criteria provided, single submitter",512,515,duplication,1,0.9914391040802002,1
+4857435,WT1,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9964698553085327,1
+4857434,WT1,Indel,Pathogenic,"criteria provided, single submitter",512,513,indel,1,0.9850517511367798,1
+4857432,SPEN,Deletion,Pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.6609488129615784,1
+4857429,MED13,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9429659247398376,1
+4857428,PCDH19,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7247652411460876,1
+4857427,LZTR1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9462398886680603,1
+4857424,TMEM127,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9829217195510864,1
+4857423,BTD,Duplication,Pathogenic,"criteria provided, single submitter",512,517,duplication,1,0.9410083889961243,1
+4857421,RORB,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.682473361492157,1
+4857419,ARFGEF1,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9120662212371826,1
+4857417,UBA2,Duplication,Pathogenic,"criteria provided, single submitter",512,519,duplication,1,0.8908732533454895,1
+4857414,BPTF,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9866728782653809,1
+4857412,SETD1B,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9649730324745178,1
+4857410,PDE1C,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.519977867603302,1
+4857407,ATP2B2,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9777225255966187,1
+4857406,SLC12A2,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9427501559257507,1
+4857405,LMX1A,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9420848488807678,1
+4857404,TNC,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9976917505264282,1
+4857403,GSDME,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9959986209869385,1
+4857402,DIAPH1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9838281869888306,1
+4857401,GRHL2,Deletion,Pathogenic,"criteria provided, single submitter",512,527,deletion,1,0.985967218875885,1
+4857400,DIABLO,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.4452628493309021,0
+4857399,DIABLO,Deletion,Pathogenic,"criteria provided, single submitter",512,517,deletion,1,0.9881778359413147,1
+4857396,COCH,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.3514992296695709,0
+4857394,EYA4,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9976020455360413,1
+4857393,EYA4,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.98155677318573,1
+4857392,EYA4,Deletion,Pathogenic,"criteria provided, single submitter",512,517,deletion,1,0.9939870834350586,1
+4857391,EYA4,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9325011968612671,1
+4857387,POU4F3,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9788545370101929,1
+4857386,RBM27-POU4F3,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9932042360305786,1
+4857384,POU4F3,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9916256070137024,1
+4857383,POU4F3,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7622613310813904,1
+4857382,RBM27-POU4F3,Duplication,Pathogenic,"criteria provided, single submitter",512,517,duplication,1,0.9727801084518433,1
+4857381,POU4F3,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9753097295761108,1
+4857380,POU4F3,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9967575669288635,1
+4857379,MYO6,Microsatellite,Pathogenic,"criteria provided, single submitter",512,519,microsatellite,1,0.9941494464874268,1
+4857378,MYO6,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9990355968475342,1
+4857376,MYO6,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9991298317909241,1
+4857367,MYO15A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.1938067078590393,0
+4857365,ITGA2B,single nucleotide variant,Likely pathogenic,reviewed by expert panel,512,513,single nucleotide variant,1,0.9953948855400085,1
+4857364,ITGA2B,Deletion,Pathogenic,reviewed by expert panel,512,515,deletion,1,0.9925948977470398,1
+4857363,ITGB3,Deletion,Pathogenic,reviewed by expert panel,512,514,deletion,1,0.9820367693901062,1
+4857360,SERPING1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9939794540405273,1
+4857359,CFAP65,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.8188681602478027,1
+4857354,KIF5A,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.44050678610801697,0
+4857344,NKX2-5,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.43029025197029114,0
+4857342,DGKE,Insertion,Likely pathogenic,"criteria provided, single submitter",512,513,insertion,1,0.9922107458114624,1
+4857341,DGKE,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9603555798530579,1
+4857340,CFH,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9962828755378723,1
+4857338,CFH,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9916166663169861,1
+4857337,CFHR5,Indel,Likely pathogenic,"criteria provided, single submitter",512,515,indel,1,0.9943690896034241,1
+4857334,CPT2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.8088230490684509,1
+4857331,LOC126861615,single nucleotide variant,Likely pathogenic,reviewed by expert panel,512,513,single nucleotide variant,1,0.6825864315032959,1
+4857330,PAH,single nucleotide variant,Likely pathogenic,reviewed by expert panel,512,513,single nucleotide variant,1,0.2042320966720581,0
+4857328,FLI1,Duplication,Likely pathogenic,"criteria provided, single submitter",512,515,duplication,1,0.9674792289733887,1
+4857327,ITGA2B,Deletion,Pathogenic,"criteria provided, single submitter",512,516,deletion,1,0.956106960773468,1
+4857326,F11,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.09645788371562958,0
+4857325,RELA,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7060704827308655,1
+4857324,F8,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9570422172546387,1
+4857323,VWF,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.4966351091861725,0
+4857322,F8,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.6935225129127502,1
+4857321,CP,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.8935202956199646,1
+4857320,FGB,Deletion,Likely pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9951539039611816,1
+4857319,F8,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.5989225506782532,1
+4857317,SPRED1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9112269878387451,1
+4857316,NF1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.32886165380477905,0
+4857315,NF1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.965199887752533,1
+4857314,NF1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9982327222824097,1
+4857313,NF1,Duplication,Likely pathogenic,"criteria provided, single submitter",512,514,duplication,1,0.9813419580459595,1
+4857312,LZTR1,Duplication,Likely pathogenic,"criteria provided, single submitter",512,514,duplication,1,0.995191216468811,1
+4857307,FGF10,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7830276489257812,1
+4857306,LZTR1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.5283127427101135,1
+4857305,COL4A5,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9239379167556763,1
+4857304,SLC3A1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9961464405059814,1
+4857303,SLC5A2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.1048736572265625,0
+4857302,EFEMP1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.6553763747215271,1
+4857301,ANKRD17,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9208642244338989,1
+4857300,EDA,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9901716113090515,1
+4857298,COL4A3,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.6712977886199951,1
+4857297,SLC5A2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.20725402235984802,0
+4857294,PKD1,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9596627354621887,1
+4857293,TAOK1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.344891220331192,0
+4857292,CRB2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.6686221361160278,1
+4857291,PKD1-AS1,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.872556746006012,1
+4857290,PKD1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7815828323364258,1
+4857287,COL4A3,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9177845120429993,1
+4857285,KCNV2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9380232691764832,1
+4857282,CHD7,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.39658796787261963,0
+4857280,PKHD1,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9973689317703247,1
+4857279,SALL1,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9879944324493408,1
+4857278,COL4A5,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.3994041979312897,0
+4857276,PKD1,Deletion,Pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9854313135147095,1
+4857271,SLC5A2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.5374389886856079,1
+4857270,COL4A1,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.9389620423316956,1
+4857269,GCK,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9905186295509338,1
+4857268,SLC5A2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9405168294906616,1
+4857267,ATP6V0A4,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9744099974632263,1
+4857265,PKD1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9950664043426514,1
+4857264,PKD1,Duplication,Pathogenic,"criteria provided, single submitter",512,513,duplication,1,0.9874853491783142,1
+4857262,SLC5A2,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9869165420532227,1
+4857257,PKD1,Insertion,Pathogenic,"criteria provided, single submitter",512,513,insertion,1,0.97268146276474,1
+4857256,NIPBL,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9912047982215881,1
+4857255,CLCN5,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9928377270698547,1
+4857252,COL1A1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9553537964820862,1
+4857251,COL4A3,Deletion,Likely pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9611903429031372,1
+4857249,KMT2D,Deletion,Likely pathogenic,"criteria provided, single submitter",512,514,deletion,1,0.8525949120521545,1
+4857248,CUL3,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.3027104139328003,0
+4857245,PKD1,Deletion,Pathogenic,"criteria provided, single submitter",512,515,deletion,1,0.9492371678352356,1
+4857244,SLC5A2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.7555640935897827,1
+4857243,LOC129992813,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9622606039047241,1
+4857242,SLC5A2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.8403103947639465,1
+4857241,SLC12A3,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9076242446899414,1
+4857239,AVPR2,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.07909613102674484,0
+4857237,PKD2,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9946787357330322,1
+4857235,FBN1,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.8943610191345215,1
+4857234,ANKRD11,single nucleotide variant,Pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.9642944931983948,1
+4857233,ACTB,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.020710188895463943,0
+4857232,ANKRD11,single nucleotide variant,Likely pathogenic,"criteria provided, single submitter",512,513,single nucleotide variant,1,0.839945912361145,1
+4857231,SALL1,Deletion,Pathogenic,"criteria provided, single submitter",512,524,deletion,1,0.9371252059936523,1

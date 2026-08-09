@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Large datasets
+variant_summary.txt
+
+# Local OS files
+.DS_Store
+Thumbs.db
