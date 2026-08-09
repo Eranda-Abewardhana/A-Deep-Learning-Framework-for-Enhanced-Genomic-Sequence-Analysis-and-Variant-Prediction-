@@ -1,0 +1,33 @@
+# Exclude large datasets
+variant_summary.txt
+ablation_results.csv
+ncbi_evaluation_results.csv
+ncbi_per_gene_eval.csv
+prospective_external_eval.csv
+guided_absolutegrad_sample.csv
+xai_validation_summary.csv
+
+# Exclude offline training and evaluation scripts
+train.py
+make_samples.py
+find_high_path.py
+quick_scan.py
+eval_samples.py
+
+# Exclude virtual environments and python caches
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude local git configuration
+.git/
+.github/
+
+# Exclude documentation / design assets
+figures/
+README.md

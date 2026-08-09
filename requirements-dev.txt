@@ -1,0 +1,12 @@
+pyfaidx
+torch
+torchvision
+scikit-learn
+pandas
+numpy
+matplotlib
+captum
+requests
+fastapi
+uvicorn
+pydantic

@@ -1,12 +1,9 @@
-pyfaidx
+# PyTorch CPU-only version for lightweight serverless environment
+--find-links https://download.pytorch.org/whl/cpu
 torch
-torchvision
-scikit-learn
-pandas
 numpy
-matplotlib
-captum
-requests
+
+# FastAPI Web Server dependencies
 fastapi
 uvicorn
 pydantic
