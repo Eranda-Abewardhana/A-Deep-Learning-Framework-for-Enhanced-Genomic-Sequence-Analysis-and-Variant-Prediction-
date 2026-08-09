@@ -263,10 +263,10 @@ except Exception as e:
 
 SAMPLES = [
     {
-        "id": "pathogenic_brca1_del",
-        "label": "Pathogenic (BRCA1 Frameshift c.68_72del)",
+        "id": "brca1_frameshift_high",
+        "label": "🚨 High Risk — Pathogenic (BRCA1 Frameshift c.68_72del)",
         "gene": "BRCA1",
-        "variant": "5-bp Frameshift Deletion",
+        "variant": "5-bp Frameshift Deletion (High Impact)",
         "ref": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
                 "ACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTG"
                 "GATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTC"
@@ -291,10 +291,54 @@ SAMPLES = [
                 "ATTTAAGCATTGTACC"),
     },
     {
-        "id": "benign_brca1_snv",
-        "label": "Benign (BRCA1 Synonymous c.5137G>A)",
+        "id": "brca2_nonsense_high",
+        "label": "🚨 High Risk — Pathogenic (BRCA2 Nonsense c.5946delT)",
+        "gene": "BRCA2",
+        "variant": "1-bp Deletion Truncation (High Impact)",
+        "ref": ("ACGAAGGTCAACCGGAAATACCAGAACAAATAACCACTCCCCCCAAACTC"
+                "CTGGAAGAAGATAAAAACAGTGTTTTTGCTGAAGAGCAGAAACAGAACAG"
+                "TTTTAGTGACAACAGCAGTGTTTTTGCTGAAGAGCAGAAACAGAACAGTT"
+                "TTAGTGACAACAGCAGTGTTTTTGCTGAAGAGCAGAAACAGAACAGTTTT"
+                "AGTGACAACAGCA"),
+        "alt": ("ACGAAGGTCAACCGGAAATACCAGAACAAATAACCACTCCCCCCAAACTC"
+                "CTGGAAGAAGATAAAAACAGTGTTTTTGCTGAAGAGCAGAAACAGAACAG"
+                "TTTTAGTGACAACAGCAGTGTTTTTGCTGAAGAGCAGAAACAGAACAGTT"
+                "TTAGTGACAACAGCAGTGTTTTTGCTGAAGAGCAGAAACAGAACAGTTTT"
+                "AGTGACAAC"),
+    },
+    {
+        "id": "brca1_missense_mid",
+        "label": "⚠️ Moderate Risk — VUS (BRCA1 Missense c.5095C>T)",
         "gene": "BRCA1",
-        "variant": "G>A SNV (Low Risk)",
+        "variant": "Missense Alteration (Uncertain Significance)",
+        "ref": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
+                "ACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTG"
+                "GATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTC"
+                "TTTCAAGCTCAGCCAGACTGCTCTCTTCAGAAATATCACTTGCATGGCCT"
+                "GGAAAGCCAGCTCTTCTACCATCCATGTCAGAGTCATGGAAACACTCTCTA"
+                "ACCTCCTTTGTTTTACCTCTATCTTGTACTCCATAAACCTCTCAGTACAGA"
+                "ACATACAACTGATCACCCTGAATGGATCCCAAAGAGCTGATAAATATAAAT"
+                "TGTGCTTAATTAAGAAGTCTTCCTTCAAAGAAGCAATGGCCAATCTAGTG"
+                "AAGAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATA"
+                "TTTTTAGAGATCTCTTGAGAATCTGATCAGAAAATCTAATGGATGCAAAG"
+                "CTATTTAAGCATTGTACC"),
+        "alt": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
+                "ACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTG"
+                "GATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTC"
+                "TTTCAAGCTCAGCCAGACTGCTCTCTTCAGAAATATCACTTGCATGGCCT"
+                "GGAAAGCCAGCTCTTCTACCATCCATGTCAGAGTCATGGAAACACTCTCTA"
+                "ACCTCCTTTGTTTTACCTCTATCTTGTACTCCATAAACCTCTCAGTACAGA"
+                "ACATACAACTGATCACCCTGAATGGATCCCAAAGAGCTGAAAAATATAAAT"
+                "TGTGCTTAATTAAGAAGTCTTCCTTCAAAGAAGCAATGGCCAATCTAGTG"
+                "AAGAATCAGGCAGCTGAATTTATTCAGCCTTCATTGCAAAAGCGCTGATA"
+                "TTTTTAGAGATCTCTTGAGAATCTGATCAGAAAATCTAATGGATGCAAAG"
+                "CTATTTAAGCATTGTACC"),
+    },
+    {
+        "id": "brca1_synonymous_low",
+        "label": "✅ Low Risk — Benign (BRCA1 Synonymous c.5137G>A)",
+        "gene": "BRCA1",
+        "variant": "Synonymous G>A SNV (Low Risk / Silent)",
         "ref": ("GATCTCCCAGCCCCAGTCGGGAAGGAGCTTTGTTCAGACTTTTGAAAAGC"
                 "ACCAGGATCCTTTGGTTCAGCTACAGGATGGAAAGTCAGGGCTCAAACTG"
                 "GATTCATTTCCAGGTTGGCTCTGAGATGGATGATACTGAAGCTGATCCTC"
@@ -319,10 +363,10 @@ SAMPLES = [
                 "CTATTTAAGCATTGTACC"),
     },
     {
-        "id": "benign_arhgap21",
-        "label": "Benign (ARHGAP21 G>A)",
+        "id": "arhgap21_intronic_low",
+        "label": "✅ Low Risk — Benign (ARHGAP21 Intronic Polymorphism)",
         "gene": "ARHGAP21",
-        "variant": "G>A SNV",
+        "variant": "Non-coding Intronic SNV (Very Low Risk)",
         "ref": ("GGATCTCCGATTTCTCCCTCTGCTAAAGGTCAGAGGTACTGGTGCGTAG"
                 "GCCGTTCCCTGGCCCAGCCAGTCTCGGCATTCACTTTCCTCTCCCGCTCT"
                 "GCTCTCATTCTCCCTAGTGTATATCTGCGCCGGATGCTTTTCCTTTTTAG"
