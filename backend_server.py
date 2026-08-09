@@ -220,7 +220,7 @@ def anchor_pad_or_crop(ref_oh: np.ndarray, alt_oh: np.ndarray,
 
 # ─── Load model ───────────────────────────────────────────────────────────────
 
-app = FastAPI(title="BRCA Mutation Pathogenicity Predictor")
+app = FastAPI(title="Genomic Variant Pathogenicity Predictor")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
