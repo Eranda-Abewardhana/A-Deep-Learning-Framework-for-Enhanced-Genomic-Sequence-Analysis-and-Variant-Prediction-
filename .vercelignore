@@ -29,5 +29,4 @@ __pycache__/
 .github/
 
 # Exclude documentation / design assets
-figures/
 README.md

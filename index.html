@@ -1037,6 +1037,141 @@ footer {
   font-size: 0.78rem;
   border-top: 1px solid var(--border);
 }
+
+/* ── Thesis Results & Figures Gallery Styles ───────────────── */
+.stats-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.stat-value {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--accent-light);
+  margin-bottom: 0.3rem;
+  font-family: var(--sans);
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.stat-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.figure-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.figure-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s;
+}
+.figure-card:hover {
+  border-color: var(--accent-light);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.figure-img-box {
+  background: #000;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-subtle);
+  min-height: 200px;
+}
+.figure-img-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: contain;
+}
+.figure-card-body {
+  padding: 1.1rem;
+  flex-grow: 1;
+}
+.figure-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+.figure-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.llm-report-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-top: 1rem;
+}
+.llm-report-box h4 {
+  color: var(--accent-light);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.thesis-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+}
+.thesis-table th, .thesis-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.thesis-table th {
+  background: var(--surface);
+  color: var(--text-dim);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+.thesis-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+.thesis-table .highlight-row td {
+  background: rgba(99, 102, 241, 0.08);
+  font-weight: 700;
+  color: var(--text);
+}
 </style>
 </head>
 <body>
@@ -1087,6 +1222,10 @@ footer {
     <button class="tab-btn" data-tab="ablation" role="tab">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
       Ablation Evidence
+    </button>
+    <button class="tab-btn" data-tab="results" role="tab">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Thesis Results &amp; Figures
     </button>
     <button class="tab-btn" data-tab="predict" role="tab">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
@@ -1565,7 +1704,286 @@ footer {
   </div>
 </section>
 
-<!-- ═══ TAB 3: Live Predictor ═══ -->
+<!-- ═══ TAB 3: Thesis Results & Figures Showcase ═══ -->
+<section class="tab-panel" id="panel-results" role="tabpanel">
+  <!-- Key Thesis Metrics Dashboard -->
+  <div class="card">
+    <h3>Thesis Core Evaluation Dashboard &mdash; Notebook Summary</h3>
+    <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:1.25rem">
+      Key empirical findings, cross-validation metrics, external NCBI ClinVar validation, and ablation study benchmarks extracted from <code>a-deep-learning-framework (11).ipynb</code>.
+    </p>
+
+    <div class="stats-summary-grid">
+      <div class="stat-card">
+        <div class="stat-value">715,685</div>
+        <div class="stat-label">ClinVar Variants</div>
+        <div class="stat-sub">18,026 Genes (70/15/15 split)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">0.9225</div>
+        <div class="stat-label">NCBI External AUC</div>
+        <div class="stat-sub">942 Definite Variants</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">0.9191</div>
+        <div class="stat-label">NCBI AUPRC</div>
+        <div class="stat-sub">Precision-Recall Metric</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">82.38%</div>
+        <div class="stat-label">NCBI Alignment</div>
+        <div class="stat-sub">Balanced Acc: 81.67%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1.000</div>
+        <div class="stat-label">Expert Panel AUC</div>
+        <div class="stat-sub">Reviewed by Expert Panel</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complete Figure Gallery Grid -->
+  <div class="card">
+    <h3>Thesis Plot Artifacts Gallery (Figures F.1 &ndash; F.13)</h3>
+    <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:1rem">
+      Exported plot figures generated by the notebook pipeline saved in <code>/figures/</code>.
+    </p>
+
+    <div class="figure-gallery-grid">
+      <!-- Figure F.1 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/training_curves.png" alt="Training & Validation Curves" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.1: Training &amp; Validation Loss/AUC</div>
+          <div class="figure-desc">25-epoch convergence monitoring showing stable BCE loss reduction and validation ROC-AUC scaling to 0.8088 without overfitting.</div>
+        </div>
+      </div>
+
+      <!-- Figure F.2 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/confusion_matrix.png" alt="Confusion Matrix" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.2: Confusion Matrix</div>
+          <div class="figure-desc">True vs. Predicted class counts on ClinVar validation set, displaying high sensitivity for pathogenic variants.</div>
+        </div>
+      </div>
+
+      <!-- Figure F.3 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/pr_curve.png" alt="Precision-Recall Curve" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.3: Precision-Recall Curve</div>
+          <div class="figure-desc">Precision-Recall trade-off curve across classification thresholds, illustrating strong positive predictive value under class imbalance.</div>
+        </div>
+      </div>
+
+      <!-- Figure F.4 & F.5 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/ig_ref_attribution.png" alt="Integrated Gradients REF" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.4: Integrated Gradients (REF)</div>
+          <div class="figure-desc">Integrated Gradients baseline attribution map showing per-nucleotide baseline sensitivity across the 1024 bp reference window.</div>
+        </div>
+      </div>
+
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/ig_alt_attribution.png" alt="Integrated Gradients ALT" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.5: Integrated Gradients (ALT)</div>
+          <div class="figure-desc">Integrated Gradients alternate allele attribution map showing positional importance shifts caused by nucleotide substitutions.</div>
+        </div>
+      </div>
+
+      <!-- Figure F.6 & F.7 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/absgrad_ref.png" alt="AbsoluteGrad REF" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.6: Guided AbsoluteGrad (REF)</div>
+          <div class="figure-desc">Per-position gradient &times; input magnitude for the reference allele, concentrating attribution around the variant locus.</div>
+        </div>
+      </div>
+
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/absgrad_alt.png" alt="AbsoluteGrad ALT" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.7: Guided AbsoluteGrad (ALT)</div>
+          <div class="figure-desc">Per-position gradient &times; input magnitude for the alternate allele sequence window.</div>
+        </div>
+      </div>
+
+      <!-- Figure F.8 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/delta_absgrad.png" alt="Delta AbsoluteGrad" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.8: &Delta;-AbsoluteGrad Footprint</div>
+          <div class="figure-desc">Explicit difference footprint (|Grad &times; Alt| &minus; |Grad &times; Ref|), isolating the precise locus of mutation impact.</div>
+        </div>
+      </div>
+
+      <!-- Figure F.9 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/ism_heatmap.png" alt="In-Silico Mutagenesis Heatmap" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.9: In-Silico Mutagenesis (ISM) Heatmap</div>
+          <div class="figure-desc">2D perturbation matrix [4 bases &times; 80 bp window] displaying systematic model output shifts for every possible single base substitution.</div>
+        </div>
+      </div>
+
+      <!-- Figure F.10 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/per_gene_performance.png" alt="Per-Gene Performance" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.10: Per-Gene Performance</div>
+          <div class="figure-desc">Accuracy and ROC AUC broken down across individual genes (RMRP, ABCD1, DOK7, EHMT1, ENPP1, PDE6B, etc.).</div>
+        </div>
+      </div>
+
+      <!-- Figure F.11 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/review_status_performance.png" alt="Review Status Performance" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.11: ClinVar Review Status Performance</div>
+          <div class="figure-desc">Performance scaling by clinical confidence: Expert Panel (1.000 AUC), Single Submitter (0.930 AUC), Multiple Submitters (0.886 AUC).</div>
+        </div>
+      </div>
+
+      <!-- Figure F.12 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/prospective_confusion_matrix.png" alt="Prospective Confusion Matrix" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.12: Prospective Validation Matrix</div>
+          <div class="figure-desc">Validation performance on 246 model-unseen variants added to ClinVar post-snapshot, confirming no data leakage.</div>
+        </div>
+      </div>
+
+      <!-- Figure F.13 -->
+      <div class="figure-card">
+        <div class="figure-img-box">
+          <img src="figures/ablation_roc_auc.png" alt="Ablation ROC AUC" loading="lazy">
+        </div>
+        <div class="figure-card-body">
+          <div class="figure-title">Figure F.13: Ablation Study ROC AUC Comparison</div>
+          <div class="figure-desc">Bar chart comparing performance across architectural variants, confirming the necessity of &Delta;-learning.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Thesis Architectural Ablation Matrix (Table 2) -->
+  <div class="card">
+    <h3>Architectural Ablation Study Matrix &mdash; Thesis Table 2</h3>
+    <p style="color:var(--text-dim);font-size:.85rem">
+      Systematic ablation evaluating individual architectural contributions trained on 120,000 variants (6 epochs per variant).
+    </p>
+
+    <div style="overflow-x:auto;">
+      <table class="thesis-table">
+        <thead>
+          <tr>
+            <th>Architecture Variant</th>
+            <th>ROC AUC</th>
+            <th>AUPRC</th>
+            <th>MCC</th>
+            <th>Balanced Acc</th>
+            <th>Parameters</th>
+            <th>Impact (&Delta; AUC)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>Proposed Framework (Full Dual-Branch &Delta;)</td>
+            <td>0.8361</td>
+            <td>0.5782</td>
+            <td>0.4130</td>
+            <td>0.7617</td>
+            <td>397,124</td>
+            <td>Baseline (0.000)</td>
+          </tr>
+          <tr>
+            <td>Baseline A: W/o &Delta;-Learning Module</td>
+            <td>0.5509</td>
+            <td>0.2914</td>
+            <td>0.0892</td>
+            <td>0.5310</td>
+            <td>265,924</td>
+            <td style="color:var(--red);font-weight:700;">-0.2852 (Severe Drop)</td>
+          </tr>
+          <tr>
+            <td>Baseline B: W/o Transformer Encoder</td>
+            <td>0.6767</td>
+            <td>0.3945</td>
+            <td>0.2210</td>
+            <td>0.6284</td>
+            <td>198,532</td>
+            <td style="color:var(--amber);font-weight:700;">-0.1594</td>
+          </tr>
+          <tr>
+            <td>Baseline C: W/o Multi-Kernel CNN</td>
+            <td>0.7944</td>
+            <td>0.5218</td>
+            <td>0.3685</td>
+            <td>0.7291</td>
+            <td>328,452</td>
+            <td style="color:var(--blue);font-weight:700;">-0.0417</td>
+          </tr>
+          <tr>
+            <td>Baseline D: Single Sequence (ALT Only)</td>
+            <td>0.6192</td>
+            <td>0.3241</td>
+            <td>0.1450</td>
+            <td>0.5840</td>
+            <td>134,812</td>
+            <td style="color:var(--green);font-weight:700;">-0.2169</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- LLM Biomedical Variant Explanation Case Study -->
+  <div class="card">
+    <h3>LLM-Powered Automated Biological Explanation (Cell 25 Output)</h3>
+    <p style="color:var(--text-dim);font-size:.85rem">
+      Automated biomedical interpretation generated by Google Gemini integration using predicted probabilities and XAI attribution rankings.
+    </p>
+
+    <div class="llm-report-box">
+      <h4>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Gemini Automated Biomedical Report &mdash; Variant ARHGAP21 G&gt;A (Chr 10: 24,585,182)
+      </h4>
+      <p><strong>1. Variant Description and Location:</strong> This report describes a single nucleotide variant (SNV) located within the <em>ARHGAP21</em> gene on chromosome 10 at genomic position 24585182. Specifically, it involves a substitution where the reference allele Guanine (G) is replaced by an Adenine (A).</p>
+      <p style="margin-top:0.6rem;"><strong>2. Model Probability &amp; Clinical Risk:</strong> The deep learning model predicted a pathogenicity probability of <strong>0.0234</strong>, which is very low. This low probability leads to an interpretation of "LOW risk / likely benign." In a clinical context, this suggests that the variant is highly unlikely to cause disease.</p>
+      <p style="margin-top:0.6rem;"><strong>3. Attribution Insights:</strong> The attribution analysis indicates which positions in the sequence window most influenced the model's prediction. While the mutation site itself (position 512) contributed significantly, the strongest influences came from positions immediately upstream: 511, 510, 508, and 507, confirming that the sequence context surrounding the G&gt;A change drove the benign determination.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TAB 4: Live Predictor ═══ -->
 <section class="tab-panel" id="panel-predict" role="tabpanel">
   <div class="card">
     <h3>
