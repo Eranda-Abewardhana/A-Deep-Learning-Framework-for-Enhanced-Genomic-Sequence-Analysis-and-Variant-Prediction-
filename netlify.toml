@@ -1,12 +1,7 @@
 [build]
-  command = "pip install -r requirements.txt"
-  functions = "netlify/functions"
-
-[functions]
-  directory = "netlify/functions"
-  included_files = ["best_brca_mutation_model.pt", "demo.html"]
+  publish = "."
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/index"
+  to = "/index.html"
   status = 200
