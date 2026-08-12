@@ -6668,7 +6668,7 @@ Click below to download:</pre>
           <span style="font-size:0.72rem; color:var(--accent-light);">[Drop REF sequence here]</span>
         </label>
         <textarea id="ref-seq" placeholder="Paste or drag reference DNA sequence (ACGT)..."></textarea>
-        <div class="char-count"><span id="ref-len">0</span> bp</div>
+        <div class="char-count"><span id="ref-len">0</span> bp raw &bull; Model input: 1024 bp (anchor padded)</div>
       </div>
       <div class="seq-input" id="alt-dropzone">
         <label for="alt-seq">
@@ -6676,7 +6676,7 @@ Click below to download:</pre>
           <span style="font-size:0.72rem; color:var(--accent-light);">[Drop ALT sequence here]</span>
         </label>
         <textarea id="alt-seq" placeholder="Paste or drag alternate DNA sequence (ACGT)..."></textarea>
-        <div class="char-count"><span id="alt-len">0</span> bp</div>
+        <div class="char-count"><span id="alt-len">0</span> bp raw &bull; Model input: 1024 bp (anchor padded)</div>
       </div>
     </div>
     <button id="run-btn" disabled>Run Prediction</button>
@@ -7024,7 +7024,7 @@ async function loadSamples() {
     card.innerHTML = `
       <div class="sample-info">
         <div class="sample-title">${s.label}</div>
-        <div class="sample-sub">Gene: ${s.gene || 'BRCA'} &bull; ${s.ref.length} bp</div>
+        <div class="sample-sub">Gene: ${s.gene || 'BRCA'} &bull; ${s.ref.length} bp raw (padded to 1024 bp window)</div>
       </div>
       <div class="sample-actions">
         <button class="load-direct-btn" id="load-btn-${i}" onclick="loadSampleDirect(${i}, this)">
