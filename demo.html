@@ -1078,12 +1078,81 @@ footer {
   margin-top: 0.25rem;
 }
 
+/* ── Gallery Layout Controls & Figure Sizes ───────────────── */
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: var(--bg-subtle, rgba(15, 23, 42, 0.6));
+  border: 1px solid var(--border-subtle, rgba(99, 102, 241, 0.25));
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius, 12px);
+  margin-bottom: 1.25rem;
+}
+.gallery-controls-info {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-dim, #94a3b8);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gallery-btn-group {
+  display: flex;
+  gap: 0.4rem;
+  background: rgba(0,0,0,0.3);
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+}
+.gallery-size-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim, #94a3b8);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.gallery-size-btn:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+.gallery-size-btn.active {
+  background: var(--accent, #6366f1);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+}
+
 .figure-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+  gap: 1.5rem;
   margin-top: 1rem;
+  transition: grid-template-columns 0.3s ease;
 }
+@media (max-width: 640px) {
+  .figure-gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+.figure-gallery-grid.grid-1col {
+  grid-template-columns: 1fr !important;
+}
+.figure-gallery-grid.grid-2col {
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)) !important;
+}
+.figure-gallery-grid.grid-3col {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)) !important;
+}
+
 .figure-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -1091,41 +1160,232 @@ footer {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .figure-card:hover {
-  border-color: var(--accent-light);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  border-color: var(--accent-light, #818cf8);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+  transform: translateY(-3px);
 }
 .figure-img-box {
-  background: #000;
-  padding: 0.75rem;
+  background: #060911;
+  padding: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--border-subtle);
-  min-height: 200px;
+  min-height: 440px;
+  position: relative;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+.figure-img-box::after {
+  content: '🔍 Click to view full resolution';
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  background: rgba(15, 23, 42, 0.88);
+  color: #e2e8f0;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.18);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.figure-img-box:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 .figure-img-box img {
   max-width: 100%;
+  max-height: 560px;
+  width: auto;
   height: auto;
   border-radius: 4px;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.figure-img-box:hover img {
+  transform: scale(1.02);
 }
 .figure-card-body {
-  padding: 1.1rem;
+  padding: 1.25rem;
   flex-grow: 1;
 }
 .figure-title {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 .figure-desc {
   font-size: 0.92rem;
   color: var(--text-dim);
+  line-height: 1.55;
+}
+
+/* Also enhance notebook image output displays */
+.nb-img-out img {
+  max-width: 100% !important;
+  max-height: 600px !important;
+  height: auto !important;
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+.nb-img-out img:hover {
+  transform: scale(1.01);
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 8, 16, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 99999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lightbox-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+.lightbox-container {
+  position: relative;
+  max-width: 94vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lightbox-img-wrapper {
+  max-width: 100%;
+  max-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #020408;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+  overflow: auto;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+.lightbox-caption-box {
+  margin-top: 1rem;
+  text-align: center;
+  max-width: 850px;
+}
+.lightbox-title-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #818cf8;
+  margin-bottom: 0.3rem;
+}
+.lightbox-desc-text {
+  font-size: 0.9rem;
+  color: #cbd5e1;
   line-height: 1.5;
+}
+.lightbox-btn-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+.lightbox-btn-close:hover {
+  background: rgba(239, 68, 68, 0.9);
+  border-color: rgba(239, 68, 68, 1);
+  transform: scale(1.08);
+}
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+.lightbox-nav-btn:hover {
+  background: rgba(99, 102, 241, 0.95);
+  border-color: rgba(129, 140, 248, 1);
+  transform: translateY(-50%) scale(1.08);
+}
+.lightbox-prev-btn { left: -25px; }
+.lightbox-next-btn { right: -25px; }
+
+@media (max-width: 768px) {
+  .lightbox-prev-btn { left: 5px; }
+  .lightbox-next-btn { right: 5px; }
+  .lightbox-btn-close { top: 5px; right: 5px; }
+}
+
+.lightbox-toolbar {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+.lightbox-action-btn {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #e2e8f0;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.lightbox-action-btn:hover {
+  background: var(--accent, #6366f1);
+  border-color: var(--accent-light, #818cf8);
+  color: #fff;
 }
 
 .llm-report-box {
@@ -1954,6 +2214,25 @@ footer {
     <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:1rem">
       Exported plot figures generated by the notebook pipeline saved in <code>/figures/</code>.
     </p>
+
+    <!-- Gallery Controls & Image Size Switcher -->
+    <div class="gallery-controls">
+      <div class="gallery-controls-info">
+        <span>📷 Figure Image Display Controls:</span>
+        <span style="font-size:0.8rem;color:var(--text-muted)">(Click any plot for full-screen high-resolution lightbox)</span>
+      </div>
+      <div class="gallery-btn-group">
+        <button class="gallery-size-btn" onclick="setGalleryGrid('grid-1col', this)">
+          <span>🖥️ Extra Large (1 Col)</span>
+        </button>
+        <button class="gallery-size-btn active" onclick="setGalleryGrid('grid-2col', this)">
+          <span>💻 Large (2 Cols)</span>
+        </button>
+        <button class="gallery-size-btn" onclick="setGalleryGrid('grid-3col', this)">
+          <span>📱 Compact (3 Cols)</span>
+        </button>
+      </div>
+    </div>
 
     <div class="figure-gallery-grid">
       <!-- Figure F.1 -->
@@ -7415,8 +7694,193 @@ async function init() {
   await checkBackend();
   await initONNX();
   await loadSamples();
+  initLightbox();
 }
 init();
+</script>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-overlay" onclick="if(event.target===this) closeLightbox()">
+  <div class="lightbox-container">
+    <button class="lightbox-btn-close" onclick="closeLightbox()" title="Close (Esc)">&times;</button>
+    <button id="lightboxPrevBtn" class="lightbox-nav-btn lightbox-prev-btn" onclick="prevLightboxImage()" title="Previous Figure (←)">&lsaquo;</button>
+    <button id="lightboxNextBtn" class="lightbox-nav-btn lightbox-next-btn" onclick="nextLightboxImage()" title="Next Figure (→)">&rsaquo;</button>
+    
+    <div class="lightbox-img-wrapper">
+      <img id="lightboxImg" class="lightbox-img" src="" alt="Enlarged Plot Figure">
+    </div>
+
+    <div class="lightbox-toolbar">
+      <button class="lightbox-action-btn" onclick="zoomLightboxImage(0.25)">🔍+ Zoom In</button>
+      <button class="lightbox-action-btn" onclick="zoomLightboxImage(-0.25)">🔍- Zoom Out</button>
+      <button class="lightbox-action-btn" onclick="zoomLightboxImage(0)">🔄 Reset</button>
+      <button class="lightbox-action-btn" onclick="downloadLightboxImage()">💾 Download Plot</button>
+    </div>
+
+    <div class="lightbox-caption-box">
+      <div id="lightboxTitle" class="lightbox-title-text"></div>
+      <div id="lightboxDesc" class="lightbox-desc-text"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Gallery grid size control
+function setGalleryGrid(gridClass, btn) {
+  const grid = document.querySelector('.figure-gallery-grid');
+  if (!grid) return;
+  grid.classList.remove('grid-1col', 'grid-2col', 'grid-3col');
+  grid.classList.add(gridClass);
+  document.querySelectorAll('.gallery-size-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}
+
+// Lightbox Modal Functionality
+let currentLightboxIndex = 0;
+let galleryImagesList = [];
+
+function initLightbox() {
+  const figureCards = document.querySelectorAll('.figure-card');
+  galleryImagesList = [];
+  
+  figureCards.forEach((card, idx) => {
+    const img = card.querySelector('img');
+    const titleEl = card.querySelector('.figure-title');
+    const descEl = card.querySelector('.figure-desc');
+    if (!img) return;
+    
+    const imgData = {
+      src: img.src,
+      alt: img.alt || 'Thesis Figure',
+      title: titleEl ? titleEl.innerText : (img.alt || ''),
+      desc: descEl ? descEl.innerText : ''
+    };
+    galleryImagesList.push(imgData);
+    
+    const imgBox = card.querySelector('.figure-img-box');
+    if (imgBox) {
+      imgBox.onclick = () => openLightbox(idx);
+    } else {
+      img.onclick = () => openLightbox(idx);
+    }
+  });
+
+  // Also bind any standalone notebook output images
+  document.querySelectorAll('.nb-img-out img').forEach(img => {
+    img.onclick = () => {
+      openCustomLightbox(img.src, img.alt || 'Notebook Plot Output', 'Exported plot generated in notebook execution cell.');
+    };
+  });
+}
+
+function openLightbox(index) {
+  if (index < 0 || index >= galleryImagesList.length) return;
+  currentLightboxIndex = index;
+  const data = galleryImagesList[index];
+  updateLightboxContent(data.src, data.alt, data.title, data.desc);
+  
+  const modal = document.getElementById('lightboxModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function openCustomLightbox(src, title, desc) {
+  currentLightboxIndex = -1;
+  updateLightboxContent(src, title, title, desc);
+  const modal = document.getElementById('lightboxModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function updateLightboxContent(src, alt, title, desc) {
+  const imgEl = document.getElementById('lightboxImg');
+  const titleEl = document.getElementById('lightboxTitle');
+  const descEl = document.getElementById('lightboxDesc');
+  const prevBtn = document.getElementById('lightboxPrevBtn');
+  const nextBtn = document.getElementById('lightboxNextBtn');
+  
+  if (imgEl) {
+    imgEl.src = src;
+    imgEl.alt = alt;
+    imgEl.style.transform = 'scale(1)';
+  }
+  if (titleEl) titleEl.innerText = title;
+  if (descEl) descEl.innerText = desc;
+  
+  if (prevBtn && nextBtn) {
+    if (currentLightboxIndex === -1) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+    } else {
+      prevBtn.style.display = 'flex';
+      nextBtn.style.display = 'flex';
+    }
+  }
+}
+
+function closeLightbox() {
+  const modal = document.getElementById('lightboxModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function prevLightboxImage() {
+  if (currentLightboxIndex > 0) {
+    openLightbox(currentLightboxIndex - 1);
+  } else if (galleryImagesList.length > 0) {
+    openLightbox(galleryImagesList.length - 1);
+  }
+}
+
+function nextLightboxImage() {
+  if (currentLightboxIndex < galleryImagesList.length - 1) {
+    openLightbox(currentLightboxIndex + 1);
+  } else if (galleryImagesList.length > 0) {
+    openLightbox(0);
+  }
+}
+
+let lightboxZoomScale = 1;
+function zoomLightboxImage(delta) {
+  const imgEl = document.getElementById('lightboxImg');
+  if (!imgEl) return;
+  if (delta === 0) {
+    lightboxZoomScale = 1;
+  } else {
+    lightboxZoomScale = Math.max(0.5, Math.min(3, lightboxZoomScale + delta));
+  }
+  imgEl.style.transform = `scale(${lightboxZoomScale})`;
+}
+
+function downloadLightboxImage() {
+  const imgEl = document.getElementById('lightboxImg');
+  if (!imgEl || !imgEl.src) return;
+  const a = document.createElement('a');
+  a.href = imgEl.src;
+  a.download = imgEl.src.split('/').pop() || 'figure.png';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+// Keyboard shortcuts for Lightbox
+document.addEventListener('keydown', (e) => {
+  const modal = document.getElementById('lightboxModal');
+  if (!modal || !modal.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') prevLightboxImage();
+  if (e.key === 'ArrowRight') nextLightboxImage();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  initLightbox();
+});
 </script>
 
 </body>
